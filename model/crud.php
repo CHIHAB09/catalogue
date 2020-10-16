@@ -113,7 +113,7 @@ function selectsEntre($db){
 //var_dump((selectsEntre($db)));
 
 //affichage d'un produit
-function selectNom($db,$id){
+function selectDetail($db,$id){
     $sql="SELECT descriptif FROM produits WHERE id = $id";
     $result = mysqli_query($db, $sql);
     if($result) {
@@ -164,7 +164,7 @@ function selectAllCategories($db){
 }
 
 //affichage de la liste des pointes de vente
-function selectsPoint ($db){
+function selectsMagasin ($db){
     $sql="SELECT * FROM point_de_vente ORDER BY ville ASC";
     $result= mysqli_query($db,$sql);
     if($result){
@@ -223,7 +223,7 @@ function deleteProduit($db, $id) {
 
 //supprimer une categorie
 function deleteCategorie($db, $id) {
-	$sql = "DELETE FROM posts WHERE id = $id";
+	$sql = "DELETE FROM categorie WHERE id = $id";
 	
 	$result = mysqli_query($db, $sql);
 	return $result ? "La suppression a réussi<br>" : "La suppression a raté: " . mysqli_error($db) . "<br>";
@@ -240,11 +240,47 @@ function deleteImage($db, $id) {
 
 
 //supprimer un point de vente
-function deletePost($db, $id) {
+function deleteMagasin($db, $id) {
 	$sql = "DELETE FROM point_de_vente WHERE id = $id";
 	
 	$result = mysqli_query($db, $sql);
 	return $result ? "La suppression a réussi<br>" : "La suppression a raté: " . mysqli_error($db) . "<br>";
 }
 
+
+//--------------> Promotion <-----------------
+
+// affichage en evidence
+
+function selectEvidence($c,$id){
+    $sql="UPDATE `produits` SET `produit_evident`= 0 WHERE `produit_evident`= 1"; // remettre tout les produit evidence a 0
+    $sql1="UPDATE `produits` SET `produit_evident`= 1 WHERE idproduit= $id;" ;// cree un produit en evidence
+    $result=mysqli_query($c,$sql);
+    $result2=mysqli_query($c,$sql1);
+    if($result&&$result2) {
+        return "L'update à reussie";
+    } else {
+        return "Un des updates a échoué: " . mysqli_error($c) . "<br>";
+    }
+}
+
+
+
+
+//cree un produits en promo
+function promotion($c, $reduction, $debut, $fin, $produits_idproduit){
+    $sql="INSERT INTO `promotion` VALUES (NULL, $reduction, '$debut', '$fin', $produits_idproduit)";
+    $result=mysqli_query($c,$sql);
+    if($result) {
+        return "La promotion a été insérée";
+    } else {
+        return "La promotion n'a pu être insérée: " . mysqli_error($c) . "<br>";
+    }
+
+}
+
 ?>
+
+
+
+
