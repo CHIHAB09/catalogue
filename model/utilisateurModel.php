@@ -20,3 +20,7 @@ function connectUtilis($c,$login,$pwd){
 
 }
 
+
+// PAS OUBLIER DE CRYPTERRRRRRRRRRRRRRRRRRRRRRRRRRR
+// 1) https://www.php.net/manual/fr/function.password-verify.php
+//2)https://www.php.net/manual/fr/function.password-hash.php

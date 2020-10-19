@@ -26,7 +26,7 @@ function insertImages($db,$legend,$URL,$produit_idproduit){
 
 // cree un point de vente
 function insertMagasin($db,$nom,$rue,$numero,$codepostal,$ville,$coordonee){
-    $sql= "INSERT INTO poi,t_de_vente (nom,rue,numero,codepostal,ville,coordonnee) VALUES('$nom','$rue','$numero','$codepostal','$ville','$coordonee');";
+    $sql= "INSERT INTO point_de_vente (nom,rue,numero,codepostal,ville,coordonnee) VALUES('$nom','$rue','$numero','$codepostal','$ville','$coordonee');";
     $result = mysqli_query($db, $sql);
 	return $result ? "L'insertion a réussie<br>" : "L'insertion a échouée: " . mysqli_error($db) . "<br>";
 }
@@ -150,7 +150,7 @@ function selectALLCountImage($db,$id){
     $data=mysqli_fetch_assoc($recup);
     return $data ['nbImage'];
 }
-var_dump(selectAllCountImage($db,1));
+//var_dump(selectAllCountImage($db,1));
 // affichage de toute la categorie
 function selectAllCategories($db){
     $sql="SELECT * FROM categorie ORDER BY nom ASC";
@@ -179,7 +179,7 @@ function selectsMagasin ($db){
 
 // modification du produit
 function updateProduit($db, $modele, $marque,$id) {
-	$sql = "UPDATE produits SET modele = $modele, marque = $marque WHERE id = $id";
+	$sql = "UPDATE produits SET modele = '$modele', marque = '$marque' WHERE id = $id";
 	
 	$result = mysqli_query($db, $sql);
 	return $result ? "La mise à jour a réussie<br>" : "La mise à jour a échouée: " . mysqli_error($db) . "<br>";
@@ -279,7 +279,6 @@ function promotion($c, $reduction, $debut, $fin, $produits_idproduit){
 
 }
 
-?>
 
 
 
