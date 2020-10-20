@@ -1,3 +1,7 @@
+<?php
+include "view/parts/navbar.php"
+
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -8,6 +12,7 @@
     <title>Login</title>
 </head>
 <body>
+    <h1>Login</h1>
     <form action="" name="connexion" method="post">
         <div>
             <label for="name">Pseudo :</label>
