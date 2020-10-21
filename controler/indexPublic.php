@@ -36,27 +36,27 @@ if(isset($_GET['pg'])&&$_GET['pg']=="connect"){
 
 
 if(!isset($_GET['pg'])){
-    include "../view/public/accueil.php";
+    include "../view/public/accueil.view.php";
 }else{
     $pg=$_GET['pg'];
 
     switch($pg){
         case "Présentation":
-            require_once "../view/public/presentation.php";
+            require_once "../view/public/presentation.view.php";
         break;
         case "Catalogue":
-            require_once "../view/public/catalogue.php";
+            require_once "../view/public/catalogue.view.php";
         break;
         case "Contact":
-            require_once "../view/public/contacts.php";
+            require_once "../view/public/contacts.view.php";
         break;
         case "Login":
-            require_once "../view/public/login2.php";
+            require_once "../view/public/login2.view.php";
             break;
             case "Deconnexion":
                 require_once "../model/deconnexion.php";
             break;
         default:
-        require_once "../view/public/accueil.php";
+        require_once "../view/public/accueil.view.php";
     }
 }

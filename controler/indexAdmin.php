@@ -3,6 +3,7 @@ require_once "../model/deconnexion.php";
 require_once "../model/crud.php";
 
 
+
 // on veut se déconnecter
 if(isset($_GET['pg'])&&$_GET['pg']=="deconnexion"){
     disconnectModel();

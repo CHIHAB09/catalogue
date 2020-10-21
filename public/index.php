@@ -20,7 +20,9 @@ if(!$db){
     // stop working
     die();
 }
+
 if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']==session_id()){
+    
     // si on est admin
     if($_SESSION['idUtilisateur']){
         require_once "../controler/indexAdmin.php";
