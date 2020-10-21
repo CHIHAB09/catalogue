@@ -9,25 +9,28 @@ require_once "../model/connectDB.php";
 
 
 
+
 //connexion à la db.
 $db = connectDB();
 
 // connect error
 if(!$db){
     // vue  connect error
-    include "../view/errorConnexion.php";
+    include "../view/public/errorConnexion.php";
     // stop working
     die();
 }
-
+if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']==session_id()){
     // si on est admin
-    if($_SESSION['id']==1){
+    if($_SESSION['idUtilisateur']){
         require_once "../controler/indexAdmin.php";
         exit;
-    }else{
+    } else {
         // chargement du contrôleur public si la condition n 'est pas valide
         require_once "../controler/indexPublic.php";
+    }
 
+}else{
+     // chargement du contrôleur public si la condition n 'est pas valide
+     require_once "../controler/indexPublic.php";
 }
-
-

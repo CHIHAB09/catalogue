@@ -6,12 +6,11 @@ require_once "../model/paginationModel.php";
 
 //tentative de connexion
 if(isset($_GET['pg'])&&$_GET['pg']=="connect"){
-
     //l'envoie du formulaire
     if(isset($_POST['pseudo'],$_POST['pwd'])){
         //tratiement des donnees
-        $pseudo=htmlspecialchars(strip_tags(trim($_POST['pseudo'])),EN_QUOTES);
-        $pwd=htmlspecialchars(strip_tags(trim($_POST['pseudo'])),EN_QUOTES);
+        $pseudo=htmlspecialchars(strip_tags(trim($_POST['pseudo'])),ENT_QUOTES);
+        $pwd=htmlspecialchars(strip_tags(trim($_POST['pwd'])),ENT_QUOTES);
 
         $connect= connectUser($db,$pseudo,$pwd);
 
@@ -26,33 +25,38 @@ if(isset($_GET['pg'])&&$_GET['pg']=="connect"){
             exit();
         }else{
             $erreur = "Login ou mot de passe incorrecte";
-             // view
-        require_once "view/login.php";
-        exit();
+     
         }
        
         }
+         // view
+    require_once "../view/admin/accueilAdmin.php";
+    exit();
 }
 
+
 if(!isset($_GET['pg'])){
-    include "../view/accueil.php";
+    include "../view/public/accueil.php";
 }else{
     $pg=$_GET['pg'];
 
     switch($pg){
         case "Présentation":
-            require_once "../view/presentation.php";
+            require_once "../view/public/presentation.php";
         break;
         case "Catalogue":
-            require_once "../view/catalogue.php";
+            require_once "../view/public/catalogue.php";
         break;
         case "Contact":
-            require_once "../view/contacts.php";
+            require_once "../view/public/contacts.php";
         break;
         case "Login":
-            require_once "../view/login2.php";
+            require_once "../view/public/login2.php";
+            break;
+            case "Deconnexion":
+                require_once "../model/deconnexion.php";
             break;
         default:
-        require_once "../view/accueil.php";
+        require_once "../view/public/accueil.php";
     }
 }

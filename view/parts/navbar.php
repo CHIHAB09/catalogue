@@ -15,11 +15,11 @@
     <nav>
       <ul>
         <li class="logo">#</li>
-        <li class="items"><a href="?pg=accueil">Accueil</a></li>
-        <li class="items"><a href="?pg=présentation">Présentation</a></li>
-        <li class="items"><a href="?pg=catalogue">Catalogue</a></li>
-        <li class="items"><a href="?pg=contacts">Contacts</a></li>
-          <li class="items"><a href="?pg=login2">login</a></li>
+        <li class="items"><a href="?pg=Accueil">Accueil</a></li>
+        <li class="items"><a href="?pg=Présentation">Présentation</a></li>
+        <li class="items"><a href="?pg=Catalogue">Catalogue</a></li>
+        <li class="items"><a href="?pg=Contacts">Contacts</a></li>
+          <li class="items"><a href="?pg=Login">login</a></li>
         <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
       </ul>
     </nav>

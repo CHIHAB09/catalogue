@@ -7,10 +7,10 @@ function connectUser($db, $pseudo, $pwd)
     $pseudo = htmlspecialchars(strip_tags(trim($pseudo)), ENT_QUOTES);
     $pwd = htmlspecialchars(strip_tags(trim($pwd)), ENT_QUOTES);
     // request
-    $sql = "SELECT u.id, u.pseudo
+    $sql = "SELECT idUtilisateur, u.pseudo
 	FROM utilisateurs u
     
-    WHERE u.pseudo='$pseudo' AND u.pwd='$pwd';";
+    WHERE u.pseudo='$pseudo' AND u.pwd='$pwd'";
     $recup = mysqli_query($db, $sql) or die(mysqli_error($db));
 
     if (mysqli_num_rows($recup)) {
@@ -22,9 +22,9 @@ function connectUser($db, $pseudo, $pwd)
 }
 
 // find all user
-function AllUser($c)
+function AllUser($connect)
 {
-    $sql = "SELECT id, pseudo FROM utilisateurs ORDER BY pseudo ASC;";
-    $request = mysqli_query($c, $sql);
+    $sql = "SELECT idUtilisateur, pseudo FROM utilisateurs ORDER BY pseudo ASC;";
+    $request = mysqli_query($connect, $sql);
     return mysqli_fetch_all($request, MYSQLI_ASSOC);
 }
