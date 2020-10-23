@@ -12,9 +12,9 @@
           Magasins
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Ajouter un magasin</a>
-          <a class="dropdown-item" href="#">Modifier un magasin</a>
-          <a class="dropdown-item" href="#">Supprimer un magasin</a>
+          <a class="dropdown-item" href="../view/admin/insertMagasin.php">Ajouter un magasin</a>
+          <a class="dropdown-item" href="../view/admin/updateMagasin.php">Modifier un magasin</a>
+          <a class="dropdown-item" href="../view/admin/deletetMagasin.php">Supprimer un magasin</a>
         </div>
       </li>
       <li class="nav-item dropdown">
