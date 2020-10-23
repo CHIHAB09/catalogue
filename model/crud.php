@@ -165,7 +165,7 @@ function selectAllCategories($db){
 
 //affichage de la liste des pointes de vente
 function selectsMagasin ($db){
-    $sql="SELECT * FROM point_de_vente ORDER BY ville ASC";
+    $sql="SELECT * FROM magasin ORDER BY ville ASC";
     $result= mysqli_query($db,$sql);
     if($result){
         $data= mysqli_fetch_all($result,MYSQLI_ASSOC);

@@ -1,5 +1,5 @@
 <?php
-include "../view/admin/parts/navBaraAdmin.php";
+include "../view/admin/parts/navBarAdmin.php";
 ?>
 
 <!DOCTYPE html>
