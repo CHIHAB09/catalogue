@@ -13,16 +13,20 @@ if(isset($_GET['pg'])&&$_GET['pg']=="deconnexion"){
 
 //existence de la connexion valide login admin
 if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) { 
+    
     if(!isset($_GET['pg'])){
-        include "../view/public/accueil.view.php";
+        include "../controler/admin/accueil.admin.controler.php";
     }else{
         $pg=$_GET['pg'];
 
         switch($pg){
+            case "Accueil":
+                require_once "../controler/admin/accueil.admin.controler.php";
+            break;
             case "Magasin":
                 require_once "../view/admin/accueil.Magasin.php";
             break;
-            case "insertMagasin":
+            case "insertMagasin":                
                 require_once "../view/admin/insertMagasin.php";
             break;
             case "updateMagasin":
@@ -33,7 +37,7 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
             break;
             
             default:            
-            require_once "../view/admin/accueilAdmin.php";
+            require_once "../controler/admin/accueil.admin.controler.php";
         }
     };
 }  

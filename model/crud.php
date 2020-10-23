@@ -24,9 +24,11 @@ function insertImages($db,$legend,$URL,$produit_idproduit){
 	return $result ? "L'insertion a réussie<br>" : "L'insertion a échouée: " . mysqli_error($db) . "<br>";
 }
 
-// cree un point de vente
-function insertMagasin($db,$nom,$rue,$numero,$codepostal,$ville,$coordonee){
-    $sql= "INSERT INTO point_de_vente (nom,rue,numero,codepostal,ville,coordonnee) VALUES('$nom','$rue','$numero','$codepostal','$ville','$coordonee');";
+// cree un magasin
+
+function insertMagasin($db,$nom,$rue,$numero,$codepostal,$ville,$longitude,$latitude){
+
+    $sql= "INSERT INTO magasin (nom,rue,numero,codepostal,ville,longitude,latitude) VALUES('$nom','$rue','$numero','$codepostal','$ville','$longitude','$latitude');";
     $result = mysqli_query($db, $sql);
 	return $result ? "L'insertion a réussie<br>" : "L'insertion a échouée: " . mysqli_error($db) . "<br>";
 }

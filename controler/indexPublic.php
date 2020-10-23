@@ -6,8 +6,10 @@ require_once "../model/paginationModel.php";
 
 //tentative de connexion
 if(isset($_GET['pg'])&&$_GET['pg']=="connect"){
+    
     //l'envoie du formulaire
     if(isset($_POST['pseudo'],$_POST['pwd'])){
+        
         //tratiement des donnees
         $pseudo=htmlspecialchars(strip_tags(trim($_POST['pseudo'])),ENT_QUOTES);
         $pwd=htmlspecialchars(strip_tags(trim($_POST['pwd'])),ENT_QUOTES);
@@ -21,11 +23,10 @@ if(isset($_GET['pg'])&&$_GET['pg']=="connect"){
             $_SESSION['utilisateurs']=session_id();
             
             // redirection
-            header("Location: ./");
+            header("Location: index.php?admin=Accueil");
             exit();
         }else{
             $erreur = "Login ou mot de passe incorrecte";
-     
         }
        
         }
@@ -34,13 +35,15 @@ if(isset($_GET['pg'])&&$_GET['pg']=="connect"){
     exit();
 }
 
-
 if(!isset($_GET['pg'])){
     include "../view/public/accueil.view.php";
 }else{
     $pg=$_GET['pg'];
 
     switch($pg){
+        case "Accueil.public":
+            require_once "../view/public/accueil.view.php";
+        break;
         case "Présentation":
             require_once "../view/public/presentation.view.php";
         break;
@@ -51,7 +54,7 @@ if(!isset($_GET['pg'])){
             require_once "../view/public/contacts.view.php";
         break;
         case "Login":
-            require_once "../view/public/login2.view.php";
+            require_once "../controler/public/login2.controler.php";
             break;
             case "Deconnexion":
                 require_once "../model/deconnexion.php";
