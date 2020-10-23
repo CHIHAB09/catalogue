@@ -22,12 +22,12 @@ if(!$db){
 }
 
 if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']==session_id()){
-    
     // si on est admin
     if($_SESSION['idUtilisateur']){
         require_once "../controler/indexAdmin.php";
         exit;
     } else {
+        
         // chargement du contrôleur public si la condition n 'est pas valide
         require_once "../controler/indexPublic.php";
     }
