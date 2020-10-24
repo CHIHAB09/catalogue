@@ -2,7 +2,7 @@
 require_once "../model/crud.php";
 require_once "../model/paginationModel.php";
 
-$nomMagasin= "";  
+$nomMagasin="";
 //si le formulaire est envoyé , on ajoute l'existence de idLiens
 if(isset($_GET['idMagasin'],$_POST['nomMagasin'],$_POST['rue'],$_POST['numero'],$_POST['cdp'],$_POST['ville'],$_POST['long'],$_POST['lat'])){
     // on traîte idMagasin en le transformant en entier si faux 0 => empty
@@ -21,8 +21,7 @@ if(empty($nomMagasin)||empty($rue)||$numero||empty($cdp)||empty($ville)||empty($
     $message = "Erreur de type de données, veuillez recommencer";
 }else {  
     function updateMagasin($db,$nomMagasin,$numero,$cdp,$rue,$ville,$long,$lat){
-    //execution de la requete
-     mysqli_query($db,$sql) or die(mysqli_error($db));
+    
      // redirection
      header("Location: ?pg=Magasin&message=update");
      
@@ -35,28 +34,26 @@ if(isset($_GET['idMagasin'])&&ctype_digit($_GET['idMagasin'])){
 // conversion en entier
 $idMagasin = (int) $_GET['idMagasin'];
 
-// préparation de la requête
-$sql = "SELECT * FROM liens WHERE idLiens=$id";
-// exécution de la requête
-$recup = mysqli_query($db,$sql) or die(mysqli_error($db));
-// si on trouve une ligne de résultat 1 vaut true
-if(mysqli_num_rows($recup)){
-    $liens = mysqli_fetch_assoc($recup);
-    // mysqli_num_rows($recup) vaut 0 donc false
+    //sql-deviens un update! NE PAS OUBLIER LE WHERE SINON TOUS RISQUES DE CHANGER
+    $sql = "UPDATE magasin SET nom='$nomMagasin', rue='$rue', codepostal='$cdp',ville='$ville',longitude='$long',latitude='$lat'
+    WHERE idMagasin=$idMagasin;";
+    //execution de la requete
+     mysqli_query($db,$sql) or die(mysqli_error($db));
+     // redirection
+     header("Location: ?admin=crudliens&message=modif");
+
 }else{
-    $erreur = "Cet article n'existe déjà plus!";
+    $erreur = "Ce magasin n'existe déjà plus!";
 }
 // l'id n'existe pas ou n'est pas valide
 }else{
 $erreur ="Joue pas aves le feu !!!!";
-}
 }
 
 ?>
 <!doctype html>
 <html lang="fr">
     <head>
-        <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
@@ -101,11 +98,11 @@ $erreur ="Joue pas aves le feu !!!!";
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="numero">Numero</label>
-                   <textarea name="numero" class="form-control col-md-9" id="description" placeholder="Entrez un numéro"><?=$nomMagasin['numero']?></textarea>
+                   <input name="numero" class="form-control col-md-9" id="description" placeholder="Entrez un numéro"><?=$nomMagasin['numero']?>
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="ville">Ville</label>
-                   <textarea name="ville" class="form-control col-md-9" id="ville" placeholder="Entrez une ville nuéro"><?=$nomMagasin['ville']?></textarea>
+                   <input name="ville" class="form-control col-md-9" id="ville" placeholder="Entrez une ville nuéro"><?=$nomMagasin['ville']?>
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="cdp">Code postal</label>
@@ -129,8 +126,7 @@ $erreur ="Joue pas aves le feu !!!!";
            
         </main>
         <?php
-}
-       
+        }
         ?>
     </body>
 </html>

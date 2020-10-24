@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
         <main class="container">
             <h1 class="text-center mt-4">Admin - <?=$_SESSION['pseudo']?></h1>
             <p class="lead text-center">Ce formulaire permet d'ajouter un nouveau lieu dans la liste</p>
-            <h3><a href="?pg=accueilAdmin" ><img src="#" alt="Retour à l'accueil"/></a></h3>
+            <h3><a href="?pg=Magasin" ><img src="#" alt="Retour à l'accueil"/></a></h3>
 
             <?php
     // message d'erreur

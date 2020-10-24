@@ -204,8 +204,8 @@ function updateImage($db, $legend,$URL,$id) {
 }
 
 // modification d'un point de vente
-function updateMagasin($db, $nom,$id) {
-	$sql = "UPDATE magasin SET nom = $nom WHERE idMagasin = $idMagasin";
+function updateMagasin($db, $nomMagasin,$id) {
+	$sql = "UPDATE magasin SET nom = $nomMagasin WHERE idMagasin = $idMagasin";
 	
 	$result = mysqli_query($db, $sql);
 	return $result ? "La mise à jour a réussie<br>" : "La mise à jour a échouée: " . mysqli_error($db) . "<br>";
@@ -242,8 +242,8 @@ function deleteImage($db, $id) {
 
 
 //supprimer un point de vente
-function deleteMagasin($db, $id) {
-	$sql = "DELETE FROM point_de_vente WHERE id = $id";
+function deleteMagasin($db, $idMagasin) {
+	$sql = "DELETE FROM magasin WHERE idMagasin = $idMagasin";
 	
 	$result = mysqli_query($db, $sql);
 	return $result ? "La suppression a réussi<br>" : "La suppression a raté: " . mysqli_error($db) . "<br>";
