@@ -99,9 +99,9 @@ count($magasins); // Permet de savoir le nombre d'éléments dans un array
                         <td><?=$item['ville']?></td>
                         <td><?=$item['longitude']?></td>
                         <td><?=$item['latitude']?></td>
-                        <td><a href="?pg=insertMagasin&id=<?=$item['idMagasin']?>"title="detail du magasin"><img src="image/detail.png" class="btn btn-sm btn-info" data-toggle="modal" data-target="#detailsMagasin"><i class="fa fa-search" aria-hidden="true"></i></a></td>
-                        <td><a href="?pg=updateMagasin&id=<?=$item['idMagasin']?>"title="modifier le magasin"><img src="image/modif.png" alt="modifier le magasin" class="btn btn-sm btn-warning"/><i class="fa fa-edit" aria-hidden="true"></i></a></td>
-                        <td><a href="?pg=deleteMagasin&id=<?=$item['idMagasin']?>" title="supprimer ce magasin"><img src="image/suprim.png" alt="supprimer ce magasin" class="btn btn-sm btn-danger"/><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                        <td><a href="?pg=detailMagasin&id=<?=$item['idMagasin']?>"title="detail du magasin"><img src="image/detail.png" class="btn btn-sm btn-info" data-toggle="modal" data-target="#detailsMagasin"><i class="fa fa-search" aria-hidden="true"></i></a></td>
+                        <td><a href="?pg=updateMagasin&id=<?=$item['idMagasin']?>"title="modifier le magasin"><img src="image/update.png" alt="modifier le magasin" class="btn btn-sm btn-warning"/><i class="fa fa-edit" aria-hidden="true"></i></a></td>
+                        <td><a href="?pg=deleteMagasin&id=<?=$item['idMagasin']?>" title="supprimer ce magasin"><img src="image/delete.png" alt="supprimer ce magasin" class="btn btn-sm btn-danger"/><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                     </tr>
                     
                 </tbody>

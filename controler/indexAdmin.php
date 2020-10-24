@@ -29,6 +29,9 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
             case "insertMagasin":                
                 require_once "../view/admin/insertMagasin.php";
             break;
+            case "detailMagasin":                
+                require_once "../view/admin/detailMagasin.php";
+            break;
             case "updateMagasin":
                 require_once "../view/admin/updateMagasin.php";
             break;
