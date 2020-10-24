@@ -205,7 +205,7 @@ function updateImage($db, $legend,$URL,$id) {
 
 // modification d'un point de vente
 function updateMagasin($db, $nom,$id) {
-	$sql = "UPDATE point_de_vente SET nom = $nom WHERE id = $id";
+	$sql = "UPDATE magasin SET nom = $nom WHERE idMagasin = $idMagasin";
 	
 	$result = mysqli_query($db, $sql);
 	return $result ? "La mise à jour a réussie<br>" : "La mise à jour a échouée: " . mysqli_error($db) . "<br>";
