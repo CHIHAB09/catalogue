@@ -28,7 +28,50 @@ count($magasins); // Permet de savoir le nombre d'éléments dans un array
             <p class="offset-1 col-md-3"><a href="?pg=insertMagasin" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Ajouter un nouveau lien</a></p>
             </header>
             
-            
+            <?php
+                // en cas de redirection depuis 1 des 3 pages du CrUD
+                if(isset($_GET['message'])){
+                switch ($_GET['message']){
+                    case "delet":
+                        ?>
+                        <div class="alert alert-success" role="alert">
+                            Magasin effacé!
+                        </div>
+                        <?php
+                        break;
+                    case "insert":
+                        ?>
+                        <div class="alert alert-success" role="alert">
+                            Magasin inséré!
+                        </div>
+                        <?php
+                        break;
+                    case "update":
+            ?>
+
+                        <div class="alert alert-success" role="alert">
+                        Lien inséré!
+                        </div>
+
+            <?php
+                        break;
+                        case "update":
+            ?>
+                        <div class="alert alert-success" role="alert">
+                            Magasin modifié!
+                        </div>
+            <?php
+    
+                    }
+                }
+        
+                    // pas encore de liens
+                    if(isset($message)) {
+                        echo "<h3>$message</h3>";
+                    }else{
+                // si $count est plus grand que 1, rajoutez s à "message"
+            ?>
+            ?> 
             
             <h3>Vous avez <?= count($magasins) ?> magasin<?php if(count($magasins)>1) echo "s"?></h3>
             <table class="table table-striped">
@@ -63,6 +106,9 @@ count($magasins); // Permet de savoir le nombre d'éléments dans un array
                     
                 </tbody>
            
-                            <?php } ?>
-                            </table>
+        <?php 
+            }
+                }
+        ?>
+                </table>
 </main>
