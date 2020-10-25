@@ -22,7 +22,6 @@
           <li class="items"><a href="?pg=Login">login</a></li>
         <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
       </ul>
-      <a href="?pg=Login"<button class "connexion" name="connexion"></button>Connexion</button></a>
     </nav>
     
 </body>
