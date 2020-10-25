@@ -1,10 +1,19 @@
 <?php
+require_once "../view/admin/parts/navBarAdmin.php";
 require_once "../model/crud.php";
-require_once "../model/paginationModel.php";
-include "../view/admin/parts/navBarAdmin.php";
+$titre= "Magasin";
 $magasins = selectsMagasin($db);
-count($magasins); // Permet de savoir le nombre d'éléments dans un array
+
+if(isset($_GET['idMagasin'])&&ctype_digit($_GET["idMagasin"])){
+    // on traîte idMagasin en le transformant en entier si faux 0 => empty
+    $idMagasin = (int) $_GET['idMagasin'];
+    // requête permettant de récupérer le contenu dans la base de donnée
+    $magasins;
+}else{
+    $erreur = "Cet contenu n'existe déjà plus!";
+}
 ?>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -24,56 +33,10 @@ count($magasins); // Permet de savoir le nombre d'éléments dans un array
 <main class="container">
             <h1 class="text-center mt-4">Admin | <?=$_SESSION['pseudo']?></h1>
             <header class="row">
-            <p class="lead col-md-8">Bienvenue dans cette section qui permet de gérer les lieux de vente. </p>
-            <p class="offset-1 col-md-3"><a href="?pg=insertMagasin" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Ajouter un nouveau lien</a></p>
+            <p class="lead col-md-8">Bienvenue ,</br>Voici le detail de ce magasin:</p>
             </header>
             
-            <?php
-                // en cas de redirection depuis 1 des 3 pages du CrUD
-                if(isset($_GET['message'])){
-                switch ($_GET['message']){
-                    case "delet":
-                        ?>
-                        <div class="alert alert-success" role="alert">
-                            Magasin effacé!
-                        </div>
-                        <?php
-                        break;
-                    case "insert":
-                        ?>
-                        <div class="alert alert-success" role="alert">
-                            Magasin inséré!
-                        </div>
-                        <?php
-                        break;
-                    case "update":
-            ?>
-
-                        <div class="alert alert-success" role="alert">
-                        Magasin inséré!
-                        </div>
-
-            <?php
-                        break;
-                        case "update":
-            ?>
-                        <div class="alert alert-success" role="alert">
-                            Magasin modifié!
-                        </div>
-            <?php
-    
-                    }
-                }
-        
-                    // pas encore de liens
-                    if(isset($message)) {
-                        echo "<h3>$message</h3>";
-                    }else{
-                // si $count est plus grand que 1, rajoutez s à "message"
-            ?>
-            
-            
-            <h3>Vous avez <?= count($magasins) ?> magasin<?php if(count($magasins)>1) echo "s"?></h3>
+            <h3>Detail du magasin</h3>
             <table class="table table-striped">
                 <thead class="thead-light">
                     <tr>
@@ -108,7 +71,7 @@ count($magasins); // Permet de savoir le nombre d'éléments dans un array
            
         <?php 
             }
-                }
+                
         ?>
                 </table>
 </main>

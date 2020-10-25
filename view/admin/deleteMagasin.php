@@ -10,13 +10,13 @@ if(isset($_GET['idMagasin'])&&ctype_digit($_GET['idMagasin'])){
 
     // on confirme la suppression en rajoutant la variable get ok
     if(isset($_GET['ok'])){
-        function deleteMagasin ($db, $idMagasin){
+        deleteMagasin ($db, $idMagasin);
 
         // redirection
         header("Location: ?admin=crudliens&message=supprim");
         
 
-    }
+    
 }
  // préparation de la requête
  $sql = "SELECT nomMagasin, rue,cdp FROM magasin WHERE idMagasin=$idMagasin";
