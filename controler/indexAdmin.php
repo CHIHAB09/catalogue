@@ -38,6 +38,9 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
             case "deleteMagasin":
                 require_once "../view/admin/deleteMagasin.php";
             break;
+            case "deconnexion":
+                require_once "../model/deconnexion.php";
+            break;
             
             default:            
             require_once "../controler/admin/accueil.admin.controler.php";

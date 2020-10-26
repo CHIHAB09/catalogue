@@ -24,14 +24,14 @@ if(isset($_GET['pg'])&&$_GET['pg']=="connect"){
             
             // redirection
             header("Location: index.php?admin=Accueil");
-            exit();
+            
         }else{
             $erreur = "Login ou mot de passe incorrecte";
         }
        
         }
          // view
-    require_once "../view/admin/accueilAdmin.php";
+    require_once "../view/public/accueil.view.php";
     exit();
 }
 
