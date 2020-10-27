@@ -42,7 +42,7 @@ if(!isset($_GET['pg'])){
 
     switch($pg){
         case "Accueil.public":
-            require_once "../view/public/accueil.view.php";
+            require_once "../view/public/accueil.public.controler.php";
         break;
         case "Présentation":
             require_once "../view/public/presentation.view.php";

@@ -24,7 +24,7 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
                 require_once "../controler/admin/accueil.admin.controler.php";
             break;
             case "Magasin":
-                require_once "../view/admin/accueil.Magasin.php";
+                require_once "../controler/admin/accueil.Magasin.controler.php";
             break;
             case "insertMagasin":                
                 require_once "../view/admin/insertMagasin.php";
@@ -37,6 +37,12 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
             break;
             case "deleteMagasin":
                 require_once "../view/admin/deleteMagasin.php";
+            break;
+            case "Produit":
+                require_once "../controler/admin/accueilProduit.controler.php";
+            break;
+            case "insertProduit":
+                require_once "../controler/admin/insertProduit.controler.php";
             break;
             case "deconnexion":
                 require_once "../model/deconnexion.php";

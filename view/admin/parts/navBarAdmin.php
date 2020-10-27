@@ -11,7 +11,7 @@
               <a class="nav-link" href="?pg=Magasin">Magasin</a> 
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Produits</a>
+              <a class="nav-link" href="?pg=Produit">Produits</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Images</a>

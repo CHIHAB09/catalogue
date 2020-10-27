@@ -44,10 +44,10 @@ function insertMagasin($db,$nom,$rue,$numero,$codepostal,$ville,$longitude,$lati
 
 // ----------> READ <--------------
 
-
-// affichage classé par nom
-function selectsNoms($db){
-    $sql="SELECT * FROM produits ORDER BY nom ASC";
+// affichage classé par id
+function selectsProduitById($db,$idProduit){
+    
+    $sql="SELECT * FROM produits Where idProduit = $idProduit";
     $result = mysqli_query($db, $sql);
     if($result) {
         $data = mysqli_fetch_all($result, MYSQLI_ASSOC);;
@@ -55,6 +55,21 @@ function selectsNoms($db){
     } else {
         return "La sélection a échouée: " . mysqli_error($db) . "<br>";
     }
+    
+}
+
+// affichage classé par model
+function selectsProduit($db){
+    
+    $sql="SELECT * FROM produits ORDER BY modele ASC";
+    $result = mysqli_query($db, $sql);
+    if($result) {
+        $data = mysqli_fetch_all($result, MYSQLI_ASSOC);;
+        return $data;
+    } else {
+        return "La sélection a échouée: " . mysqli_error($db) . "<br>";
+    }
+    
 }
 
 // affichage classé par prix
@@ -191,8 +206,8 @@ function selectsMagasinById ($db,$idMagasin){
 // ----------> UPDATE <--------------
 
 // modification du produit
-function updateProduit($db, $modele, $marque,$id) {
-	$sql = "UPDATE produits SET modele = '$modele', marque = '$marque' WHERE id = $id";
+function updateProduit($db, $model,$produitEvident,$marque,$descriptif,$prix,$id) {
+	$sql = "UPDATE produits SET modele = '$model',produit_evident = '$produitEvident', marque = '$marque',descriptif = '$descriptif',prix = $prix, WHERE id = $idProduit";
 	
 	$result = mysqli_query($db, $sql);
 	return $result ? "La mise à jour a réussie<br>" : "La mise à jour a échouée: " . mysqli_error($db) . "<br>";
@@ -227,8 +242,8 @@ function updateMagasin($db,$idMagasin, $nomMagasin,$rue,$numero,$cdp,$ville,$lon
 
 
 // supprimer un produit
-function deleteProduit($db, $id) {
-	$sql = "DELETE FROM produits WHERE id = $id";
+function deleteProduit($db, $idProduit) {
+	$sql = "DELETE FROM produits WHERE idProduit = $idProduit";
 	
 	$result = mysqli_query($db, $sql);
 	return $result ? "La suppression a réussi<br>" : "La suppression a raté: " . mysqli_error($db) . "<br>";
