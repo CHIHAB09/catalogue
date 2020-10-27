@@ -28,7 +28,7 @@ function insertImages($db,$legend,$URL,$produit_idproduit){
 
 function insertMagasin($db,$nom,$rue,$numero,$codepostal,$ville,$longitude,$latitude){
 
-    $sql= "INSERT INTO magasin (nom,rue,numero,codepostal,ville,longitude,latitude) VALUES('$nom','$rue','$numero','$codepostal','$ville','$longitude','$latitude');";
+    $sql= "INSERT INTO magasin  VALUES(DEFAULT,'$nom','$rue','$numero','$codepostal','$ville','$longitude','$latitude');";
     $result = mysqli_query($db, $sql);
 	return $result ? "L'insertion a réussie<br>" : "L'insertion a échouée: " . mysqli_error($db) . "<br>";
 }
@@ -181,7 +181,7 @@ function selectsMagasinById ($db,$idMagasin){
     $sql="SELECT * FROM magasin WHERE idMagasin='$idMagasin' ORDER BY ville ASC";
     $result= mysqli_query($db,$sql);
     if($result){
-        $data= mysqli_fetch_all($result,MYSQLI_ASSOC);
+        $data= mysqli_fetch_assoc($result);
         return $data;
     }else{
         return "Le point de vente n'éxiste plus:" . mysqli_error($db) . "<br>";
@@ -215,8 +215,8 @@ function updateImage($db, $legend,$URL,$id) {
 }
 
 // modification d'un point de vente
-function updateMagasin($db, $nomMagasin,$id) {
-	$sql = "UPDATE magasin SET nom = $nomMagasin WHERE idMagasin = $idMagasin";
+function updateMagasin($db,$idMagasin, $nomMagasin,$rue,$numero,$cdp,$ville,$long,$lat) {
+	$sql = "UPDATE magasin SET nom = '$nomMagasin', rue = '$rue', numero = '$numero', codepostal = '$cdp', ville= '$ville', longitude = '$long', latitude= '$lat' WHERE idMagasin = $idMagasin";
 	
 	$result = mysqli_query($db, $sql);
 	return $result ? "La mise à jour a réussie<br>" : "La mise à jour a échouée: " . mysqli_error($db) . "<br>";

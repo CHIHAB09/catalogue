@@ -2,7 +2,12 @@
 require_once "../model/crud.php";
 require_once "../model/paginationModel.php";
 include "../view/admin/parts/navBarAdmin.php";
+
+
+
 $magasin="";
+
+
 // on vérifie l'existence de la variable get id et que son contenu de type string ne contient que des numériques
 if(isset($_GET['idMagasin'])&&ctype_digit($_GET['idMagasin'])){
     // conversion en entier
@@ -11,28 +16,34 @@ if(isset($_GET['idMagasin'])&&ctype_digit($_GET['idMagasin'])){
     // on confirme la suppression en rajoutant la variable get ok
     if(isset($_GET['ok'])){
         deleteMagasin ($db, $idMagasin);
-
+   
         // redirection
-        header("Location: ?admin=crudliens&message=supprim");
+        header("Location: ?pg=Magasin&message=delete");
+    }else{
+        // préparation de la requête
+        $sql = "SELECT nom, rue,codepostal FROM magasin WHERE idMagasin=$idMagasin";
+        // exécution de la requête
+        $recup = mysqli_query($db,$sql) or die(mysqli_error($db));
+        // si on trouve une ligne de résultat 1 vaut true
+        if(mysqli_num_rows($recup)){
+            $magasin = mysqli_fetch_assoc($recup);
+            // mysqli_num_rows($recup) vaut 0 donc false
+        }else{
+            $erreur = "Ce magasin n'existe déjà plus!";
+        }
+    
+    }
+
+// l'id n'existe pas ou n'est pas valide
+}else{
+    $erreur ="Ceci n'est pas le bon ID";
+
+}
         
 
     
-}
- // préparation de la requête
- $sql = "SELECT nomMagasin, rue,cdp FROM magasin WHERE idMagasin=$idMagasin";
- // exécution de la requête
- $recup = mysqli_query($db,$sql) or die(mysqli_error($db));
- // si on trouve une ligne de résultat 1 vaut true
- if(mysqli_num_rows($recup)){
-     $magasin = mysqli_fetch_assoc($recup);
- // mysqli_num_rows($recup) vaut 0 donc false
- }else{
-     $erreur = "Ce magasin n'existe déjà plus!";
- }
-// l'id n'existe pas ou n'est pas valide
-}else{
- $erreur ="Joue pas avec le feu !!!";
-}
+
+ 
 
 ?>
 
@@ -54,7 +65,7 @@ if(isset($_GET['idMagasin'])&&ctype_digit($_GET['idMagasin'])){
     </head>
     <body>
     <header class="jumbotron">
-    <h1 class="display-4 text-center mb-4">Portfolio | Suppression du lien - <?php echo (isset($erreur))? $erreur: $magasin['nomMagasin']  ?></h1>
+    <h1 class="display-4 text-center mb-4">Portfolio | Suppression du lien - <?php echo (isset($erreur))? $erreur: $magasin['nom']  ?></h1>
     <p>Bienvenue <?=$_SESSION['pseudo']?></p>
     </header> 
 
@@ -63,10 +74,10 @@ if(isset($_GET['idMagasin'])&&ctype_digit($_GET['idMagasin'])){
             if(!isset($erreur)){
         ?>
 <h3>Voulez vous vraiment supprimer :</h3><hr>
-<h4><?=$magasin['nomMagasin']?></h4>
-<h5><?=$magasin['cdp']?></h5>
+<h4><?=$magasin['nom']?></h4>
+<h5><?=$magasin['codepostal']?></h5>
         <hr>
-        <a class="btn btn-danger" href="?pg=deleteMagasin.php&id=<?=$Magasin?>&ok" role="button">Supprimer définitivement !</a>
+        <a class="btn btn-danger" href="?pg=deleteMagasin&idMagasin=<?=$idMagasin?>&ok" role="button">Supprimer définitivement !</a>
         <a class="btn btn-secondary" href="?pg=Magasin" role="button">Ne pas supprimer</a>
     <?php
     }else{

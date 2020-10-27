@@ -17,6 +17,7 @@ function disconnectModel(){
 
 // Finalement, on détruit la session.
     session_destroy();
+    //header ("location:./");
 }
-//header ("location:./");
+
 //exit;
