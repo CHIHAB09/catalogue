@@ -2,12 +2,7 @@
 
 // ----------> CREATE <--------------
 
-//cree un produit
-function insertProduit($db,$modele,$top_vente,$marque,$descriptif,$prix){
-    $sql= "INSERT INTO produits (modele, top_vente, marque, descriptif, prix) VALUES('$modele','$top_vente','$marque','$descriptif','$prix');";
-    $result = mysqli_query($db, $sql);
-	return $result ? "L'insertion a réussie<br>" : "L'insertion a échouée: " . mysqli_error($db) . "<br>";
-}
+
 //var_dump(insertProduit($db,'Heart Bio Hack','0','Puma','lorem ipsum', '58.50'));
 
 //cree une categorie

@@ -48,7 +48,7 @@ include "../view/admin/parts/navBarAdmin.php";
                    <div class="invalid-feedback text-left offset-md-3">Vous devez precisez.</div>
                </div>
                <div class="form-group row">
-                   <label class="col-md-3" for="marque">numéro (*)</label>
+                   <label class="col-md-3" for="marque">Marque (*)</label>
                    <textarea name="marque" class="form-control col-md-9" id="marque" placeholder="Entrez la marque"required></textarea>
                </div>
                <div class="form-group row">

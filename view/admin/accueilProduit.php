@@ -65,7 +65,7 @@ count($produit); // Permet de savoir le nombre d'éléments dans un array
             ?>
             
             
-            <h3>Vous avez <?= count($produit) ?> magasin<?php if(count($produit)>1) echo "s"?></h3>
+            <h3>Vous avez <?= count($produit) ?> produit<?php if(count($produit)>1) echo "s"?></h3>
             <table class="table table-striped">
                 <thead class="thead-light">
                     <tr>

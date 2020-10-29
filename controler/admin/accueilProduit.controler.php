@@ -2,3 +2,13 @@
 include "../model/accueilProduit.Model.php";
 require_once "../model/crud.php";
 require_once "../model/paginationModel.php";
+
+
+
+
+
+
+
+
+
+include "../view/admin/accueilProduit.php";

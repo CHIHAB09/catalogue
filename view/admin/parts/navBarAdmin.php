@@ -23,6 +23,6 @@
               <a class="nav-link" href="#">Produits</a>
             </li>
         </ul>
-           <a class="btn btn-light my-2 my-sm-0" href="?p=deconnexion">Déconnexion</a>
+           <a class="btn btn-light my-2 my-sm-0" href="?pg=deconnexion">Déconnexion</a>
         </div>
 </nav>   

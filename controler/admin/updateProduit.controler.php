@@ -1,13 +1,19 @@
 <?php
 
+require_once "../model/crud.php";
+require_once "../model/paginationModel.php";
  // on vérifie l'existence de la variable get id et que son contenu de type string ne contient que des numériques
 
- if(isset($_GET['idProduit'])&&ctype_digit($_GET['idProduit'])){
-    
+$idProduit="";
+
+  if(isset($_GET['idProduit'])&&ctype_digit($_GET['idProduit'])){
+   
+
+ 
     // on traîte idMagasin en le transformant en entier si faux 0 => empty
     $idProduit = (int) $_GET['idProduit'];
     $produit = selectsProduitById ($db,$idProduit);
-    //var_dump($produit);
+    
 
     }else{
         $erreur = "Ce produit n'existe déjà plus!";
@@ -26,7 +32,7 @@
     $prix = htmlspecialchars(strip_tags(trim($_POST['prix'])),ENT_QUOTES);
         //var_dump($idMagasin);
 // si on a une erreur de type (ajout de la vérification de $idMagasin)
-if(empty($model)||empty($produitEvident)||empty($marque)||empty($descriptif)||empty($prix)){
+if(empty($model)||!isset($produitEvident)||empty($marque)||empty($descriptif)||empty($prix)){
     
     $message = "Erreur de type de données, veuillez recommencer";
 }else {  
@@ -37,3 +43,5 @@ if(empty($model)||empty($produitEvident)||empty($marque)||empty($descriptif)||em
      
  }
 }
+
+include "../view/admin/updateProduit.php";

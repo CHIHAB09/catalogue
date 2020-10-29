@@ -23,13 +23,13 @@ $nomProduit="";
            
            <header class="jumbotron">
             <h1 class="display-4 text-center mb-4">Admin - Modifier un magasin :</h1>
-            <?php var_dump($produit); ?>
+            <?php //var_dump($produit); ?>
             <h2 class="display-5 text-center mb-4"><?php echo (isset($erreur))? "$erreur": $produit['modele']  ?></h2>
             <p>Bienvenue <?=$_SESSION['pseudo']?></p>
 </header>
         
         <main class="container">
-            <h3><a href="?pg=Produit" ><img src="i#" alt="Retour à la gestion des produits"/></a></h3>
+            <h3><a href="?pg=Produit" ><img src="#" alt="Retour à la gestion des produits"/></a></h3>
             <?php
                 // message d'erreur
                 if(isset($message)) {

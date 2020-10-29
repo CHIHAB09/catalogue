@@ -44,8 +44,14 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
             case "insertProduit":
                 require_once "../controler/admin/insertProduit.controler.php";
             break;
+            case "updateProduit":
+                require_once "../controler/admin/updateProduit.controler.php";
+            break;
+            case "deleteProduit":
+                require_once "../controler/admin/deleteProduit.controler.php";
+            break;
             case "deconnexion":
-                require_once "../model/deconnexion.php";
+                require_once "../controler/deconnexion.controler.php";
             break;
             
             default:            
