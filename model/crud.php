@@ -40,12 +40,12 @@ function insertMagasin($db,$nom,$rue,$numero,$codepostal,$ville,$longitude,$lati
 // ----------> READ <--------------
 
 // affichage classé par id
-function selectsProduitById($db,$idProduit){
+function selectsProduitById($db,$idproduit){
     
-    $sql="SELECT * FROM produits Where idProduit = $idProduit";
+    $sql="SELECT * FROM produits Where idproduit = $idproduit";
     $result = mysqli_query($db, $sql);
     if($result) {
-        $data = mysqli_fetch_all($result, MYSQLI_ASSOC);;
+        $data = mysqli_fetch_assoc($result);;
         return $data;
     } else {
         return "La sélection a échouée: " . mysqli_error($db) . "<br>";
@@ -202,7 +202,7 @@ function selectsMagasinById ($db,$idMagasin){
 
 // modification du produit
 function updateProduit($db, $model,$produitEvident,$marque,$descriptif,$prix,$id) {
-	$sql = "UPDATE produits SET modele = '$model',produit_evident = '$produitEvident', marque = '$marque',descriptif = '$descriptif',prix = $prix, WHERE id = $idProduit";
+	$sql = "UPDATE produits SET modele = '$model',produit_evident = '$produitEvident', marque = '$marque',descriptif = '$descriptif',prix = $prix, WHERE id = $id";
 	
 	$result = mysqli_query($db, $sql);
 	return $result ? "La mise à jour a réussie<br>" : "La mise à jour a échouée: " . mysqli_error($db) . "<br>";
@@ -237,8 +237,8 @@ function updateMagasin($db,$idMagasin, $nomMagasin,$rue,$numero,$cdp,$ville,$lon
 
 
 // supprimer un produit
-function deleteProduit($db, $idProduit) {
-	$sql = "DELETE FROM produits WHERE idProduit = $idProduit";
+function deleteProduit($db, $idproduit) {
+	$sql = "DELETE FROM produits WHERE idproduit = $idproduit";
 	
 	$result = mysqli_query($db, $sql);
 	return $result ? "La suppression a réussi<br>" : "La suppression a raté: " . mysqli_error($db) . "<br>";

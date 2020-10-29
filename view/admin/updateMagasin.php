@@ -69,7 +69,7 @@ if(empty($nomMagasin)||empty($rue)||empty($numero)||empty($cdp)||empty($ville)||
            
            <header class="jumbotron">
             <h1 class="display-4 text-center mb-4">Admin - Modifier un magasin :</h1>
-            //<?php var_dump($magasin); ?>
+            <!--<?php var_dump($magasin); ?> !-->
             <h2 class="display-5 text-center mb-4"><?php echo (isset($erreur))? "$erreur": $magasin['nom']  ?></h2>
             <p>Bienvenue <?=$_SESSION['pseudo']?></p>
 </header>

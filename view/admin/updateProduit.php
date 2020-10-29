@@ -29,7 +29,7 @@ $nomProduit="";
 </header>
         
         <main class="container">
-            <h3><a href="?pg=Produit" ><img src="#" alt="Retour à la gestion des produits"/></a></h3>
+            <h3><a href="?pg=Produit" ><img src="image/retour.png" alt="Retour à la gestion des produits"/></a></h3>
             <?php
                 // message d'erreur
                 if(isset($message)) {
@@ -42,25 +42,27 @@ $nomProduit="";
            <form id="formulaire" method="POST">
                <div class="form-group row">
                    <label class="col-md-3" for="model">Modele  (*)</label>
-                   <input name="modele" type="text" class="form-control col-md-9" id="modele" placeholder="Entrez le modele du produit" required>
+                   <input name="modele" type="text" class="form-control col-md-9" id="modele" placeholder="Entrez le modele du produit" value="<?=$produit['modele'] ?>" required>
                    <div class="invalid-feedback text-left offset-md-3">Vous devez entrez le modele du produit</div>
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="PE">Produit est-il en avant? (*)</label>
-                   <input name="PE" type="PE" class="form-control col-md-9" id="PE" placeholder="OUI ? NON?" required>
+                   <input name="PE" type="PE" class="form-control col-md-9" id="PE" placeholder="OUI ? NON?" value="<?=$produit['produit_evident'] ?>" required>
                    <div class="invalid-feedback text-left offset-md-3">Vous devez precisez.</div>
                </div>
                <div class="form-group row">
-                   <label class="col-md-3" for="marque">numéro (*)</label>
-                   <textarea name="marque" class="form-control col-md-9" id="marque" placeholder="Entrez la marque"required></textarea>
+                   <label class="col-md-3" for="marque"> Marque (*)</label>
+                   <input name="marque" type="PE" class="form-control col-md-9" id="marque" placeholder="OUI ? NON?" value="<?=$produit['marque'] ?>" required>
+                   <div class="invalid-feedback text-left offset-md-3">Vous devez precisez.</div>
                </div>
+               
                <div class="form-group row">
                    <label class="col-md-3" for="descriptif">Descriptif (*)</label>
-                   <textarea name="descriptif" class="form-control col-md-9" id="descriptif" placeholder="Descriptif"required></textarea>
+                   <input name="descriptif" class="form-control col-md-9" id="descriptif" placeholder="Descriptif"value="<?=$produit['descriptif'] ?>" required>
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="prix">Prix</label>
-                   <textarea name="prix" class="form-control col-md-9" id="prix" placeholder="Prix"required></textarea>
+                   <input name="prix" class="form-control col-md-9" id="prix" placeholder="prix"value="<?=$produit['prix'] ?>" required>
                </div>
                
                <div class="form-group row">
