@@ -2,14 +2,11 @@
 
 require_once "../model/crud.php";
 require_once "../model/paginationModel.php";
- // on vérifie l'existence de la variable get id et que son contenu de type string ne contient que des numériques
-
+ 
 $idproduit="";
-
+// on vérifie l'existence de la variable get id et que son contenu de type string ne contient que des numériques
   if(isset($_GET['idproduit'])&&ctype_digit($_GET['idproduit'])){
    
-   
- 
     // on traîte idMagasin en le transformant en entier si faux 0 => empty
     $idproduit = (int) $_GET['idproduit'];
     $produit = selectsProduitById ($db,$idproduit);
@@ -36,8 +33,8 @@ if(empty($model)||!isset($produitEvident)||empty($marque)||empty($descriptif)||e
       
     $message = "Erreur de type de données, veuillez recommencer";
 }else {  
-    updateProduit($db, $model,$produitEvident,$marque,$descriptif,$prix,$id);
-        //var_dump($idMagasin);
+    updateProduit($db,$idproduit,$model,$produitEvident,$marque,$descriptif,$prix);
+        var_dump(mysqli_error($db));
      // redirection
      header("Location: ?pg=Produit&message=update");
      

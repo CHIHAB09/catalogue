@@ -35,8 +35,6 @@ function insertMagasin($db,$nom,$rue,$numero,$codepostal,$ville,$longitude,$lati
 
 
 
-
-
 // ----------> READ <--------------
 
 // affichage classé par id
@@ -163,6 +161,8 @@ function selectALLCountImage($db,$id){
     return $data ['nbImage'];
 }
 //var_dump(selectAllCountImage($db,1));
+
+
 // affichage de toute la categorie
 function selectAllCategories($db){
     $sql="SELECT * FROM categorie ORDER BY nom ASC";
@@ -201,8 +201,8 @@ function selectsMagasinById ($db,$idMagasin){
 // ----------> UPDATE <--------------
 
 // modification du produit
-function updateProduit($db, $model,$produitEvident,$marque,$descriptif,$prix,$id) {
-	$sql = "UPDATE produits SET modele = '$model',produit_evident = '$produitEvident', marque = '$marque',descriptif = '$descriptif',prix = $prix, WHERE id = $id";
+function updateProduit($db,$id,$model,$produitEvident,$marque,$descriptif,$prix) {
+	$sql = "UPDATE produits SET modele = '$model',produit_evident = '$produitEvident', marque = '$marque',descriptif = '$descriptif',prix = $prix WHERE idproduit = $id";
 	
 	$result = mysqli_query($db, $sql);
 	return $result ? "La mise à jour a réussie<br>" : "La mise à jour a échouée: " . mysqli_error($db) . "<br>";
