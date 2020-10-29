@@ -56,6 +56,9 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
             case "deconnexion":
                 require_once "../controler/deconnexion.controler.php";
             break;
+            case "Categorie":
+                require_once "../controler/admin/accueilCateg.controler.php";
+            break;
             
             default:            
             require_once "../controler/admin/accueil.admin.controler.php";

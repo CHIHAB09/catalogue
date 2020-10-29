@@ -76,12 +76,27 @@ function selectsprix($db){
         return "La sélection a échouée: " . mysqli_error($db) . "<br>";
     }
 }
+function selectsAllCategories($db){
+    $sql="SELECT * 
+    FROM produits P 
+    JOIN produits_has_categorie AS PHC ON P.idproduit= PHC.produits_id 
+    JOIN categorie AS C ON C.idcategorie = PHC.categorie_id
+    JOIN images AS I ON I.produits_idproduit= P.idproduit ORDER BY P.modele ; ";
+
+    $result = mysqli_query($db, $sql);
+    if($result) {
+        $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        return $data;
+    } else {
+        return "La sélection a échouée: " . mysqli_error($db) . "<br>";
+    }
+}
 // affichage des produits classé par categorie
 function selectsCategories($db){
     $sql="SELECT * 
     FROM produits P 
-    JOIN produits_has_categorie AS PHC ON P.id= PHC.produits_id 
-    JOIN categorie AS C ON C.idcategorie = PHC.categorie_id ORDER BY C.nom ; ";
+    JOIN produits_has_categorie AS PHC ON P.idproduit= PHC.produits_id 
+    JOIN categorie AS C ON C.idcategorie = PHC.categorie_id ORDER BY P.modele ; ";
 
     $result = mysqli_query($db, $sql);
     if($result) {
@@ -97,7 +112,7 @@ function selectsCategories($db){
 function selectCategorie($db,$id){
     $sql="SELECT *
     FROM produits AS P 
-    JOIN produits_has_categorie ON produits_id  = P.id JOIN categorie AS C ON categorie_id = idcategorie  WHERE idcategorie= $id; ";
+    JOIN produits_has_categorie ON produits_id  = P.idproduit JOIN categorie AS C ON categorie_id = idcategorie  WHERE idcategorie= $id; ";
 
     $result = mysqli_query($db, $sql);
     if($result) {
