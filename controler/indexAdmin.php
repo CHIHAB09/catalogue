@@ -50,6 +50,9 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
             case "deleteProduit":
                 require_once "../controler/admin/deleteProduit.controler.php";
             break;
+            case "detailProduit":                
+                require_once "../view/admin/detailProduit.php";
+            break;
             case "deconnexion":
                 require_once "../controler/deconnexion.controler.php";
             break;

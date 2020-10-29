@@ -14,13 +14,13 @@
               <a class="nav-link" href="?pg=Produit">Produits</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Images</a>
+              <a class="nav-link" href="#">Categorie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Image</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Promotion</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Produits</a>
             </li>
         </ul>
            <a class="btn btn-light my-2 my-sm-0" href="?pg=deconnexion">Déconnexion</a>
