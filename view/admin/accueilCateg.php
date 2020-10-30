@@ -22,7 +22,7 @@ include "../view/admin/parts/navBarAdmin.php";
             <h1 class="text-center mt-4">Admin | <?=$_SESSION['pseudo']?></h1>
             <header class="row">
             <p class="lead col-md-8">Bienvenue dans cette section qui permet de gérer les categories. </p>
-            <p class="offset-1 col-md-3"><a href="?pg=insertMagasin" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Ajouter une nouvelle categorie</a></p>
+            <p class="offset-1 col-md-3"><a href="?pg=insertCateg" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Ajouter une nouvelle categorie</a></p>
             </header>
             
             <?php
