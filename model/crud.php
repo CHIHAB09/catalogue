@@ -76,6 +76,18 @@ function selectsprix($db){
         return "La sélection a échouée: " . mysqli_error($db) . "<br>";
     }
 }
+// tout de categorie
+function selectsCateg($db){
+    $sql="SELECT * FROM categorie ";
+    $result = mysqli_query($db, $sql);
+    if($result) {
+        $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        return $data;
+    } else {
+        return "La sélection a échouée: " . mysqli_error($db) . "<br>";
+    }
+}
+// tous de categorie et produit
 function selectsAllCategories($db){
     $sql="SELECT * 
     FROM produits P 
@@ -109,14 +121,14 @@ function selectsCategories($db){
 //var_dump(selectsCategories($db));
 
 // affichage les produits d'une categorie
-function selectCategorie($db,$id){
+function selectCategorieByID($db,$id){
     $sql="SELECT *
-    FROM produits AS P 
-    JOIN produits_has_categorie ON produits_id  = P.idproduit JOIN categorie AS C ON categorie_id = idcategorie  WHERE idcategorie= $id; ";
+    FROM categorie 
+    WHERE idcategorie= $id; ";
 
     $result = mysqli_query($db, $sql);
     if($result) {
-        $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $data = mysqli_fetch_assoc($result);
         return $data;
     } else {
         return "La sélection a échouée: " . mysqli_error($db) . "<br>";
@@ -217,15 +229,15 @@ function selectsMagasinById ($db,$idMagasin){
 
 // modification du produit
 function updateProduit($db,$id,$model,$produitEvident,$marque,$descriptif,$prix) {
-	$sql = "UPDATE produits SET modele = '$model',produit_evident = '$produitEvident', marque = '$marque',descriptif = '$descriptif',prix = $prix WHERE idproduit = $id";
+	$sql = "UPDATE produits SET modele = '$model',produit_evident = '$produitEvident', marque = '$marque',descriptif = '$descriptif',prix = '$prix' WHERE idproduit = '$id'";
 	
 	$result = mysqli_query($db, $sql);
 	return $result ? "La mise à jour a réussie<br>" : "La mise à jour a échouée: " . mysqli_error($db) . "<br>";
 }
 
 // modification d'une cathegorie
-function updateCategorie($db, $nom,$id) {
-	$sql = "UPDATE categorie SET nom = $nom WHERE id = $id";
+function updateCategorie($db, $genre,$id) {
+	$sql = "UPDATE categorie SET genre = '$genre' WHERE idcategorie = '$id'";
 	
 	$result = mysqli_query($db, $sql);
 	return $result ? "La mise à jour a réussie<br>" : "La mise à jour a échouée: " . mysqli_error($db) . "<br>";
@@ -260,12 +272,19 @@ function deleteProduit($db, $idproduit) {
 }
 
 //supprimer une categorie
-function deleteCategorie($db, $id) {
-	$sql = "DELETE FROM categorie WHERE id = $id";
-	
-	$result = mysqli_query($db, $sql);
-	return $result ? "La suppression a réussi<br>" : "La suppression a raté: " . mysqli_error($db) . "<br>";
+function deleteCategorie($db, $idcategorie) {
+    mysqli_begin_transaction($db);
+	$sql = mysqli_query($db,"DELETE FROM produits_has_categorie WHERE categorie_id = '$idcategorie';");
+    $sql1 = mysqli_query($db,"DELETE FROM categorie WHERE idcategorie = '$idcategorie';");
+    if($sql && $sql1){
+        mysqli_commit($db);
+        return true;
+    }else{
+        mysqli_rollback($db);
+        return false;
+    }
 }
+	
 
 //supprimer une image
 

@@ -59,6 +59,12 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
             case "Categorie":
                 require_once "../controler/admin/accueilCateg.controler.php";
             break;
+            case "updateCateg":
+                require_once "../controler/admin/updateCateg.controler.php";
+            break;
+            case "deleteCateg":
+                require_once "../controler/admin/deleteCateg.controler.php";
+            break;
             
             default:            
             require_once "../controler/admin/accueil.admin.controler.php";
