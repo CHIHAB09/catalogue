@@ -68,6 +68,9 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
             case "insertCateg":
                 require_once "../controler/admin/insertCateg.controler.php";
             break;
+            case "detailCateg":                
+                require_once "../view/admin/detailCateg.php";
+            break;
             
             default:            
             require_once "../controler/admin/accueil.admin.controler.php";

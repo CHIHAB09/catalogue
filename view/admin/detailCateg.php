@@ -1,14 +1,14 @@
 <?php
 require_once "../view/admin/parts/navBarAdmin.php";
 require_once "../model/crud.php";
-$titre= "Produit";
-$produit = selectsProduit($db);
+$titre= "Categorie";
+$categ = selectsCateg($db);
 
-if(isset($_GET['idproduit'])&&ctype_digit($_GET["idproduit"])){
+if(isset($_GET['idcategorie'])&&ctype_digit($_GET["idcategorie"])){
     // on traîte idproduit en le transformant en entier si faux 0 => empty
-    $idproduit = (int) $_GET['idproduit'];
+    $idcategorie = (int) $_GET['idcategorie'];
     // requête permettant de récupérer le contenu dans la base de donnée
-    $produit;
+    $categ;
 }else{
     $erreur = "Cet contenu n'existe déjà plus!";
 }
@@ -26,37 +26,29 @@ if(isset($_GET['idproduit'])&&ctype_digit($_GET["idproduit"])){
 </head>
 <body>
 <header class="jumbotron">
-    <h1 class="display-4 text-center mb-4">Catalogue | Administration des produits</h1>
+    <h1 class="display-4 text-center mb-4">Catalogue | Administration des categories</h1>
     <p>Bienvenue <?=$_SESSION['pseudo']?></p>
 </header>
 
 <main class="container">
             <h1 class="text-center mt-4">Admin | <?=$_SESSION['pseudo']?></h1>
             <header class="row">
-            <p class="lead col-md-8">Bienvenue ,</br>Voici le detail de ce produit:</p>
+            <p class="lead col-md-8">Bienvenue ,</br>Voici le detail de cette categorie:</p>
             </header>
             
-            <h3>Detail du produit</h3>
+            <h3>Detail de la categorie</h3>
             <table class="table table-striped">
                 <thead class="thead-light">
                     <tr>
-                    <th scope="col">Modele</th>
-                      <th scope="col">Produit en evident</th>
-                      <th scope="col">Marque</th>
-                      <th scope="col">Descriptif</th>
-                      <th scope="col">Prix</th>
+                    <th scope="col">Genre</th>
                     </tr>
                 </thead>
                 <tbody>
                         <?php
-                            foreach($produit as $item ) {
+                            foreach($categ as $item ) {
                         ?>
                     <tr>
-                    <td><?=$item['modele']?></td>
-                        <td><?=$item['produit_evident']?></td>
-                        <td><?=$item['marque']?></td>
-                        <td><?=$item['descriptif']?></td>
-                        <td><?=$item['prix']?></td>
+                    <td><?=$item['genre']?></td>
                     </tr>
                     
                 </tbody>

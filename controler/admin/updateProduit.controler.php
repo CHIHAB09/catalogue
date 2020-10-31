@@ -27,13 +27,16 @@ $idproduit="";
     $marque = htmlspecialchars(strip_tags(trim($_POST['marque'])),ENT_QUOTES);
     $descriptif = htmlspecialchars(strip_tags(trim($_POST['descriptif'])),ENT_QUOTES);
     $prix = htmlspecialchars(strip_tags(trim($_POST['prix'])),ENT_QUOTES);
+    $genre = htmlspecialchars(strip_tags(trim($_POST['genre'])),ENT_QUOTES);
+    $legend = htmlspecialchars(strip_tags(trim($_POST['prlegendix'])),ENT_QUOTES);
+    $URL = htmlspecialchars(strip_tags(trim($_POST['URL'])),ENT_QUOTES);
         //var_dump($idMagasin);
 // si on a une erreur de type (ajout de la vérification de $idMagasin)
-if(empty($model)||!isset($produitEvident)||empty($marque)||empty($descriptif)||empty($prix)){
+if(empty($model)||!isset($produitEvident)||empty($marque)||empty($descriptif)||empty($prix)||empty($model)||empty($legend)||empty($URL)){
       
     $message = "Erreur de type de données, veuillez recommencer";
 }else {  
-    updateProduit($db,$idproduit,$model,$produitEvident,$marque,$descriptif,$prix);
+    updateAllProduits($db,$idproduit,$model,$produitEvident,$descriptif,$prix,$genre,$legend,$URL);
         var_dump(mysqli_error($db));
      // redirection
      header("Location: ?pg=Produit&message=update");

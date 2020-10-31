@@ -8,11 +8,11 @@ if (isset($_POST['submit'])) {
     
    
     // si on a une erreur de type
-    if(empty($model)){
+    if(empty($genre)){
         
         $message = "Erreur de type de données, veuillez recommencer";
     }else {
-        insertCategorie($db, $_POST['modele'], $_POST['PE'], $_POST['marque'], $_POST['descriptif'], $_POST['prix']);
+        insertCategorie($db, $_POST['genre']);
         header("Location: ?pg=Categorie&message=insert");
 }
 }

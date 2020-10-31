@@ -3,14 +3,6 @@
 // ----------> CREATE <--------------
 
 
-//var_dump(insertProduit($db,'Heart Bio Hack','0','Puma','lorem ipsum', '58.50'));
-
-//cree une categorie
-function insertCategorie($db,$nom){
-    $sql= "INSERT INTO categorie (nom) VALUES('$nom');";
-    $result = mysqli_query($db, $sql);
-	return $result ? "L'insertion a réussie<br>" : "L'insertion a échouée: " . mysqli_error($db) . "<br>";
-}
 
 //cree une image
 function insertImages($db,$legend,$URL,$produit_idproduit){
@@ -87,8 +79,8 @@ function selectsCateg($db){
         return "La sélection a échouée: " . mysqli_error($db) . "<br>";
     }
 }
-// tous de categorie et produit
-function selectsAllCategories($db){
+// tous sur les produits
+function selectsAllProduits($db){
     $sql="SELECT * 
     FROM produits P 
     JOIN produits_has_categorie AS PHC ON P.idproduit= PHC.produits_id 
@@ -226,7 +218,27 @@ function selectsMagasinById ($db,$idMagasin){
 }
 
 // ----------> UPDATE <--------------
+// modif tous sur le produit
+// tous sur les produits
+function updateAllProduits($db,$idproduit,$model,$produitEvident,$descriptif,$prix,$genre,$legend,$URL){
+    $sql="UPDATE produits P 
+    JOIN produits_has_categorie AS PHC ON P.idproduit= PHC.produits_id 
+    JOIN categorie AS C ON C.idcategorie = PHC.categorie_id
+    JOIN images AS I ON I.produits_idproduit= P.idproduit
+    SET modele = '$model', produit_evident = '$produitEvident', marque ='$marque', descriptif ='$descriptif', prix = '$prix', genre = '$genre', legend = '$legend', URL = '$URL'
+    Where idproduit = '$idproduit'
+    AND P.idproduit= PHC.produits_id
+    AND C.idcategorie= PHC.categorie_id
+    AND I.produits_idproduit= P.idproduit;";
 
+    $result = mysqli_query($db, $sql);
+    if($result) {
+        $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        return $data;
+    } else {
+        return "La sélection a échouée: " . mysqli_error($db) . "<br>";
+    }
+}
 // modification du produit
 function updateProduit($db,$id,$model,$produitEvident,$marque,$descriptif,$prix) {
 	$sql = "UPDATE produits SET modele = '$model',produit_evident = '$produitEvident', marque = '$marque',descriptif = '$descriptif',prix = '$prix' WHERE idproduit = '$id'";
