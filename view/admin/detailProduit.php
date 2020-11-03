@@ -31,6 +31,7 @@ if(isset($_GET['idproduit'])&&ctype_digit($_GET["idproduit"])){
 </header>
 
 <main class="container">
+<h3><a href="?pg=Produit" ><img src="image/retour.png" alt="Retour à la gestion des produits"/></a></h3>
             <h1 class="text-center mt-4">Admin | <?=$_SESSION['pseudo']?></h1>
             <header class="row">
             <p class="lead col-md-8">Bienvenue ,</br>Voici le detail de ce produit:</p>

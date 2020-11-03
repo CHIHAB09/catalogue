@@ -80,12 +80,13 @@ function selectsCateg($db){
     }
 }
 // tous sur les produits
-function selectsAllProduits($db){
+function selectsAllProduits($db,$idproduit){
     $sql="SELECT * 
     FROM produits P 
     JOIN produits_has_categorie AS PHC ON P.idproduit= PHC.produits_id 
     JOIN categorie AS C ON C.idcategorie = PHC.categorie_id
-    JOIN images AS I ON I.produits_idproduit= P.idproduit ORDER BY P.modele ; ";
+    JOIN images AS I ON I.produits_idproduit= P.idproduit 
+    WHERE P.idproduit = '$idproduit' ; ";
 
     $result = mysqli_query($db, $sql);
     if($result) {
