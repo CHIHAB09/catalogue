@@ -71,6 +71,21 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
             case "detailCateg":                
                 require_once "../view/admin/detailCateg.php";
             break;
+            case "Image":
+                require_once "../controler/admin/accueilImage.controler.php";
+            break;
+            case "insertImage":
+                require_once "../controler/admin/insertImage.controler.php";
+            break;
+            case "detailImage":                
+                require_once "../view/admin/detailImage.php";
+            break;
+            case "deleteImage":
+                require_once "../controler/admin/deleteImage.controler.php";
+            break;
+            case "updateImage":
+                require_once "../controler/admin/updateImage.controler.php";
+            break;
             
             default:            
             require_once "../controler/admin/accueil.admin.controler.php";

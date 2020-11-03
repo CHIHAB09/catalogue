@@ -32,6 +32,7 @@ if(isset($_GET['idcategorie'])&&ctype_digit($_GET["idcategorie"])){
 
 <main class="container">
             <h1 class="text-center mt-4">Admin | <?=$_SESSION['pseudo']?></h1>
+            <h3><a href="?pg=Categorie" ><img src="image/retour.png" alt="Retour à la gestion des categories"/></br></br></a></h3>
             <header class="row">
             <p class="lead col-md-8">Bienvenue ,</br>Voici le detail de cette categorie:</p>
             </header>

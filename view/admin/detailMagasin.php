@@ -32,6 +32,7 @@ if(isset($_GET['idMagasin'])&&ctype_digit($_GET["idMagasin"])){
 
 <main class="container">
             <h1 class="text-center mt-4">Admin | <?=$_SESSION['pseudo']?></h1>
+            <h3><a href="?pg=Magasin" ><img src="image/retour.png" alt="Retour à la gestion des magasins"/></br></br></a></h3>
             <header class="row">
             <p class="lead col-md-8">Bienvenue ,</br>Voici le detail de ce magasin:</p>
             </header>

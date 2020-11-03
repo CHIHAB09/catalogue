@@ -1,14 +1,14 @@
 <?php
 require_once "../view/admin/parts/navBarAdmin.php";
 require_once "../model/crud.php";
-$titre= "Produit";
-$produit = selectsProduit($db);
+$titre= "Categorie";
+$image = selectsImageById($db,$_GET['idimage']);
 
-if(isset($_GET['idproduit'])&&ctype_digit($_GET["idproduit"])){
+if(isset($_GET['idimage'])&&ctype_digit($_GET["idimage"])){
     // on traîte idproduit en le transformant en entier si faux 0 => empty
-    $idproduit = (int) $_GET['idproduit'];
+    $idimage = (int) $_GET['idimage'];
     // requête permettant de récupérer le contenu dans la base de donnée
-    $produit;
+    $image;
 }else{
     $erreur = "Cet contenu n'existe déjà plus!";
 }
@@ -26,38 +26,32 @@ if(isset($_GET['idproduit'])&&ctype_digit($_GET["idproduit"])){
 </head>
 <body>
 <header class="jumbotron">
-    <h1 class="display-4 text-center mb-4">Catalogue | Administration des produits</h1>
+    <h1 class="display-4 text-center mb-4">Catalogue | Administration des images</h1>
     <p>Bienvenue <?=$_SESSION['pseudo']?></p>
 </header>
 
 <main class="container">
             <h1 class="text-center mt-4">Admin | <?=$_SESSION['pseudo']?></h1>
-            <h3><a href="?pg=Produit" ><img src="image/retour.png" alt="Retour à la gestion des produits"/></br></br></a></h3>
+            <h3><a href="?pg=Image" ><img src="image/retour.png" alt="Retour à la gestion des images"/></br></br></a></h3>
             <header class="row">
-            <p class="lead col-md-8">Bienvenue ,</br>Voici le detail de ce produit:</p>
+            <p class="lead col-md-8">Bienvenue ,</br>Voici le detail de cette image:</p>
             </header>
             
-            <h3>Detail du produit</h3>
+            <h3>Detail de l'image</h3>
             <table class="table table-striped">
                 <thead class="thead-light">
                     <tr>
-                    <th scope="col">Modele</th>
-                      <th scope="col">Produit en evident</th>
-                      <th scope="col">Marque</th>
-                      <th scope="col">Descriptif</th>
-                      <th scope="col">Prix</th>
+                    <th scope="col">Lgend</th>
+                    <th scope="col">URL</th>
                     </tr>
                 </thead>
                 <tbody>
                         <?php
-                            foreach($produit as $item ) {
+                            foreach($image as $item ) {
                         ?>
                     <tr>
-                    <td><?=$item['modele']?></td>
-                        <td><?=$item['produit_evident']?></td>
-                        <td><?=$item['marque']?></td>
-                        <td><?=$item['descriptif']?></td>
-                        <td><?=$item['prix']?></td>
+                    <td><?=$item['legend']?></td>
+                    <td><?=$item['URL']?></td>
                     </tr>
                     
                 </tbody>

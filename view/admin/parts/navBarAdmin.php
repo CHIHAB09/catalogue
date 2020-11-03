@@ -17,7 +17,7 @@
               <a class="nav-link" href="?pg=Categorie">Categorie</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Image</a>
+              <a class="nav-link" href="?pg=Image">Image</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Promotion</a>
