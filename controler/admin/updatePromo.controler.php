@@ -3,13 +3,13 @@
 require_once "../model/crud.php";
 require_once "../model/paginationModel.php";
  //$genre="";
-$idimage="";
+$idpromotion="";
 // on vérifie l'existence de la variable get id et que son contenu de type string ne contient que des numériques
-  if(isset($_GET['idimage'])&&ctype_digit($_GET['idimage'])){
+  if(isset($_GET['idpromotion'])&&ctype_digit($_GET['idpromotion'])){
    
     // on traîte idMagasin en le transformant en entier si faux 0 => empty
-    $idimage = (int) $_GET['idimage'];
-    $image = selectsImageById($db,$idimage);
+    $idpromotion = (int) $_GET['idpromotion'];
+    $promo = selectsPromoById($db,$idpromotion);
     
 
     }else{
@@ -23,22 +23,22 @@ $idimage="";
     if(isset($_POST['submit'])){
       
     //si une erreur vaudra "" => empty
-    $legend = htmlspecialchars(strip_tags(trim($_POST['legend'])),ENT_QUOTES);
-    $URL = htmlspecialchars(strip_tags(trim($_POST['URL'])),ENT_QUOTES);
-    $produits_idproduit = htmlspecialchars(strip_tags(trim($_POST['produits_idproduit'])),ENT_QUOTES); 
+    $reduction = htmlspecialchars(strip_tags(trim($_POST['reduction'])),ENT_QUOTES);
+    $debut = htmlspecialchars(strip_tags(trim($_POST['debut'])),ENT_QUOTES);
+    $fin = htmlspecialchars(strip_tags(trim($_POST['fin'])),ENT_QUOTES); 
  
         //var_dump($idcategorie);
 // si on a une erreur de type (ajout de la vérification de $idMagasin)
-if(empty($legend)||empty($URL)||empty($produits_idproduit)){
+if(empty($reduction)||empty($debut)||empty($fin)){
     
     $message = "Erreur de type de données, veuillez recommencer";
 }else {  
-    updateImage($db, $legend,$URL,$idimage);
+    updatePromo($db, $reduction,$debut,$fin,$idpromotion);
         //var_dump(mysqli_error($db));
      // redirection
-     header("Location: ?pg=Image&message=update");
+     header("Location: ?pg=Promo&message=update");
      //var_dump(updateCategorie($db, $genre,$idcategorie));
  }
 }
 
-include "../view/admin/updateImage.php";
+include "../view/admin/updatePromo.php";

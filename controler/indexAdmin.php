@@ -98,6 +98,9 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
             case "updatePromo":
                 require_once "../controler/admin/updatePromo.controler.php";
             break;
+            case "detailPromo":
+                require_once "../view/admin/detailPromo.php";
+            break;
             
             default:            
             require_once "../controler/admin/accueil.admin.controler.php";

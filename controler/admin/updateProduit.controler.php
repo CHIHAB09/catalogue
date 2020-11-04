@@ -9,8 +9,8 @@ $idproduit="";
    
     // on traîte idMagasin en le transformant en entier si faux 0 => empty
     $idproduit = (int) $_GET['idproduit'];
-    $produit = selectsProduitById ($db,$idproduit);
-  
+    $produit = selectsAllProduits($db,$idproduit);
+  //var_dump($produit);
 
     }else{
         $erreur = "Ce produit n'existe déjà plus!";
@@ -28,7 +28,7 @@ $idproduit="";
     $descriptif = htmlspecialchars(strip_tags(trim($_POST['descriptif'])),ENT_QUOTES);
     $prix = htmlspecialchars(strip_tags(trim($_POST['prix'])),ENT_QUOTES);
     $genre = htmlspecialchars(strip_tags(trim($_POST['genre'])),ENT_QUOTES);
-    $legend = htmlspecialchars(strip_tags(trim($_POST['prlegendix'])),ENT_QUOTES);
+    $legend = htmlspecialchars(strip_tags(trim($_POST['legend'])),ENT_QUOTES);
     $URL = htmlspecialchars(strip_tags(trim($_POST['URL'])),ENT_QUOTES);
         //var_dump($idMagasin);
 // si on a une erreur de type (ajout de la vérification de $idMagasin)

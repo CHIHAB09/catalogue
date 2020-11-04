@@ -1,7 +1,7 @@
 <?php
 
 include "../view/admin/parts/navBarAdmin.php"; 
-var_dump($image);
+//var_dump($image);
 ?>
 
 <!doctype html>

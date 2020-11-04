@@ -1,51 +1,6 @@
 <?php
 
-include "../view/admin/parts/navBarAdmin.php";
-
-
-
-$produit="";
-
-// on vérifie l'existence de la variable get id et que son contenu de type string ne contient que des numériques
-if(isset($_GET['idproduit'])&&ctype_digit($_GET['idproduit'])){
-    
-
-    // conversion en entier
-    $idproduit = (int) $_GET['idproduit'];
-
-    // on confirme la suppression en rajoutant la variable get ok
-    if(isset($_GET['ok'])){
-        deleteProduit ($db, $idproduit);
-        var_dump(deleteProduit ($db, $idproduit));
-        // redirection
-        //header("Location: ?pg=Produit&message=delete");
-    }else{
-        // préparation de la requête
-        $sql = "SELECT modele, marque,prix FROM produits WHERE idproduit=$idproduit";
-        // exécution de la requête
-        $recup = mysqli_query($db,$sql) or die(mysqli_error($db));
-        // si on trouve une ligne de résultat 1 vaut true
-        if(mysqli_num_rows($recup)){
-            $produit = mysqli_fetch_assoc($recup);
-            // mysqli_num_rows($recup) vaut 0 donc false
-        }else{
-            $erreur = "Ce produit n'existe déjà plus!";
-        }
-    
-    }
-
-// l'id n'existe pas ou n'est pas valide
-}else{
-    $erreur ="Ceci n'est pas le bon ID";
-
-}
-        
-
-    
-
- 
-
-?>
+include "../view/admin/parts/navBarAdmin.php"; ?>
 
 <!doctype html>
 <html lang="fr">
@@ -60,12 +15,12 @@ if(isset($_GET['idproduit'])&&ctype_digit($_GET['idproduit'])){
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-        <title>Admin - Suppression d'un produit- <?php echo (isset($erreur))? $erreur: $produit['modele']  ?></title>
+        <title>Admin - Suppression d'une promotion <?php echo (isset($erreur))? $erreur: $promo['reduction']  ?></title>
 
     </head>
     <body>
     <header class="jumbotron">
-    <h1 class="display-4 text-center mb-4">Portfolio | Suppression du produit - <?php echo (isset($erreur))? $erreur: $produit['modele']  ?></h1>
+    <h1 class="display-4 text-center mb-4">Catalogue | Suppression promotion -<?php echo (isset($erreur))? $erreur: $promo['reduction']  ?></h1>
     <p>Bienvenue <?=$_SESSION['pseudo']?></p>
     </header> 
 
@@ -74,11 +29,12 @@ if(isset($_GET['idproduit'])&&ctype_digit($_GET['idproduit'])){
             if(!isset($erreur)){
         ?>
 <h3>Voulez vous vraiment supprimer :</h3><hr>
-<h4><?=$produit['modele']?></h4>
-<h5><?=$produit['marque']?></h5>
+<h4><?=$promo['reduction']?></h4>
+<h5><?=$promo['fin']?></h5>
+
         <hr>
-        <a class="btn btn-danger" href="?pg=deleteProduit&idproduit=<?=$idproduit?>&ok" role="button">Supprimer définitivement !</a>
-        <a class="btn btn-secondary" href="?pg=Produit" role="button">Ne pas supprimer</a>
+        <a class="btn btn-danger" href="?pg=deletePromo&idpromotion=<?=$idpromotion?>&ok" role="button">Supprimer définitivement !</a>
+        <a class="btn btn-secondary" href="?pg=Promo" role="button">Ne pas supprimer</a>
     <?php
     }else{
     ?>
@@ -95,6 +51,6 @@ if(isset($_GET['idproduit'])&&ctype_digit($_GET['idproduit'])){
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         
         <!-- Validation du formulaire -->
-       <script> src="../../view/admin/deleteProduit.php"</script>
+       <script> src="../../view/admin/deletePromo.php"</script>
     </body>
 </html>

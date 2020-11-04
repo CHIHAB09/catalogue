@@ -14,6 +14,7 @@ function insertMagasin($db,$nom,$rue,$numero,$codepostal,$ville,$longitude,$lati
     $result = mysqli_query($db, $sql);
 	return $result ? "L'insertion a réussie<br>" : "L'insertion a échouée: " . mysqli_error($db) . "<br>";
 }
+
 // ----------> READ <--------------
 
 // affichage classé par id
@@ -42,7 +43,19 @@ function selectsUserById($db,$iduser){
     }
     
 }
-
+// affichage promo classé par id
+function selectsPromoById($db,$idpromotion){
+    
+    $sql="SELECT * FROM promotion Where idpromotion = '$idpromotion'";
+    $result = mysqli_query($db, $sql);
+    if($result) {
+        $data = mysqli_fetch_assoc($result);;
+        return $data;
+    } else {
+        return "La sélection a échouée: " . mysqli_error($db) . "<br>";
+    }
+    
+}
 // affichage classé par model
 function selectsProduit($db){
     
@@ -104,20 +117,10 @@ function selectsCateg($db){
         return "La sélection a échouée: " . mysqli_error($db) . "<br>";
     }
 }
-// tout de promotion
+
+// tout de promo
 function selectsPromo($db){
-    $sql="SELECT reduction,debut,fin FROM promotion ";
-    $result = mysqli_query($db, $sql);
-    if($result) {
-        $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        return $data;
-    } else {
-        return "La sélection a échouée: " . mysqli_error($db) . "<br>";
-    }
-}
-// tout de user
-function selectsUser($db){
-    $sql="SELECT * FROM utilisateurs ";
+    $sql="SELECT * FROM promotion ";
     $result = mysqli_query($db, $sql);
     if($result) {
         $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -127,7 +130,24 @@ function selectsUser($db){
     }
 }
 // tous sur les produits
-function selectsAllProduits($db,$idproduit){
+function selectsAllProduits($db){
+    $sql="SELECT * 
+    FROM produits P 
+    JOIN produits_has_categorie AS PHC ON P.idproduit= PHC.produits_id 
+    JOIN categorie AS C ON C.idcategorie = PHC.categorie_id
+    LEFT JOIN images AS I ON I.produits_idproduit= P.idproduit  
+    ORDER BY P.idproduit  ; ";
+
+    $result = mysqli_query($db, $sql);
+    if($result) {
+        $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        return $data;
+    } else {
+        return "La sélection a échouée: " . mysqli_error($db) . "<br>";
+    }
+}
+// tous sur les produits par id
+function selectsAllProduitsById($db,$idproduit){
     $sql="SELECT * 
     FROM produits P 
     JOIN produits_has_categorie AS PHC ON P.idproduit= PHC.produits_id 
@@ -310,6 +330,13 @@ function updateImage($db, $legend,$URL,$idimage) {
 	$result = mysqli_query($db, $sql);
 	return $result ? "La mise à jour a réussie<br>" : "La mise à jour a échouée: " . mysqli_error($db) . "<br>";
 }
+// modification d'une promo
+function updatePromo($db, $reduction,$debut,$fin,$idpromotion) {
+	$sql = "UPDATE promotion SET reduction = '$reduction', debut = '$debut', fin = '$fin' WHERE idimage = '$idpromotion'";
+	
+	$result = mysqli_query($db, $sql);
+	return $result ? "La mise à jour a réussie<br>" : "La mise à jour a échouée: " . mysqli_error($db) . "<br>";
+}
 // modification d'une user
 function updateUser($db, $nom,$prenom,$pseudo,$pwd,$iduser) {
 	$sql = "UPDATE utilisateurs SET nom = '$nom', prenom = '$prenom', pseudo = '$pseudo', pwd = '$pwd' WHERE iduser = '$iduser'";
@@ -340,6 +367,13 @@ function deleteProduit($db, $idproduit) {
 // supprimer un user
 function deleteUser($db, $iduser) {
 	$sql = "DELETE FROM utilisateurs WHERE iduser = $iduser";
+	
+	$result = mysqli_query($db, $sql);
+	return $result ? "La suppression a réussi<br>" : "La suppression a raté: " . mysqli_error($db) . "<br>";
+}
+// supprimer un user
+function deletePromo($db, $idpromotion) {
+	$sql = "DELETE FROM promotion WHERE idpromotion = $idpromotion";
 	
 	$result = mysqli_query($db, $sql);
 	return $result ? "La suppression a réussi<br>" : "La suppression a raté: " . mysqli_error($db) . "<br>";

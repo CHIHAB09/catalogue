@@ -2,13 +2,13 @@
 require_once "../view/admin/parts/navBarAdmin.php";
 require_once "../model/crud.php";
 $titre= "Magasin";
-$magasins = selectsMagasin($db);
+
 
 if(isset($_GET['idMagasin'])&&ctype_digit($_GET["idMagasin"])){
     // on traîte idMagasin en le transformant en entier si faux 0 => empty
     $idMagasin = (int) $_GET['idMagasin'];
     // requête permettant de récupérer le contenu dans la base de donnée
-    $magasins;
+    $magasins = selectsMagasinById ($db,$idMagasin);
 }else{
     $erreur = "Cet contenu n'existe déjà plus!";
 }
@@ -52,24 +52,19 @@ if(isset($_GET['idMagasin'])&&ctype_digit($_GET["idMagasin"])){
                     </tr>
                 </thead>
                 <tbody>
-                        <?php
-                            foreach($magasins as $item ) {
-                        ?>
+                        
                     <tr>
-                        <td><?=$item['nom']?></td>
-                        <td><?=$item['rue']?></td>
-                        <td><?=$item['numero']?></td>
-                        <td><?=$item['codepostal']?></td>
-                        <td><?=$item['ville']?></td>
-                        <td><?=$item['longitude']?></td>
-                        <td><?=$item['latitude']?></td>
+                        <td><?=$magasins['nom']?></td>
+                        <td><?=$magasins['rue']?></td>
+                        <td><?=$magasins['numero']?></td>
+                        <td><?=$magasins['codepostal']?></td>
+                        <td><?=$magasins['ville']?></td>
+                        <td><?=$magasins['longitude']?></td>
+                        <td><?=$magasins['latitude']?></td>
                     </tr>
                     
                 </tbody>
            
-        <?php 
-            }
-                
-        ?>
+     
                 </table>
 </main>
