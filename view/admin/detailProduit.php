@@ -2,13 +2,14 @@
 require_once "../view/admin/parts/navBarAdmin.php";
 require_once "../model/crud.php";
 $titre= "Produit";
-$produit = selectsProduit($db);
+
 
 if(isset($_GET['idproduit'])&&ctype_digit($_GET["idproduit"])){
     // on traîte idproduit en le transformant en entier si faux 0 => empty
     $idproduit = (int) $_GET['idproduit'];
     // requête permettant de récupérer le contenu dans la base de donnée
-    $produit;
+    $produit = selectsAllProduits($db,$idproduit);
+    //var_dump($produit);  
 }else{
     $erreur = "Cet contenu n'existe déjà plus!";
 }
@@ -46,11 +47,15 @@ if(isset($_GET['idproduit'])&&ctype_digit($_GET["idproduit"])){
                       <th scope="col">Marque</th>
                       <th scope="col">Descriptif</th>
                       <th scope="col">Prix</th>
+                      <th scope="col">Genre</th>
+                      <th scope="col">Legend</th>
+                      <th scope="col">URL</th>
                     </tr>
                 </thead>
                 <tbody>
                         <?php
                             foreach($produit as $item ) {
+                                
                         ?>
                     <tr>
                     <td><?=$item['modele']?></td>
@@ -58,13 +63,16 @@ if(isset($_GET['idproduit'])&&ctype_digit($_GET["idproduit"])){
                         <td><?=$item['marque']?></td>
                         <td><?=$item['descriptif']?></td>
                         <td><?=$item['prix']?></td>
+                        <td><?=$item['genre']?></td>
+                        <td><?=$item['legend']?></td>
+                        <td><?=$item['URL']?></td>
                     </tr>
                     
                 </tbody>
            
         <?php 
             }
-                
+              
         ?>
                 </table>
 </main>

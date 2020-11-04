@@ -86,6 +86,18 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
             case "updateImage":
                 require_once "../controler/admin/updateImage.controler.php";
             break;
+            case "Promo":
+                require_once "../controler/admin/accueilPromo.controler.php";
+            break;
+            case "insertPromo":
+                require_once "../controler/admin/insertPromo.controler.php";
+            break;
+            case "deletePromo":
+                require_once "../controler/admin/deletePromo.controler.php";
+            break;
+            case "updatePromo":
+                require_once "../controler/admin/updatePromo.controler.php";
+            break;
             
             default:            
             require_once "../controler/admin/accueil.admin.controler.php";

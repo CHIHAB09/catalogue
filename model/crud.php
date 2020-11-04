@@ -14,20 +14,25 @@ function insertMagasin($db,$nom,$rue,$numero,$codepostal,$ville,$longitude,$lati
     $result = mysqli_query($db, $sql);
 	return $result ? "L'insertion a réussie<br>" : "L'insertion a échouée: " . mysqli_error($db) . "<br>";
 }
-
-
-
-
-
-
-
-
 // ----------> READ <--------------
 
 // affichage classé par id
 function selectsProduitById($db,$idproduit){
     
     $sql="SELECT * FROM produits Where idproduit = $idproduit";
+    $result = mysqli_query($db, $sql);
+    if($result) {
+        $data = mysqli_fetch_assoc($result);;
+        return $data;
+    } else {
+        return "La sélection a échouée: " . mysqli_error($db) . "<br>";
+    }
+    
+}
+// affichage classé par id
+function selectsUserById($db,$iduser){
+    
+    $sql="SELECT * FROM utilisateurs Where iduser = '$iduser'";
     $result = mysqli_query($db, $sql);
     if($result) {
         $data = mysqli_fetch_assoc($result);;
@@ -63,6 +68,8 @@ function selectsImageById($db,$idimage){
         return "La sélection a échouée: " . mysqli_error($db) . "<br>";
     }
 }
+
+
 // affichage classé par image
 function selectsImage($db){
     $sql="SELECT * FROM images ORDER BY URL ASC";
@@ -97,13 +104,35 @@ function selectsCateg($db){
         return "La sélection a échouée: " . mysqli_error($db) . "<br>";
     }
 }
+// tout de promotion
+function selectsPromo($db){
+    $sql="SELECT reduction,debut,fin FROM promotion ";
+    $result = mysqli_query($db, $sql);
+    if($result) {
+        $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        return $data;
+    } else {
+        return "La sélection a échouée: " . mysqli_error($db) . "<br>";
+    }
+}
+// tout de user
+function selectsUser($db){
+    $sql="SELECT * FROM utilisateurs ";
+    $result = mysqli_query($db, $sql);
+    if($result) {
+        $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        return $data;
+    } else {
+        return "La sélection a échouée: " . mysqli_error($db) . "<br>";
+    }
+}
 // tous sur les produits
 function selectsAllProduits($db,$idproduit){
     $sql="SELECT * 
     FROM produits P 
     JOIN produits_has_categorie AS PHC ON P.idproduit= PHC.produits_id 
     JOIN categorie AS C ON C.idcategorie = PHC.categorie_id
-    JOIN images AS I ON I.produits_idproduit= P.idproduit 
+    LEFT JOIN images AS I ON I.produits_idproduit= P.idproduit  
     WHERE P.idproduit = '$idproduit' ; ";
 
     $result = mysqli_query($db, $sql);
@@ -132,10 +161,10 @@ function selectsCategories($db){
 //var_dump(selectsCategories($db));
 
 // affichage les produits d'une categorie
-function selectCategorieByID($db,$id){
+function selectCategorieByID($db,$idcategorie){
     $sql="SELECT *
     FROM categorie 
-    WHERE idcategorie= $id; ";
+    WHERE idcategorie= '$idcategorie'; ";
 
     $result = mysqli_query($db, $sql);
     if($result) {
@@ -281,6 +310,13 @@ function updateImage($db, $legend,$URL,$idimage) {
 	$result = mysqli_query($db, $sql);
 	return $result ? "La mise à jour a réussie<br>" : "La mise à jour a échouée: " . mysqli_error($db) . "<br>";
 }
+// modification d'une user
+function updateUser($db, $nom,$prenom,$pseudo,$pwd,$iduser) {
+	$sql = "UPDATE utilisateurs SET nom = '$nom', prenom = '$prenom', pseudo = '$pseudo', pwd = '$pwd' WHERE iduser = '$iduser'";
+	
+	$result = mysqli_query($db, $sql);
+	return $result ? "La mise à jour a réussie<br>" : "La mise à jour a échouée: " . mysqli_error($db) . "<br>";
+}
 
 // modification d'un point de vente
 function updateMagasin($db,$idMagasin, $nomMagasin,$rue,$numero,$cdp,$ville,$long,$lat) {
@@ -297,6 +333,13 @@ function updateMagasin($db,$idMagasin, $nomMagasin,$rue,$numero,$cdp,$ville,$lon
 // supprimer un produit
 function deleteProduit($db, $idproduit) {
 	$sql = "DELETE FROM produits WHERE idproduit = $idproduit";
+	
+	$result = mysqli_query($db, $sql);
+	return $result ? "La suppression a réussi<br>" : "La suppression a raté: " . mysqli_error($db) . "<br>";
+}
+// supprimer un user
+function deleteUser($db, $iduser) {
+	$sql = "DELETE FROM utilisateurs WHERE iduser = $iduser";
 	
 	$result = mysqli_query($db, $sql);
 	return $result ? "La suppression a réussi<br>" : "La suppression a raté: " . mysqli_error($db) . "<br>";

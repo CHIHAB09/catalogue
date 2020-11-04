@@ -1,8 +1,6 @@
 <?php
 
-include "../view/admin/parts/navBarAdmin.php"; 
-var_dump($image);
-?>
+include "../view/admin/parts/navBarAdmin.php"; ?>
 
 <!doctype html>
 <html lang="fr">
@@ -17,12 +15,12 @@ var_dump($image);
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-        <title>Admin - Suppression d'une image <?php echo (isset($erreur))? $erreur: $image['legend']  ?></title>
+        <title>Admin - Suppression d'une image <?php echo (isset($erreur))? $erreur: $user['pseudo']  ?></title>
 
     </head>
     <body>
     <header class="jumbotron">
-    <h1 class="display-4 text-center mb-4">Cataloggue | Suppression image - </br></br><?php echo (isset($erreur))? $erreur: $image['legend']  ?></h1>
+    <h1 class="display-4 text-center mb-4">Catalogue | Suppression user - <?php if (isset($erreur)){echo $erreur;}  ?></h1>
     <p>Bienvenue <?=$_SESSION['pseudo']?></p>
     </header> 
 
@@ -31,12 +29,12 @@ var_dump($image);
             if(!isset($erreur)){
         ?>
 <h3>Voulez vous vraiment supprimer :</h3><hr>
-<h4><?=$image['URL']?></h4>
-<h5><?=$image['legend']?></h5>
+<h4><?=$user['pseudo']?></h4>
+<h5><?=$user['nom']?></h5>
 
         <hr>
-        <a class="btn btn-danger" href="?pg=deleteImage&idimage=<?=$idimage?>&ok" role="button">Supprimer définitivement !</a>
-        <a class="btn btn-secondary" href="?pg=Image" role="button">Ne pas supprimer</a>
+        <a class="btn btn-danger" href="?pg=deleteUser&iduser=<?=$iduser?>&ok" role="button">Supprimer définitivement !</a>
+        <a class="btn btn-secondary" href="?pg=User" role="button">Ne pas supprimer</a>
     <?php
     }else{
     ?>
@@ -53,6 +51,6 @@ var_dump($image);
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         
         <!-- Validation du formulaire -->
-       <script> src="../../view/admin/deleteProduit.php"</script>
+       <script> src="../../view/admin/deleteUser.php"</script>
     </body>
 </html>

@@ -20,7 +20,7 @@
               <a class="nav-link" href="?pg=Image">Image</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Promotion</a>
+              <a class="nav-link" href="?pg=Promo">Promotion</a>
             </li>
         </ul>
            <a class="btn btn-light my-2 my-sm-0" href="?pg=deconnexion">Déconnexion</a>

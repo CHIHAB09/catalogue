@@ -2,13 +2,13 @@
 require_once "../view/admin/parts/navBarAdmin.php";
 require_once "../model/crud.php";
 $titre= "Categorie";
-$categ = selectsCateg($db);
+
 
 if(isset($_GET['idcategorie'])&&ctype_digit($_GET["idcategorie"])){
     // on traîte idproduit en le transformant en entier si faux 0 => empty
     $idcategorie = (int) $_GET['idcategorie'];
     // requête permettant de récupérer le contenu dans la base de donnée
-    $categ;
+    $categ = selectCategorieByID($db,$idcategorie);
 }else{
     $erreur = "Cet contenu n'existe déjà plus!";
 }
@@ -46,16 +46,16 @@ if(isset($_GET['idcategorie'])&&ctype_digit($_GET["idcategorie"])){
                 </thead>
                 <tbody>
                         <?php
-                            foreach($categ as $item ) {
+                            //foreach($categ as $item ) {
                         ?>
                     <tr>
-                    <td><?=$item['genre']?></td>
+                    <td><?=$categ['genre']?></td>
                     </tr>
                     
                 </tbody>
            
         <?php 
-            }
+            //}
                 
         ?>
                 </table>
