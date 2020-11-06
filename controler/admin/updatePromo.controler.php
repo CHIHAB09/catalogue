@@ -1,6 +1,6 @@
 <?php
 
-require_once "../model/crud.php";
+require_once "../model/updatePromo.model.php";
 require_once "../model/paginationModel.php";
  //$genre="";
 $idpromotion="";
@@ -24,8 +24,8 @@ $idpromotion="";
       
     //si une erreur vaudra "" => empty
     $reduction = htmlspecialchars(strip_tags(trim($_POST['reduction'])),ENT_QUOTES);
-    $debut = htmlspecialchars(strip_tags(trim($_POST['debut'])),ENT_QUOTES);
-    $fin = htmlspecialchars(strip_tags(trim($_POST['fin'])),ENT_QUOTES); 
+    $debut = date(y-m-d($_POST['debut']));
+    $fin = date(y-m-d($_POST['fin'])); 
  
         //var_dump($idcategorie);
 // si on a une erreur de type (ajout de la vérification de $idMagasin)
@@ -33,11 +33,11 @@ if(empty($reduction)||empty($debut)||empty($fin)){
     
     $message = "Erreur de type de données, veuillez recommencer";
 }else {  
-    updatePromo($db, $reduction,$debut,$fin,$idpromotion);
+    $update = updatePromo ($db,$reduction,$debut,$fin,$idproduit);
         //var_dump(mysqli_error($db));
      // redirection
      header("Location: ?pg=Promo&message=update");
-     //var_dump(updateCategorie($db, $genre,$idcategorie));
+     var_dump($update);
  }
 }
 

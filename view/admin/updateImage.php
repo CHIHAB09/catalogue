@@ -1,8 +1,7 @@
 <?php
 
 include "../view/admin/parts/navBarAdmin.php";
-
-$nomImage="";
+//var_dump($image);
 ?>
 <!doctype html>
 <html lang="fr">
@@ -55,6 +54,7 @@ $nomImage="";
                    <input name="produits_idproduit" type="text" class="form-control col-md-9" id="produits_idproduit" placeholder="Entrez le chemin" value="<?=$image['produits_idproduit'] ?>" required>
                    <div class="invalid-feedback text-left offset-md-3">Vous devez entrez l'ID du produit que represente l'image</div>
                 </div>
+                
                
                
                <div class="form-group row">

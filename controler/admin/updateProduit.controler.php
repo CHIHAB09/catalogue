@@ -1,6 +1,6 @@
 <?php
 
-require_once "../model/crud.php";
+require_once "../model/updateProduit.model.php";
 require_once "../model/paginationModel.php";
  
 $idproduit="";
@@ -9,8 +9,8 @@ $idproduit="";
    
     // on traîte idMagasin en le transformant en entier si faux 0 => empty
     $idproduit = (int) $_GET['idproduit'];
-    $produit = selectsAllProduits($db,$idproduit);
-  //var_dump($produit);
+    $produit =  selectsAllProduitsById($db,$idproduit);
+  var_dump($produit);
 
     }else{
         $erreur = "Ce produit n'existe déjà plus!";
@@ -36,8 +36,8 @@ if(empty($model)||!isset($produitEvident)||empty($marque)||empty($descriptif)||e
       
     $message = "Erreur de type de données, veuillez recommencer";
 }else {  
-    updateAllProduits($db,$idproduit,$model,$produitEvident,$descriptif,$prix,$genre,$legend,$URL);
-        var_dump(mysqli_error($db));
+    $update=updateAllProduits($db,$idproduit,$model,$produitEvident,$marque,$descriptif,$prix,$genre,$legend,$URL);
+    //var_dump($update);
      // redirection
      header("Location: ?pg=Produit&message=update");
      

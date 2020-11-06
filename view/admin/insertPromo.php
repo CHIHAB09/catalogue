@@ -27,7 +27,7 @@ include "../view/admin/parts/navBarAdmin.php";
         <main class="container">
             <h1 class="text-center mt-4">Admin - <?=$_SESSION['pseudo']?></h1>
             <p class="lead text-center">Ce formulaire permet d'ajouter une nouvelle promotion dans la liste</p>
-            <h3><a href="?pg=User" ><img src="image/retour.png" alt="Retour à l'accueil"/></a></h3>
+            <h3><a href="?pg=Promo" ><img src="image/retour.png" alt="Retour à l'accueil"/></a></h3>
 
             <?php
     // message d'erreur
@@ -44,12 +44,12 @@ include "../view/admin/parts/navBarAdmin.php";
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="debut">Date de debut  (*)</label>
-                   <input name="debut" type="text" class="form-control col-md-9" id="debut" placeholder="Entrez votre date de debut" required>
+                   <input name="debut" type="date" class="form-control col-md-9" id="debut" placeholder="Entrez votre date de debut" required>
                    <div class="invalid-feedback text-left offset-md-3">Vous devez entrez votre date de debut</div>
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="fin">date de fin  (*)</label>
-                   <input name="fin" type="text" class="form-control col-md-9" id="fin" placeholder="Entrez votre date de fin" required>
+                   <input name="fin" type="date" class="form-control col-md-9" id="fin" placeholder="Entrez votre date de fin" required>
                    <div class="invalid-feedback text-left offset-md-3">Vous devez entrez votre date de fin</div>
                </div>
                <div class="form-group row">

@@ -1,6 +1,6 @@
 <?php
 
-require_once "../model/crud.php";
+require_once "../model/updateCateg.model.php";
 require_once "../model/paginationModel.php";
  //$genre="";
 $idcategorie="";

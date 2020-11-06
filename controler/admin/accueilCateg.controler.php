@@ -1,5 +1,5 @@
 <?php
-require_once "../model/crud.php";
+require_once "../model/accueilcateg.model.php";
 include "../model/paginationModel.php";
 
 

@@ -1,7 +1,5 @@
 <?php
-
 include "../view/admin/parts/navBarAdmin.php"; ?>
-
 <!doctype html>
 <html lang="fr">
     <head>

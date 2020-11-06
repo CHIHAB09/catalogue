@@ -8,13 +8,13 @@ if(isset($_GET['idproduit'])&&ctype_digit($_GET["idproduit"])){
     // on traîte idproduit en le transformant en entier si faux 0 => empty
     $idproduit = (int) $_GET['idproduit'];
     // requête permettant de récupérer le contenu dans la base de donnée
-    $produit = selectsAllProduits($db,$idproduit);
-    //var_dump($produit);  
+    $produit = selectsAllProduitsById($db,$idproduit);
+    var_dump($produit);  
+    
 }else{
     $erreur = "Cet contenu n'existe déjà plus!";
 }
 ?>
-
 <!doctype html>
 <html lang="fr">
 <head>
@@ -53,26 +53,18 @@ if(isset($_GET['idproduit'])&&ctype_digit($_GET["idproduit"])){
                     </tr>
                 </thead>
                 <tbody>
-                        <?php
-                            foreach($produit as $item ) {
-                                
-                        ?>
                     <tr>
-                    <td><?=$item['modele']?></td>
-                        <td><?=$item['produit_evident']?></td>
-                        <td><?=$item['marque']?></td>
-                        <td><?=$item['descriptif']?></td>
-                        <td><?=$item['prix']?></td>
-                        <td><?=$item['genre']?></td>
-                        <td><?=$item['legend']?></td>
-                        <td><?=$item['URL']?></td>
+                    <td><?=$produit['modele']?></td>
+                        <td><?=$produit['produit_evident']?></td>
+                        <td><?=$produit['marque']?></td>
+                        <td><?=$produit['descriptif']?></td>
+                        <td><?=$produit['prix']?></td>
+                        <td><?=$produit['genre']?></td>
+                        <td><?=$produit['legend']?></td>
+                        <td><?=$produit['URL']?></td>
                     </tr>
                     
                 </tbody>
-           
-        <?php 
-            }
-              
-        ?>
+        
                 </table>
 </main>

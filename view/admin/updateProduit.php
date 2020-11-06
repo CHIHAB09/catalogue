@@ -1,8 +1,6 @@
 <?php
 
 include "../view/admin/parts/navBarAdmin.php";
-
-$nomProduit="";
 ?>
 <!doctype html>
 <html lang="fr">
@@ -40,43 +38,43 @@ $nomProduit="";
             // on remplit le formulaire avec le contenu de notre select
             ?>
             <?php
-                foreach($produit AS $item){
+                //foreach($produit AS $produit){
             ?>
            <form id="formulaire" method="POST">
                <div class="form-group row">
                    <label class="col-md-3" for="model">Modele  (*)</label>
-                   <input name="modele" type="text" class="form-control col-md-9" id="modele" placeholder="Entrez le modele du produit" value="<?=$item['modele'] ?>" required>
+                   <input name="modele" type="text" class="form-control col-md-9" id="modele" placeholder="Entrez le modele du produit" value="<?=$produit['modele'] ?>" required>
                    <div class="invalid-feedback text-left offset-md-3">Vous devez entrez le modele du produit</div>
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="PE">Produit est-il en avant? (*)</label>
-                   <input name="PE" type="PE" class="form-control col-md-9" id="PE" placeholder="OUI ? NON?" value="<?=$item['produit_evident'] ?>" required>
+                   <input name="PE" type="PE" class="form-control col-md-9" id="PE" placeholder="OUI ? NON?" value="<?=$produit['produit_evident'] ?>" required>
                    <div class="invalid-feedback text-left offset-md-3">Vous devez precisez.</div>
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="marque"> Marque (*)</label>
-                   <input name="marque" type="text" class="form-control col-md-9" id="marque" placeholder="marque du model" value="<?=$item['marque'] ?>" required>
+                   <input name="marque" type="text" class="form-control col-md-9" id="marque" placeholder="marque du model" value="<?=$produit['marque'] ?>" required>
                    <div class="invalid-feedback text-left offset-md-3">Vous devez precisez.</div>
                </div>
                 <div class="form-group row">
                    <label class="col-md-3" for="descriptif">Descriptif (*)</label>
-                   <input name="descriptif" class="form-control col-md-9" id="descriptif" placeholder="Descriptif"value="<?=$item['descriptif'] ?>" required>
+                   <input name="descriptif" class="form-control col-md-9" id="descriptif" placeholder="Descriptif"value="<?=$produit['descriptif'] ?>" required>
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="prix">Prix (*)</label>
-                   <input name="prix" class="form-control col-md-9" id="prix" placeholder="prix"value="<?=$item['prix'] ?>" required>
+                   <input name="prix" class="form-control col-md-9" id="prix" placeholder="prix"value="<?=$produit['prix'] ?>" required>
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="genre">Genre (*)</label>
-                   <input name="genre" class="form-control col-md-9" id="genre" placeholder="genre"value="<?=$item['genre'] ?>" required>
+                   <input name="genre" class="form-control col-md-9" id="genre" placeholder="genre"value="<?=$produit['genre'] ?>" required>
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="legend">Legend (*)</label>
-                   <input name="legend" class="form-control col-md-9" id="legend" placeholder="legend"value="<?=$item['legend'] ?>" required>
+                   <input name="legend" class="form-control col-md-9" id="legend" placeholder="legend"value="<?=$produit['legend'] ?>" required>
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="URL">URL (*)</label>
-                   <input name="URL" class="form-control col-md-9" id="URL" placeholder="URL"value="<?=$item['URL'] ?>" required>
+                   <input name="URL" class="form-control col-md-9" id="URL" placeholder="URL"value="<?=$produit['URL'] ?>" required>
                </div>
                
                
@@ -94,7 +92,7 @@ $nomProduit="";
         ?>
         <?php
                 
-        }
+        //}
     
         ?>
     </body>

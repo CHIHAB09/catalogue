@@ -1,5 +1,5 @@
 <?php
-require_once "../model/deleteCateg.model.php";
+require_once "../model/deleteImage.model.php";
 
 
 

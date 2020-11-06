@@ -1,7 +1,6 @@
 <?php
 include "../view/admin/parts/navBarAdmin.php";
-$magasins = selectsMagasin($db);
-count($magasins); // Permet de savoir le nombre d'éléments dans un array
+
 ?>
 <!doctype html>
 <html lang="fr">

@@ -1,6 +1,5 @@
 <?php
-
-require_once "../model/crud.php";
+require_once "../model/updateImage.model.php";
 require_once "../model/paginationModel.php";
  //$genre="";
 $idimage="";
@@ -33,11 +32,11 @@ if(empty($legend)||empty($URL)||empty($produits_idproduit)){
     
     $message = "Erreur de type de données, veuillez recommencer";
 }else {  
-    updateImage($db, $legend,$URL,$idimage);
+    $image1=updateImage($db,$legend,$URL,$idimage);
         //var_dump(mysqli_error($db));
      // redirection
      header("Location: ?pg=Image&message=update");
-     //var_dump(updateCategorie($db, $genre,$idcategorie));
+    // var_dump(mysqli_error($db));
  }
 }
 
