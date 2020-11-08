@@ -1,5 +1,17 @@
 <?php
-
+// tout de promo avec id
+function selectsPromoById($db,$idpromotion){
+        $sql="SELECT * 
+        FROM promotion
+        WHERE idpromotion = '$idpromotion' ;";
+            $result = mysqli_query($db, $sql);
+        if($result) {
+            $data = assoc($result);
+            return $data;
+        }else {
+            return "La sélection a échouée: " . mysqli_error($db) . "<br>";
+        }
+}
 // modification d'une promo
 function updatePromo($db, $reduction,$debut,$fin,$idpromotion) {
 	$sql = "UPDATE produits P

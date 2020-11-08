@@ -2,19 +2,15 @@
 
 require_once "../model/updatePromo.model.php";
 require_once "../model/paginationModel.php";
- //$genre="";
-$idpromotion="";
 // on vérifie l'existence de la variable get id et que son contenu de type string ne contient que des numériques
   if(isset($_GET['idpromotion'])&&ctype_digit($_GET['idpromotion'])){
    
     // on traîte idMagasin en le transformant en entier si faux 0 => empty
     $idpromotion = (int) $_GET['idpromotion'];
     $promo = selectsPromoById($db,$idpromotion);
-    
-
     }else{
-        $erreur = "Cette categorie n'existe déjà plus!";
-    
+        $erreur = "Cette promotion n'existe déjà plus!";
+        var_dump($promo);
     // l'id n'existe pas ou n'est pas valide
     }
     

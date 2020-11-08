@@ -1,6 +1,4 @@
 <?php
-require_once "../model/crud.php";
-require_once "../model/paginationModel.php";
 include "../view/admin/parts/navBarAdmin.php";
 
 
@@ -63,29 +61,29 @@ include "../view/admin/parts/navBarAdmin.php";
                    <div class="invalid-feedback text-left offset-md-3">Vous devez entrez le nom du lieu</div>
                </div>
                <div class="form-group row">
-                   <label class="col-md-3" for="urlSite">Rue du lieu (*)</label>
+                   <label class="col-md-3" for="rue">Rue du lieu (*)</label>
                    <input name="rue" type="rue" class="form-control col-md-9" id="rue" placeholder="Entrez la rue" required>
                    <div class="invalid-feedback text-left offset-md-3">Vous devez rentrer une rue existente.</div>
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="numero">numéro</label>
-                   <textarea name="numero" class="form-control col-md-9" id="numero" placeholder="Entrez le numero"required></textarea>
+                   <input name="numero" class="form-control col-md-9" id="numero" placeholder="Entrez le numero"required>
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="cdp">Code postal</label>
-                   <textarea name="cdp" class="form-control col-md-9" id="cdp" placeholder="Entrez le code postal"required></textarea>
+                   <input name="cdp" class="form-control col-md-9" id="cdp" placeholder="Entrez le code postal"required>
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="ville">Ville</label>
-                   <textarea name="ville" class="form-control col-md-9" id="ville" placeholder="Entrez la ville"required></textarea>
+                   <input name="ville" class="form-control col-md-9" id="ville" placeholder="Entrez la ville"required>
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="long">Longitude</label>
-                   <textarea name="long" class="form-control col-md-9" id="long" placeholder="Entrez la longitude"required></textarea>
+                   <input name="long" class="form-control col-md-9" id="long" placeholder="Entrez la longitude"required>
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="lat">Latitude</label>
-                   <textarea name="lat" class="form-control col-md-9" id="lat" placeholder="Entrez la latitude"required></textarea>
+                   <input name="lat" class="form-control col-md-9" id="lat" placeholder="Entrez la latitude"required>
                </div>
                <div class="form-group row">
                    <p class="form-text text-center col-md-12">(*) Champs obligatoires</p>

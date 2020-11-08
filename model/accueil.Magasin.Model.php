@@ -1,6 +1,4 @@
 <?php
-include "../view/admin/accueil.Magasin.php";
-
 //affichage de la liste des pointes de vente 
 function selectsMagasin ($db){
     $sql="SELECT * FROM magasin  ORDER BY ville ASC";

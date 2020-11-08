@@ -5,7 +5,7 @@ function selectsCategories($db){
     $sql="SELECT * 
     FROM produits P 
     JOIN produits_has_categorie AS PHC ON P.idproduit= PHC.produits_id 
-    JOIN categorie AS C ON C.idcategorie = PHC.categorie_id ORDER BY P.modele ; ";
+    LEFT JOIN categorie AS C ON C.idcategorie = PHC.categorie_id ORDER BY P.modele ; ";
 
     $result = mysqli_query($db, $sql);
     if($result) {

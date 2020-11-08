@@ -78,7 +78,7 @@ include "../view/admin/parts/navBarAdmin.php";
                 </thead>
                 <tbody>
                         <?php
-                            foreach($promo as $item ) {
+                            foreach($promo1 as $item ) {
                         ?>
                     <tr>
                         <td><?=$item['reduction']?></td>
