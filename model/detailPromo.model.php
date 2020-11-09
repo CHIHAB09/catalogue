@@ -3,7 +3,7 @@
 // affichage promo classé par id
 function selectsPromoById($db,$idpromotion){
     
-    $sql="SELECT * FROM promotion Where idpromotion = '$idpromotion'";
+    $sql="SELECT * FROM promotion WHERE idpromotion = '$idpromotion'";
     $result = mysqli_query($db, $sql);
     if($result) {
         $data = mysqli_fetch_assoc($result);;

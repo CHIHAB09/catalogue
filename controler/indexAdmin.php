@@ -254,9 +254,9 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
             case "updateMagasin":
                 require_once "../controler/admin/updateMagasin.controler.php";
             break;
-            /*case "deleteMagasin":
+            case "deleteMagasin":
                 require_once "../controler/admin/deleteMagasin.controler.php";
-            break;*/
+            break;
             case "Produit":
                 require_once "../controler/admin/accueilProduit.controler.php";
             break;
