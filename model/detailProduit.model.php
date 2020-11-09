@@ -1,4 +1,4 @@
-<?php
+.<?php
 // tous sur les produits par id
 function selectsAllProduitsById($db,$idproduit){
     $sql="SELECT * 
@@ -9,8 +9,12 @@ function selectsAllProduitsById($db,$idproduit){
     WHERE P.idproduit = '$idproduit' ; ";
 
     $result = mysqli_query($db, $sql);
-    if(!$result) {
+    if($result) {
+
+        $data = mysqli_fetch_assoc($result);
+        return $data;
         
+    }else{
         return "La sélection a échouée: " . mysqli_error($db) . "<br>";
     }
 }

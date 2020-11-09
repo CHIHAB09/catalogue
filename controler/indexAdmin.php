@@ -32,8 +32,8 @@ if(isset($_GET["detailProduit"])){
         $erreur = "Ce produit n'existe plus";
     }
 
-    // view
-    require_once "../view/admin/detailProduit.php";
+    // controler
+    require_once "../controler/admin/detailProduit.php";
     exit();
 
 }
@@ -101,7 +101,7 @@ if(isset($_GET['pg'])&&$_GET['pg']=="insert"){
     // on récupère toutes les rubriques potentielles
     $recup_categs = recupAllRubriques($db);
 
-    require_once "../view/admin/insertProduit.php";
+    require_once "../controler/admin/insertProduit.php";
     //var_dump($_POST);
     exit();
 }
@@ -142,7 +142,7 @@ if(isset($_GET['pg'])&&$_GET['p']=="delete"){
     }
 
 
-    require_once "../view/admin/deleteProduit.php";
+    require_once "../controler/admin/deleteProduit.php";
     //var_dump($_POST);
     exit();
 }
@@ -225,7 +225,7 @@ if(isset($_GET['pg'])&&$_GET['pg']=="update"){
     }
 
 
-    require_once "../view/admin/adminUpdateArticleView.php";
+    require_once "../controler/admin/adminUpdateArticlecontroler.php";
     //var_dump($_POST);
     exit();
 }
@@ -246,17 +246,17 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
                 require_once "../controler/admin/accueil.Magasin.controler.php";
             break;
             case "insertMagasin":                
-                require_once "../view/admin/insertMagasin.php";
+                require_once "../controler/admin/insertMagasin.controler.php";
             break;
             case "detailMagasin":                
-                require_once "../view/admin/detailMagasin.php";
+                require_once "../controler/admin/detailMagasin.controler.php";
             break;
             case "updateMagasin":
-                require_once "../view/admin/updateMagasin.php";
+                require_once "../controler/admin/updateMagasin.controler.php";
             break;
-            case "deleteMagasin":
-                require_once "../view/admin/deleteMagasin.php";
-            break;
+            /*case "deleteMagasin":
+                require_once "../controler/admin/deleteMagasin.controler.php";
+            break;*/
             case "Produit":
                 require_once "../controler/admin/accueilProduit.controler.php";
             break;
@@ -270,7 +270,7 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
                 require_once "../controler/admin/deleteProduit.controler.php";
             break;
             case "detailProduit":                
-                require_once "../view/admin/detailProduit.php";
+                require_once "../controler/admin/detailProduit.controler.php";
             break;
             case "deconnexion":
                 require_once "../controler/deconnexion.controler.php";
@@ -288,7 +288,7 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
                 require_once "../controler/admin/insertCateg.controler.php";
             break;
             case "detailCateg":                
-                require_once "../view/admin/detailCateg.php";
+                require_once "../controler/admin/detailCateg.controler.php";
             break;
             case "Image":
                 require_once "../controler/admin/accueilImage.controler.php";
@@ -297,7 +297,7 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
                 require_once "../controler/admin/insertImage.controler.php";
             break;
             case "detailImage":                
-                require_once "../view/admin/detailImage.php";
+                require_once "../controler/admin/detailImage.controler.php";
             break;
             case "deleteImage":
                 require_once "../controler/admin/deleteImage.controler.php";
@@ -318,7 +318,7 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
                 require_once "../controler/admin/updatePromo.controler.php";
             break;
             case "detailPromo":
-                require_once "../view/admin/detailPromo.php";
+                require_once "../controler/admin/detailPromo.controler.php";
             break;
             
             default:            

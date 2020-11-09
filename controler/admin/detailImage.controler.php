@@ -16,4 +16,4 @@ if(isset($_GET['idimage'])&&ctype_digit($_GET["idimage"])){
 
 
 
-require_once "../view/detailImage.php";
+require_once "../view/admin/detailImage.php";

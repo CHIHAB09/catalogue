@@ -6,14 +6,15 @@ require_once "../model/paginationModel.php";
         // on traîte idproduit en le transformant en entier si faux 0 => empty
         $idproduit = (int) $_GET['idproduit'];
         $produit =  selectsAllProduitsById($db,$idproduit);
-        var_dump($produit);
+       
         }else{
             $erreur = "Ce produit n'existe déjà plus!";
         
         // l'id n'existe pas ou n'est pas valide
         }
 
-    
+        $categories= selectsCategories($db);
+
     //si le formulaire est envoyé , on ajoute l'existence de idmagasin
     if(isset($_POST['submit'])){
     //si une erreur vaudra "" => empty
@@ -22,20 +23,20 @@ require_once "../model/paginationModel.php";
     $marque = htmlspecialchars(strip_tags(trim($_POST['marque'])),ENT_QUOTES);
     $descriptif = htmlspecialchars(strip_tags(trim($_POST['descriptif'])),ENT_QUOTES);
     $prix = htmlspecialchars(strip_tags(trim($_POST['prix'])),ENT_QUOTES);
-    $genre = htmlspecialchars(strip_tags(trim($_POST['genre'])),ENT_QUOTES);
     $legend = htmlspecialchars(strip_tags(trim($_POST['legend'])),ENT_QUOTES);
     $URL = htmlspecialchars(strip_tags(trim($_POST['URL'])),ENT_QUOTES);
+    $idcategories= $_POST['idcategories'];
         //var_dump($idproduit);
 // si on a une erreur de type (ajout de la vérification de $idMagasin)
-if(empty($model)||!isset($produitEvident)||empty($marque)||empty($descriptif)||empty($prix)||empty($genre)||empty($legend)||empty($URL)){
+if(empty($model)||!isset($produitEvident)||empty($marque)||empty($descriptif)||empty($prix)||empty($idcategories)){
       
     $message = "Erreur de type de données, veuillez recommencer";
 }else {  
-    $update=updateAllProduits($db,$idproduit,$model,$produitEvident,$marque,$descriptif,$prix,$genre,$legend,$URL);
+    $update=updateAllProduits($db,$idproduit,$model,$produitEvident,$marque,$descriptif,$prix,$legend,$URL);
     //var_dump($update);
-     // redirection
-     header("Location: ?pg=Produit&message=update");
-     
+    $updateProduitCateg= updateProduitCateg($db,$idproduit,$idcategories);
+    // redirection
+    header("Location: ?pg=Produit&message=update");
  }
 }
 

@@ -1,6 +1,6 @@
 <?php
 require_once "../model/deleteProduit.model.php";
-include "../view/admin/deleteProduit.php";
+
 
 
 $produit="";
@@ -17,7 +17,7 @@ if(isset($_GET['idproduit'])&&ctype_digit($_GET['idproduit'])){
         deleteProduit ($db, $idproduit);
         var_dump(deleteProduit ($db, $idproduit));
         // redirection
-        //header("Location: ?pg=Produit&message=delete");
+        header("Location: ?pg=Produit&message=delete");
     }else{
         // préparation de la requête
         $sql = "SELECT modele, marque,prix FROM produits WHERE idproduit=$idproduit";
@@ -38,4 +38,4 @@ if(isset($_GET['idproduit'])&&ctype_digit($_GET['idproduit'])){
     $erreur ="Ceci n'est pas le bon ID";
 
 }
-        
+include "../view/admin/deleteProduit.php";

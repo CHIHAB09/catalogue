@@ -93,8 +93,8 @@ include "../view/admin/parts/navBarAdmin.php";
                         
                         <td><a href="?pg=insertPromo&idproduit=<?=$item['idproduit']?>" title="cree une promo"><img src="image/insert.png" alt="cree une image" class="btn btn-sm btn-primary"/><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                         <td><a href="?pg=detailPromo&idproduit=<?=$item['idproduit']?>"title="detail de la promo"><img src="image/detail.png" class="btn btn-sm btn-info" data-toggle="modal" data-target="#detailImage"><i class="fa fa-search" aria-hidden="true"></i></a></td>
-                        <td><a href="?pg=updatePromo&idproduit=<?=$item['idproduit']?>"title="modifier la promo"><img src="image/update.png" alt="modifier l'image" class="btn btn-sm btn-warning"/><i class="fa fa-edit" aria-hidden="true"></i></a></td>
-                        <td><a href="?pg=deletePromo&idproduit=<?=$item['idproduit']?>" title="supprimer cette promo"><img src="image/delete.png" alt="supprimer cette image" class="btn btn-sm btn-danger"/><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                        <td><a href="?pg=updatePromo&idpromotion=<?=$item['idpromotion']?>"title="modifier la promo"><img src="image/update.png" alt="modifier l'image" class="btn btn-sm btn-warning"/><i class="fa fa-edit" aria-hidden="true"></i></a></td>
+                        <td><a href="?pg=deletePromo&idpromotion=<?=$item['idpromotion']?>" title="supprimer cette promo"><img src="image/delete.png" alt="supprimer cette image" class="btn btn-sm btn-danger"/><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                     </tr>
                     
                 </tbody>

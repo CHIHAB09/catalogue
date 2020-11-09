@@ -1,13 +1,9 @@
 <?php
 require_once "../model/deletePromo.model.php";
 
-
-
-
 // on vérifie l'existence de la variable get id et que son contenu de type string ne contient que des numériques
 if(isset($_GET['idpromotion'])&&ctype_digit($_GET['idpromotion'])){
     
-
     // conversion en entier
     $idpromotion = (int) $_GET['idpromotion'];
     $promo= selectsPromoById($db,$idpromotion);
@@ -23,9 +19,9 @@ if(isset($_GET['idpromotion'])&&ctype_digit($_GET['idpromotion'])){
         header("Location: ?pg=Promo&message=delete");
     }
 
-// l'id n'existe pas ou n'est pas valide
-}else{
-    $erreur ="Ceci n'est pas le bon ID";
+    // l'id n'existe pas ou n'est pas valide
+    }else{
+        $erreur ="Ceci n'est pas le bon ID";
 
 }
       

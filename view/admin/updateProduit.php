@@ -64,19 +64,27 @@ include "../view/admin/parts/navBarAdmin.php";
                    <input name="prix" class="form-control col-md-9" id="prix" placeholder="prix"value="<?=$produit['prix'] ?>" required>
                </div>
                <div class="form-group row">
-                   <label class="col-md-3" for="genre">Genre (*)</label>
-                   <input name="genre" class="form-control col-md-9" id="genre" placeholder="genre"value="<?=$produit['genre'] ?>" required>
-               </div>
-               <div class="form-group row">
                    <label class="col-md-3" for="legend">Legend (*)</label>
-                   <input name="legend" class="form-control col-md-9" id="legend" placeholder="legend"value="<?=$produit['legend'] ?>" required>
+                   <input name="legend" class="form-control col-md-9" id="legend" placeholder="legend"value="<?=$produit['legend'] ?>" >
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="URL">URL (*)</label>
-                   <input name="URL" class="form-control col-md-9" id="URL" placeholder="URL"value="<?=$produit['URL'] ?>" required>
+                   <input name="URL" class="form-control col-md-9" id="URL" placeholder="URL"value="<?=$produit['URL'] ?>" >
                </div>
+               <div class="form-group row">
+               <?php
+                    foreach($categories AS $categorie){
+               ?>
                
+                   <div class="col">
+                       <label class="col-md-3" for="<?=$categorie['genre']?>"><?=$categorie['genre']?></label>
+                   <input type="checkbox" name="idcategories[]" class="form-control col-md-9" id="<?=$categorie['genre']?>"value="<?=$categorie['idcategorie']?>" >
+                   </div>
                
+               <?php
+               }
+               ?>
+               </div>
                <div class="form-group row">
                    <p class="form-text text-center col-md-12">(*) Champs obligatoires</p>
                </div>
@@ -87,11 +95,6 @@ include "../view/admin/parts/navBarAdmin.php";
         <?php
                 
         }
-    
-        ?>
-        <?php
-                
-        //}
     
         ?>
     </body>

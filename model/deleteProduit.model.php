@@ -1,4 +1,9 @@
 <?php
+
+
+
+
+
 // supprimer un produit
 function deleteProduit($db, $idproduit) {
     mysqli_begin_transaction($db);
@@ -13,4 +18,3 @@ function deleteProduit($db, $idproduit) {
         return false;
     }
 }
-// supprimer un user
