@@ -1,8 +1,5 @@
 <?php
-
 include "../view/admin/parts/navBarAdmin.php";
-
-
 ?>
 <!doctype html>
 <html lang="fr">
@@ -36,7 +33,7 @@ include "../view/admin/parts/navBarAdmin.php";
     }
     ?>
 
-            <form id="formulaire" method="POST">
+            <form id="formulaire" method="POST" enctype="multipart/form-data">
                <div class="form-group row">
                    <label class="col-md-3" for="genre">Legend  (*)</label>
                    <input name="legend" type="text" class="form-control col-md-9" id="legend" placeholder="Entrez une legend" required>
@@ -44,7 +41,8 @@ include "../view/admin/parts/navBarAdmin.php";
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="URL">URL  (*)</label>
-                   <input name="URL" type="text" class="form-control col-md-9" id="URL" placeholder="Entrez le chemin" required>
+                   <input name="URL" type="file" value="30000
+                   " class="form-control col-md-9" id="URL" placeholder="Entrez le chemin" required>
                    <div class="invalid-feedback text-left offset-md-3">Vous devez entrez le chemin de l'image</div>
                </div>
                <div class="form-group row">
