@@ -41,8 +41,7 @@ include "../view/admin/parts/navBarAdmin.php";
                </div>
                <div class="form-group row">
                    <label class="col-md-3" for="URL">URL  (*)</label>
-                   <input name="URL" type="file" value="30000
-                   " class="form-control col-md-9" id="URL" placeholder="Entrez le chemin" required>
+                   <input name="URL" type="file" value="50000" class="form-control col-md-9" id="URL" placeholder="Entrez le chemin" required>
                    <div class="invalid-feedback text-left offset-md-3">Vous devez entrez le chemin de l'image</div>
                </div>
                <div class="form-group row">

@@ -8,16 +8,16 @@ define("DB_PWD","");
 define("DB_PORT",3306);
 define("DB_CHARSET","utf8");
 
-/*
+
 // nombre par produit
 define("NUMBER_ARTICLE_PER_PAGE",5);
 // Article's number per page for Admin
 define("NUMBER_ARTICLE_PER_PAGE_ADMIN",3);
 
 // Upload images path
-define("IMG_UPLOAD_ORIGINAL","img/upload/origin/");
-define("IMG_UPLOAD_MEDIUM","img/upload/medium/");
-define("IMG_UPLOAD_SMALL","img/upload/thumb/");
+define("IMG_UPLOAD_ORIGINAL","image/upload/origin/");
+define("IMG_UPLOAD_MEDIUM","image/upload/medium/");
+define("IMG_UPLOAD_SMALL","image/upload/thumb/");
 
 // Maximum size for medium images (keep the proportions)
 define("IMG_MEDIUM_WIDTH",950);
@@ -36,4 +36,3 @@ define("IMG_MAX_SIZE",100000000); // +- 100 mio
 // Qualities for JPG images
 define("IMG_JPG_MEDIUM",90);
 define("IMG_JPG_SMALL",80);
-*/
