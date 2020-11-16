@@ -30,18 +30,18 @@ function uploadImage(array $fileName,$validExt,$maxSize,$fileNameOrig,$fileNameM
                 //hauteur en pixel de l'image d'origine
                 $imageHeight = $imageInfo[1];
                 //creation du nouveau nom de fichier
-                $nouveauNomFichier = imageNewNom($validExt);
+                $nouveauNomFichier = imageNewNom($extend);
                 // là ou le nom est stocker temporairement
                 $tmpName = $_FILES['URL']['tmp_name'];
                 //on cree un nom et un id unique avec la methode md5 et rand pour avoir un resultat aleatoire
-                $fileNameOrig = "image/upload/origin" . $uniqueName . $fileExt;
-                $result = move_uploaded_file($tmpName,$foldersOrig);
+                $fileNameComplet = $fileNameOrig . $nouveauNomFichier ;
+                $result = move_uploaded_file($tmpName,$fileNameComplet);
                 //on essaye d'envoier physiquement l'image
                 if($result){
                     //transformation de l'image vers medium en gardant les proportions
-                    imageMakeResize($nouveauNomFichier,$imageWidth,$imageHeight,$validExt,$fileNameOrig,$fileNameMed,$widhtMed,$heightMed,$qualiteMed);
+                    imageMakeResize($nouveauNomFichier,$imageWidth,$imageHeight,$extend,$fileNameOrig,$fileNameMed,$widhtMed,$heightMed,$qualiteMed);
                     //transformation de l'image vers Small en gardant les proportions
-                    imageMakeThumbs($nouveauNomFichier,$imageWidth,$imageHeight,$validExt,$fileNameOrig,$fileNameSmall,$widhtSmall,$heightSmall,$qualiteSmall);
+                    imageMakeThumbs($nouveauNomFichier,$imageWidth,$imageHeight,$extend,$fileNameOrig,$fileNameSmall,$widhtSmall,$heightSmall,$qualiteSmall);
                      //si on a un deplacement de fichier 
                      // envoi le tableau avec le nom sous forme de tableau
                         return [$nouveauNomFichier,];
@@ -193,7 +193,7 @@ function imageMakeThumbs($name, $largeurOri, $hauteurOri, $extension, $origin, $
         // on adapte l'image au bon format, puis on colle
         imagecopyresampled($newImg, $copie, 0 - ($new_width - $thumb_width) / 2, 0 - ($new_height - $thumb_height) / 2, 0, 0, $new_width, $new_height, $width, $height);
         // on finalise le fichier jpg
-        imagejpeg($newImg, $thumb . $name, $qualityJpg);
+        imagejpeg($newImg, $thumb . $name, $qualiteJpg);
     } elseif ($extension == ".png") {
         // en png
         $copie = imagecreatefrompng($origin . $name);

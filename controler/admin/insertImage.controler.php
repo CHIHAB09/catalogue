@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
                     // l'image a bien été envoyée, donc on obtient un tableau
                     if(is_array($upload)){
                         // on insert l'image (et on récupère l'id de l'image)
-                        $idimage = insertImages($db,$_POST['URL'],$upload[0],$produit_idproduit);
+                        $idimage = insertImages($db,$legend,$upload[0],$produit_idproduit);
 
                     // en cas d'erreur (string)
                     }else{
