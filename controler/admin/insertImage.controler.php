@@ -25,8 +25,8 @@ if (isset($_POST['submit'])) {
                         $error = $upload;
                     }
                 }
-                //header("Location: ./");
-                //exit;
+                header("Location: ?pg=Image&message=insert");
+                exit;
             }else{
 
                 $erreur ="Problème lors de l'insertion";

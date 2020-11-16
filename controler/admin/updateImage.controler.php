@@ -36,6 +36,7 @@ if(empty($legend)||empty($URL)||empty($produits_idproduit)){
         //var_dump(mysqli_error($db));
      // redirection
      header("Location: ?pg=Image&message=update");
+     exit;
     // var_dump(mysqli_error($db));
  }
 }
