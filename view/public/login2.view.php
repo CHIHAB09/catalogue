@@ -1,6 +1,3 @@
-<?php
-include "../view/parts/navbar.php"
-?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -30,7 +27,7 @@ include "../view/parts/navbar.php"
         <input type="submit" value="login">
       </div>
     </form>
-    <a href="?pg=Accueil"><button class="">Retour à l'accueil.</button></a>
+    <a href="?pg=Accueil"><button class="button">Retour à l'accueil.</button></a>
     <script src="../../public/js/login.js"></script>
 </body>
 

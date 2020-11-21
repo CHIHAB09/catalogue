@@ -1,9 +1,4 @@
 <?php
-
-
-
-
-
 // ----------> Produit <--------------
 
 // affichage classé par id
@@ -103,39 +98,7 @@ function selectCount($db){
 }
 //var_dump(selectCount($db));
 
-
-//---- Magasin-------
-
-
-
-//affichage de la liste des pointes de vente avec id
-function selectsMagasinById ($db,$idMagasin){
-    $sql="SELECT * FROM magasin WHERE idMagasin='$idMagasin' ORDER BY ville ASC";
-    $result= mysqli_query($db,$sql);
-    if($result){
-        $data= mysqli_fetch_assoc($result);
-        return $data;
-    }else{
-        return "Le point de vente n'éxiste plus:" . mysqli_error($db) . "<br>";
-    }
-}
-
-// modification d'un point de vente
-function updateMagasin($db,$idMagasin, $nomMagasin,$rue,$numero,$cdp,$ville,$long,$lat) {
-	$sql = "UPDATE magasin SET nom = '$nomMagasin', rue = '$rue', numero = '$numero', codepostal = '$cdp', ville= '$ville', longitude = '$long', latitude= '$lat' WHERE idMagasin = $idMagasin";
-	
-	$result = mysqli_query($db, $sql);
-	return $result ? "La mise à jour a réussie<br>" : "La mise à jour a échouée: " . mysqli_error($db) . "<br>";
-}
-
-
-
-
-
-
-
 //--------Image--------
-
 
 //affichage le nombre d'image en fonction de produit
 function selectALLCountImage($db,$id){
@@ -148,7 +111,6 @@ function selectALLCountImage($db,$id){
 
 
 //---------PROMO--------
-
 
 // tout de promo
 function selectsPromo($db){
@@ -173,8 +135,3 @@ function promotion($c, $reduction, $debut, $fin, $produits_idproduit){
     }
 
 }
-
-// ----------> DELETE <--------------
-
-
-

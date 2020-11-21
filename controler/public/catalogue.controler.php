@@ -1,14 +1,12 @@
 <?php
-include "../view/parts/navbar.php"
-?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+require_once "../model/public/catalogue.model.php";
+
+$produit = selectsAllProduits($db);
+//count($produit); // Permet de savoir le nombre d'éléments dans un array
+
+//var_dump (selectsAllProduits($db));
+
+
+
+
+include "../view/public/catalogue.view.php";
