@@ -50,6 +50,9 @@ if(!isset($_GET['pg'])){
         case "Promotion":
             require_once "../controler/public/Promotion.controler.php";
         break;
+        case "Promotion":
+            require_once "../controler/public/magasinPublic.controler.php";
+        break;
         case "Présentation":
             require_once "../controler/public/presentation.controler.php";
         break;
@@ -71,4 +74,4 @@ if(!isset($_GET['pg'])){
 }
 
 
-require_once "../view/parts/footer.php";
+//require_once "../view/parts/footer.php";

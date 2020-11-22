@@ -1,5 +1,5 @@
 <?php
-
+require_once "../model/accueil.Magasin.model.php";
 $_SESSION['enoyeok'] ="";
 
 if (isset($_POST['Send'])) {
@@ -14,7 +14,7 @@ if ( (!empty($themail))&& (!empty($sujet)) && (!empty($message)) && (!empty($the
     $message = $message . ' ' . $thename . '' . $prenom;
     $Entetes= 'From: webmaster@example.com' . "\r\n" .
     'Content-type: text/html; charset=UTF-8' . "\r\n";
-    echo "coucou";
+    //echo "coucou";
     ini_set('smtp_port',25);
     ini_set('SMTP','relay.proximus.be');
     mail($themail, $sujet, $message, $Entetes);

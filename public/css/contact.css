@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto');
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto');
 *{
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
     font-family: 'Roboto',sans-serif;
 }
 body{
-    background:url('../image/logo/panthere.jpg') no repeat top center;
+    background:url('image/logo/panthere.jpg') no repeat top center;
     background-size: cover;
     height: 100vh;
 }
@@ -92,4 +92,11 @@ body{
     .msg{
         width: 10%;
     }
-}
+}*/
+
+/* Carte */
+
+#mymap{
+    min-height: 400px;
+  
+  }
