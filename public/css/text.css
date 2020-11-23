@@ -1,0 +1,71 @@
+body{
+    font-size: 40px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bigItem{
+    background-image: url("../image/upload/thumb/8c4cbf32dc32cec6c165cb7a249ff8f3.png");
+    width: 100%;
+    margin: 0;
+}
+
+.item {
+    width: 100%;
+}
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+}
+.feature{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*MENU DE NAVIGATION*/
+
+/*COULEURS MENU DE NAVIGATION*/
+.blue{
+	color: white;
+	font-weight: bold;
+	font-family: 'Taviraj', serif;
+	font-size: 19px;	
+}
+/*DONNEES MENU DE NAVIGATION*/
+
+/*STRUCTURE MENU LI ET LI A*/
+#nav li{
+	display: inline-block;
+	list-style: none;	
+}
+#nav li a{
+	display:inline-block;
+	text-decoration: none;
+	position: relative;
+	width:120px;
+	text-align:center;
+}
+
+/*pour rendre notre site responsive aux écrans plus petits que 700 px*/
+@media screen and (max-width: 700px){
+    #nav li{
+       display: block;
+    
+    }
+}

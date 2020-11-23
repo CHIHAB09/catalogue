@@ -1,8 +1,3 @@
-<?php
-require_once "../view/admin/parts/navBarAdmin.php";
-var_dump($promo);
-?>
-
 <!doctype html>
 <html lang="fr">
 <head>

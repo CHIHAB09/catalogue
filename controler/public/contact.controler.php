@@ -1,5 +1,7 @@
 <?php
-require_once "../model/accueil.Magasin.model.php";
+require_once "../model/public/contact.model.php";
+
+$shop= selectsMagasin($db);
 $_SESSION['enoyeok'] ="";
 
 if (isset($_POST['Send'])) {

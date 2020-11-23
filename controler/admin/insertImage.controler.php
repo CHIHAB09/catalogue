@@ -1,6 +1,5 @@
 <?php
 require_once "../model/insertImage.model.php";
-//var_dump($_FILES);
 
 // verification et securisation avant la requete au moment de l envoie du formulaire
 if (isset($_POST['submit'])) {
@@ -26,20 +25,12 @@ if (isset($_POST['submit'])) {
                         $error = $upload;
                     }
                 }
-                header("Location: ?pg=Image&message=insert");
+                //header("Location: ?pg=Image&message=insert");
                 //exit;
             }else{
 
                 $erreur ="Problème lors de l'insertion";
             }
-
-        
-
-
-
-
-
-
 
 
 include "../view/admin/insertImage.php";

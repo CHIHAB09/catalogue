@@ -49,7 +49,9 @@ function selectEvidence($c,$id){
         return "Un des updates a échoué: " . mysqli_error($c) . "<br>";
     }
 }
-
+functionProduitEvid($c,$id){
+    $sql="SELECT * FROM produits WHERE produit_evident = 1";
+}
 
 // affichage classé par prix
 function selectsprix($db){
@@ -114,7 +116,8 @@ function selectALLCountImage($db,$id){
 
 // tout de promo
 function selectsPromo($db){
-    $sql="SELECT * FROM promotion ";
+    $sql="SELECT * FROM promotion 
+    ORDER BY reduction";
     $result = mysqli_query($db, $sql);
     if($result) {
         $data = mysqli_fetch_all($result, MYSQLI_ASSOC);

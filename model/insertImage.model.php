@@ -128,7 +128,7 @@ function imageMakeResize($name, $largeurOri, $hauteurOri, $extension, $origin, $
             $proportion = $hauteurMax / $hauteurOri;
         }
         // mise en proportion de la largeur et hauteur finales
-        $largeurFinal = round($largeurOri * $proportion);
+        $largeurFinal = round($largeurOri * $proportion);// arrondit le nombre
         $hauteurFinal = round($hauteurOri * $proportion);
     }
     //var_dump($largeurFinal,$hauteurFinal);

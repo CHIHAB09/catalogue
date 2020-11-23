@@ -1,6 +1,5 @@
 <?php
 require_once "../model/deconnexion.php";
-require_once "../model/crud.php";
 require_once "../view/admin/parts/navBarAdmin.php";
 /*require_once "../model/categorieModel.php";
 require_once "../model/produitModel.php";

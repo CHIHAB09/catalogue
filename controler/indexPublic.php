@@ -1,5 +1,4 @@
 <?php
-require_once "../model/crud.php";
 require_once "../model/connectUsers.php";
 require_once "../model/paginationModel.php";
 require_once "../view/parts/navbar.php";
@@ -48,10 +47,7 @@ if(!isset($_GET['pg'])){
             require_once "../controler/accueil.public.controler.php";
         break;
         case "Promotion":
-            require_once "../controler/public/Promotion.controler.php";
-        break;
-        case "Promotion":
-            require_once "../controler/public/magasinPublic.controler.php";
+            require_once "../controler/public/promo.controler.php";
         break;
         case "Présentation":
             require_once "../controler/public/presentation.controler.php";

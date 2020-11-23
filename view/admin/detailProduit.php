@@ -1,7 +1,3 @@
-<?php
-require_once "../view/admin/parts/navBarAdmin.php";
-$titre= "Produit";
-?>
 <!doctype html>
 <html lang="fr">
 <head>
