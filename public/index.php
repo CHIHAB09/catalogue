@@ -20,6 +20,7 @@ if(!$db){
     // stop working
     die();
 }
+//require_once "../view/parts/header";
 
 if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']==session_id()){
     

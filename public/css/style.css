@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 3fr repeat(3, 1fr);
+    grid-template-rows: 4fr 8fr 0.5fr;
+    grid-template-areas: 
+    "logo nav nav nav"
+    "feature content content content"
+    "footer footer footer footer"
+    ;
+}
+
+.logo{
+    grid-area: logo;
+    background-color: rgb(243, 11, 11);
+}
+
+.navigation{
+    grid-area: nav;
+    background-color: rgb(199, 121, 182);
+}
+
+.content{
+    grid-area: content;
+    flex-direction: row;
+    background-color: rgb(211, 211, 211);
+}
+
+.feature{
+    grid-area: feature;
+    background-color: rgb(236, 219, 60);
+}
+
+.footer{
+    grid-area: footer;
+    background-color: rgb(68, 61, 61);
+    color: white;
+}
+/*pour rendre notre site responsive aux écrans plus petits que 700 px*/
+@media screen and (max-width: 700px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.5fr 6fr 2fr 0.5fr;
+        grid-template-areas: 
+        "logo"
+        "nav"
+        "content"
+        "feature"
+        "footer"
+        ;
+    }
+}

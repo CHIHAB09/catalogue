@@ -1,0 +1,51 @@
+h1 {
+    text-align: center;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+
+
+}
+h2 {
+    text-align: center;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+
+}
+
+.grille{
+    
+    /*occupe 80%de la largueur*/
+    width:80%;
+    /* hauteur automatique*/
+    height:auto;
+    /* 30px en haut et en bas et auto  a gauche et a droite pour centre le tout */
+    margin: 30px auto;
+    /*bordure  */
+    border: 1px solid #333;
+
+    /* ici on prepare le grid*/
+    display: grid;
+    /*cree le nombre de column*/    /*  function minmax defini la taille minimum et maximum dans la grille css ( x,x) argument de longueur;*/
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); /*auto-fill: cree autant de colonee que la grille peut avec la taille qu elle dispose*/
+    /*alignement au niveau de la largueur pour les items*/
+    justify-items: center;/* centre sur x*/
+    /* goutiere entre les images*/
+    grid-gap:10px;
+    /* alignement au niveau de la hauteur pour les itmes*/
+    align-items: center;
+
+    
+}
+
+
+.item {
+    /*largueur de 300px*/
+    width:300px;
+    /* hauteur de 200 */
+    height : 200px;
+    
+    background: #333;
+
+}

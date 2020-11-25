@@ -31,7 +31,7 @@ define("IMG_SMALL_HEIGHT",80);
 define("IMG_FORMAT",[".jpg", ".jpeg", ".gif", ".png"]);
 
 // Maximum size for image
-define("IMG_MAX_SIZE",100000000); // +- 100 mio
+define("IMG_MAX_SIZE",1000000000); // +- 1000 mio
 
 // Qualities for JPG images
 define("IMG_JPG_MEDIUM",90);

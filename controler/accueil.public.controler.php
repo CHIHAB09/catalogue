@@ -1,3 +1,12 @@
 <?php
+require_once "../model/public/accueil.model.php";
 
-include "../view/public/accueil.view.php";
+$promo = selectsAllPromo($db);
+
+
+
+
+
+
+
+include "../view/public/accueil.public.php";

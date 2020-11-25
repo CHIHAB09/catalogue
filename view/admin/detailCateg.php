@@ -1,5 +1,4 @@
 <?php
-require_once "../view/admin/parts/navBarAdmin.php";
 require_once "../model/crud.php";
 $titre= "Categorie";
 
