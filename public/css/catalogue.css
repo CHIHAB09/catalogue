@@ -1,4 +1,4 @@
-h1 {
+/*h1 {
     text-align: center;
     font-size: 40px;
     font-family: Arial, Helvetica, sans-serif;
@@ -14,27 +14,27 @@ h2 {
 
 }
 
-.grille{
+.grille{*/
     
     /*occupe 80%de la largueur*/
-    width:80%;
+   /* width:80%;*/
     /* hauteur automatique*/
-    height:auto;
+    /*height:auto;*/
     /* 30px en haut et en bas et auto  a gauche et a droite pour centre le tout */
-    margin: 30px auto;
+   /* margin: 30px auto;*/
     /*bordure  */
-    border: 1px solid #333;
+   /* border: 1px solid #333;*/
 
     /* ici on prepare le grid*/
-    display: grid;
+   /* display: grid;*/
     /*cree le nombre de column*/    /*  function minmax defini la taille minimum et maximum dans la grille css ( x,x) argument de longueur;*/
-    grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); /*auto-fill: cree autant de colonee que la grille peut avec la taille qu elle dispose*/
+   /* grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); /*auto-fill: cree autant de colonee que la grille peut avec la taille qu elle dispose*/
     /*alignement au niveau de la largueur pour les items*/
-    justify-items: center;/* centre sur x*/
+   /* justify-items: center;/* centre sur x*/
     /* goutiere entre les images*/
-    grid-gap:10px;
+   /* grid-gap:10px;
     /* alignement au niveau de la hauteur pour les itmes*/
-    align-items: center;
+    /*align-items: center;
 
     
 }
@@ -42,10 +42,196 @@ h2 {
 
 .item {
     /*largueur de 300px*/
-    width:300px;
+   /* width:300px;
     /* hauteur de 200 */
-    height : 200px;
+  /*  height : 200px;
     
-    background: #333;
+    /*background: #333;
 
+}*/
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 3fr repeat(3, 1fr);
+    grid-template-rows: 4fr 8fr 0.5fr;
+    grid-template-areas: 
+    "logo nav nav nav"
+    "feature content content content"
+    "footer footer footer footer"
+    ;
+}
+
+.content{
+    grid-area: content;
+    flex-direction: row;
+    background-color: rgb(211, 211, 211);
+}
+
+
+
+/*pour rendre notre site responsive aux écrans plus petits que 700 px*/
+@media screen and (max-width: 700px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.5fr 6fr 2fr 0.5fr;
+        grid-template-areas: 
+        "logo . . "
+        "nav"
+        "content"
+        "feature"
+        "footer"
+        ;
+    }
+}
+
+body{
+    font-size: 40px;
+}
+
+/*.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}*/
+/*.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}*/
+.bigItem{
+    /*background-image: url("../image/upload/origin/0ba17fdc4cc3d936ef7b959ed5d85006.png");*/
+    width: 100%;
+    /*height: 100%;*/
+    margin: 0;
+}
+.item {
+    /*background-image: url("../image/upload/origin/0ba17fdc4cc3d936ef7b959ed5d85006.png");*/
+    width: 100%;
+    text-align: center;
+    
+}
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+}
+/*.feature{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}*/
+/*.evident{
+    /*background-image: url("../image/upload/thumb/8c4cbf32dc32cec6c165cb7a249ff8f3.png");*/
+  /*  width: 100%;*/
+  /*  margin: 0;*/
+   /* text-align: center;/*
+}*/
+/*.evidentitem{
+    border-radius: 1;
+}*/
+/*.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}*/
+
+/*MENU DE NAVIGATION*/
+
+/*COULEURS MENU DE NAVIGATION*/
+/*.blue{
+	color: white;
+	font-weight: bold;
+	font-family: 'Taviraj', serif;
+	font-size: 19px;	
+}*/
+/*DONNEES MENU DE NAVIGATION*/
+
+/*STRUCTURE MENU LI ET LI A*/
+/*#nav li{
+	display: inline-block;
+	list-style: none;	
+}
+#nav li a{
+	display:inline-block;
+	text-decoration: none;
+	position: relative;
+	width:120px;
+	text-align:center;
+}*/
+
+/*pour rendre notre site responsive aux écrans plus petits que 700 px*/
+@media screen and (max-width: 700px){
+    #nav li{
+       display: block;
+    
+    }
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 3fr repeat(3, 1fr);
+    grid-template-rows: 4fr 8fr 0.5fr;
+    grid-template-areas: 
+    "logo nav nav nav"
+    "feature content content content"
+    "footer footer footer footer"
+    ;
+}
+
+/*.logo{
+    grid-area: logo;
+    background-color: rgb(243, 11, 11);
+}*/
+
+/*.navigation{
+    grid-area: nav;
+    background-color: rgb(199, 121, 182);
+}*/
+
+.content{
+    grid-area: content;
+    flex-direction: row;
+    background-color: rgb(211, 211, 211);
+}
+
+/*.feature{
+    grid-area: feature;
+    background-color: rgb(233, 231, 218);
+}*/
+
+/*.footer{
+    grid-area: footer;
+    background-color: rgb(68, 61, 61);
+    color: white;
+}*/
+/*pour rendre notre site responsive aux écrans plus petits que 700 px*/
+@media screen and (max-width: 700px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.5fr 6fr 2fr 0.5fr;
+        grid-template-areas: 
+        "logo . . "
+        "nav"
+        "content"
+        "feature"
+        "footer"
+        ;
+    }
 }

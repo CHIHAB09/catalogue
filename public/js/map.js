@@ -1,9 +1,4 @@
-let magasins= [
-    {"latitude": 50.85,"longitude": 4.3167},
-    {"latitude": 50.85,"longitude": 4.36667},
-    {"latitude":50.867416,"longitude":4.377298},
-    {"latitude":50.8466,"longitude":4.3528}
-];
+
 /*
 // on initialise la carte et on charge les tuille et on regle les zoom
 let mymap = L.map('mymap').setView([50.8466, 4.3528], 12);
@@ -63,5 +58,5 @@ for( let shop of shops){
 
     //on crée le marqueur et on lui attribue une popup
     let marqueur = L.marker([shop.longitude, shop.latitude],{icon:icone}).addTo(mymap);
-    marqueur.bindPopup("<h1>"+shop.nom+"</h1>"+"<h2>"+shop.rue+"</h2>");
+    marqueur.bindPopup("<h1>"+shop.nom+"</h1>"+"<h2>"+shop.rue+"</h2>"+"<h3>"+shop.numero+"</h3>"+"<h4>"+shop.codepostal+"</h4>"+"<h5>"+shop.ville+"</h3>");
 }

@@ -27,4 +27,6 @@ if ( (!empty($themail))&& (!empty($sujet)) && (!empty($message)) && (!empty($the
 }
 
 
+
+
 include "../view/public/contacts.view.php";

@@ -20,7 +20,6 @@
         <li class="items"><a href="?pg=Catalogue">Catalogue</a></li>
         <li class="items"><a href="?pg=Contact">Contact</a></li>
         <li class="items"><a href="?pg=Promotion">Promotion</a></li>
-        <li class="items"><a href="?pg=Magasin">Magasin</a></li>
         <li class="items"><a href="?pg=Login">login</a></li>
         <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
       </ul>

@@ -17,7 +17,7 @@ body{
 
 .logo{
     grid-area: logo;
-    background-color: rgb(243, 11, 11);
+    background-color:rgb(211, 211, 211);
 }
 
 .navigation{
@@ -33,7 +33,7 @@ body{
 
 .feature{
     grid-area: feature;
-    background-color: rgb(236, 219, 60);
+    background-color: rgb(233, 231, 218);
 }
 
 .footer{
@@ -47,7 +47,7 @@ body{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 0.5fr 6fr 2fr 0.5fr;
         grid-template-areas: 
-        "logo"
+        "logo . . "
         "nav"
         "content"
         "feature"

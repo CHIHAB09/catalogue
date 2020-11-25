@@ -49,9 +49,6 @@ function selectEvidence($c,$id){
         return "Un des updates a échoué: " . mysqli_error($c) . "<br>";
     }
 }
-functionProduitEvid($c,$id){
-    $sql="SELECT * FROM produits WHERE produit_evident = 1";
-}
 
 // affichage classé par prix
 function selectsprix($db){

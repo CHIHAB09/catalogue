@@ -2,8 +2,8 @@
 require_once "../model/public/promo.model.php";
 
 $promos= selectsAllProduitsPromo($db);
-$produitEvidents=selectsAllProduits($db);
-var_dump($promos);
+$evidents=selectsAllProduitsEvident($db);
+//var_dump($promos);
 
-
+//var_dump($evidents);
 include "../view/public/promo.php";

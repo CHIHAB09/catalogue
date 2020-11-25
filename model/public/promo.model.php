@@ -1,12 +1,13 @@
 <?php
 // pour les produit evident reprendre
-function selectsAllProduits($db){
+function selectsAllProduitsEvident($db){
     $sql="SELECT * 
     FROM produits P 
     LEFT JOIN produits_has_categorie AS PHC ON P.idproduit= PHC.produits_id 
     LEFT JOIN categorie AS C ON C.idcategorie = PHC.categorie_id
     LEFT JOIN images AS I ON I.produits_idproduit= P.idproduit  
-    ORDER BY P.idproduit; ";
+    ORDER BY produit_evident desc
+    LIMIT 1; ";
 
     $result = mysqli_query($db, $sql);
     if($result) {
