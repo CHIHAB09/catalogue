@@ -12,7 +12,7 @@
 
 </head>
 <body>
-          <nav>
+          <nav class="topnav">
             <ul>
               <li class="logo"><img src="image/logo/panthersneakers-black_3.png"></li>
               <li class="items"><a href="?pg=Accueil">Accueil</a></li>

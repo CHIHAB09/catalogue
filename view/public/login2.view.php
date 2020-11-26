@@ -32,7 +32,7 @@
               </div>
           </form>
     </div>
-        <a href="?pg=Accueil"><button class="button">Retour à l'accueil.</button></a>
+       
         <script src="../../public/js/login.js"></script>
 </body>
 
