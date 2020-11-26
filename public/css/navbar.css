@@ -2,7 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color : #222; 
+    background : white;
   font-family: 'Montserrat',sans-serif;
+}
+.items{
+	color: white;
+	font-weight: bold;
+	font-family: 'Taviraj', serif;
+	font-size: 19px;	
 }
 nav{
   background: #fdfbfb;
@@ -18,6 +26,7 @@ nav ul{
 nav ul li{
   padding: 15px 0;
   cursor: pointer;
+  
 }
 nav ul li.items{
   position: relative;
@@ -33,7 +42,7 @@ nav ul li.items:after{
   bottom: 5px;
   height: 2px;
   width: 100%;
-  background: #33ffff;
+  background: orangered;
   opacity: 0;
   transition: all 0.2s linear;
 }
@@ -52,11 +61,17 @@ nav ul li.logo{
 nav ul li a{
   color: black;
   font-size: 18px;
-  text-decoration: none;
+  
   transition: .4s;
 }
+li a {
+  text-decoration: none;
+  color: black;
+}
+
 nav ul li:hover a{
-  color: cyan;
+  color: orangered;
+  text-decoration: none;
 }
 nav ul li i{
   font-size: 23px;
@@ -67,7 +82,9 @@ nav ul li.btn{
 nav ul li.btn.hide i:before{
   content: '\f00d';
 }
-@media all and (max-width: 900px){
+
+/* responsive*/
+@media all and (max-width: 700px){
   nav{
     padding: 5px 30px;
   }
@@ -83,8 +100,8 @@ nav ul li.btn.hide i:before{
   }
   nav ul li.items:hover{
     border-radius: 5px;
-    box-shadow: inset 0 0 5px #33ffff,
-                inset 0 0 10px #66ffff;
+    box-shadow: inset 0 0 5px orangered,
+                inset 0 0 10px orangered;
   }
   nav ul li.items:hover:after{
     opacity: 0;

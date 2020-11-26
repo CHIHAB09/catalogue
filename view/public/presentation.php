@@ -2,6 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../public/css/presentation.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -24,7 +26,7 @@
     
     </div>
     <div class="titre">
-        <h1 class="titre">Panthersneakers:</h1>
+        <h1 class="titre">Panther sneakers:</h1>
     </div>
     <div class="contenue">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum molestie ex venenatis varius. Proin eget porta nunc, quis blandit lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam tortor lorem, lacinia ut egestas vitae, viverra vel massa. Mauris ornare neque vitae lorem varius porttitor. Nam sagittis orci urna, non ullamcorper quam vehicula vel. Sed convallis ornare convallis. In vel nulla ut neque condimentum fermentum congue vitae justo. Phasellus vel elementum dolor, a aliquet nulla. Curabitur nec vestibulum orci, eget auctor turpis. Nam pulvinar ultricies enim vel pharetra. Aenean orci turpis, congue quis tortor et, porttitor imperdiet metus.

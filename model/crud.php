@@ -1,19 +1,5 @@
 <?php
-// ----------> Produit <--------------
 
-// affichage classé par id
-function selectsProduitById($db,$idproduit){
-    
-    $sql="SELECT * FROM produits Where idproduit = $idproduit";
-    $result = mysqli_query($db, $sql);
-    if($result) {
-        $data = mysqli_fetch_assoc($result);;
-        return $data;
-    } else {
-        return "La sélection a échouée: " . mysqli_error($db) . "<br>";
-    }
-    
-}
 // affichage classé par model
 function selectsProduit($db){
     

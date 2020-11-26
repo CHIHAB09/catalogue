@@ -61,6 +61,10 @@ if(!isset($_GET['pg'])){
         case "Login":
             require_once "../controler/public/login2.controler.php";
             break;
+        case "detailProduit":
+            require_once "../controler/public/detailProduit.controler.php";
+            break;
+
             case "Deconnexion":
                 require_once "../model/deconnexion.php";
             break;

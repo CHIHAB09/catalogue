@@ -12,18 +12,18 @@
 
 </head>
 <body>
-    <nav>
-      <ul>
-        <li class="logo"><img src="image/logo/panthersneakers-white_5.png"></li>
-        <li class="items"><a href="?pg=Accueil">Accueil</a></li>
-        <li class="items"><a href="?pg=Présentation">Présentation</a></li>
-        <li class="items"><a href="?pg=Catalogue">Catalogue</a></li>
-        <li class="items"><a href="?pg=Contact">Contact</a></li>
-        <li class="items"><a href="?pg=Promotion">Promotion</a></li>
-        <li class="items"><a href="?pg=Login">login</a></li>
-        <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
-      </ul>
-    </nav>
-    
+          <nav>
+            <ul>
+              <li class="logo"><img src="image/logo/panthersneakers-black_3.png"></li>
+              <li class="items"><a href="?pg=Accueil">Accueil</a></li>
+              <li class="items"><a href="?pg=Présentation">Présentation</a></li>
+              <li class="items"><a href="?pg=Catalogue">Catalogue</a></li>
+              <li class="items"><a href="?pg=Contact">Contact</a></li>
+              <li class="items"><a href="?pg=Promotion">Promotion</a></li>
+              <li class="items"><a href="?pg=Login">login</a></li>
+              <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
+            </ul>
+          </nav>
+      
 </body>
 </html>

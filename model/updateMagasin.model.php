@@ -7,3 +7,16 @@ function updateMagasin($db,$idMagasin, $nomMagasin,$rue,$numero,$cdp,$ville,$lon
 	$result = mysqli_query($db, $sql);
 	return $result ? "La mise à jour a réussie<br>" : "La mise à jour a échouée: " . mysqli_error($db) . "<br>";
 }
+
+function selectsMagasinById($db,$idMagasin){
+    
+    $sql="SELECT * FROM magasin WHERE idMagasin = $idMagasin";
+    $result = mysqli_query($db, $sql);
+    if($result) {
+        $data = mysqli_fetch_all($result, MYSQLI_ASSOC);;
+        return $data;
+    } else {
+        return "La sélection a échouée: " . mysqli_error($db) . "<br>";
+    }
+    
+}

@@ -1,3 +1,9 @@
+* { 
+    margin : 0 auto;
+    color : #222; 
+    background : white; 
+    font-family : 'Montserrat', sans-serif;
+}
 body {
     margin:0;
     padding:0;
@@ -19,7 +25,7 @@ body {
 .bienvenue ul li {
     text-align: center;
     list-style: none;
-    color: #484848;
+    color: #222;
     font-family: arial;
     font-size: 90px;
     letter-spacing: 15px;
@@ -28,16 +34,16 @@ body {
 
 @keyframes flash {
     0% {
-        color: #484848;
+        color: #222;
         text-shadow: none;
     }
     90%{
-        color: #484848;
+        color: #222;
         text-shadow: none;
     }
     100%{
-        color: #fff900;
-        text-shadow: 0 0 7px #fff900,00 0 50px #fff900;
+        color: orangered;
+        text-shadow: 0 0 7px orangered,00 0 50px orangered;
     }
 }
 
@@ -73,13 +79,14 @@ ul li:nth-child(9){
 }
 
 .titre h1 {
+    margin: 20px;
     text-align: center;
     color:orangered;
 }
 
 
 .contenue p{
-    text-align: center;
+    text-align: justify;
 
 }
 
@@ -91,8 +98,9 @@ ul li:nth-child(9){
 }
 
 .img {
+    width: 100%;
     text-align: center;
-    border-top: 2px solid red;
+    border-top: 2px solid orangered;
     
 }
 
@@ -103,6 +111,6 @@ li a {
 
 li a:hover {
     text-decoration: underline;
-    color:red;
+    color:orangered;
 }
 /*}*/
