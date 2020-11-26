@@ -9,7 +9,7 @@
 h1 {
     text-align: center;
     font-size: 40px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Bebas Neue', cursive;
     margin: 0;
     color: orangered;
 
@@ -40,11 +40,11 @@ body{
     padding: 30px;
     border-radius: 5px;
     display: flex;
-    box-shadow: 0 0 10px rgba(0,0,0,0.13);
+    box-shadow: 0 0 10px #222;
     padding:30px;
     border-radius: 5px;
     display: flex;
-    box-shadow: 0 0 10px rgba(0,0,0,0.13);
+    box-shadow: 0 0 10px#222;
 
 }
 
@@ -64,9 +64,9 @@ body{
     margin: 10px;
     background: transparent;
     border: 0;
-    border-bottom: 2px solid #c5ecfd;
+    border-bottom: 2px solid orangered;
     padding: 10px;
-    color: #c5ecfd;
+    color: #222;
     width: 100%;
 
 }
@@ -76,21 +76,21 @@ body{
 }
 
 ::-webkit-input-placeholder{
-    color: #c5ecfd;
+    color: orangered;
 }
 
 ::-moz-input-placeholder{
-    color: #c5ecfd;
+    color: orangered;
 }
 ::-ms-input-placeholder{
-    color: #c5ecfd;
+    color: orangered;
 }
 .btn,.Send{
-    background: #39b7dd;
+    background: orangered;
     text-align: center;
     padding: 15px;
     border-radius:5px;
-    color: #fff;
+    color: #222;
     cursor: pointer;
     text-transform: uppercase;
 }
