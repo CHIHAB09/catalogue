@@ -34,8 +34,7 @@
         Morbi a varius nibh, ut interdum diam. Vestibulum quam lorem, euismod eget magna ac, consequat convallis est. Curabitur ullamcorper ac leo ac interdum. Maecenas congue euismod auctor. Aenean eros leo, sodales a eros sed, commodo consectetur odio. Proin vel libero tincidunt, placerat ipsum eget, porta enim. Praesent et mauris malesuada, hendrerit leo at, congue sapien. Donec condimentum bibendum quam ac tincidunt. Vestibulum id lorem nulla. Duis euismod ante elit, sed vehicula libero eleifend non. Duis id ex eget dolor condimentum vulputate id facilisis ligula.</p>
     </div>
     <div class="video">
-        <video src="image/video/puma.mp4" width="640" height="360" poster="image/poster.png" id="film1" controls>
-            <a href="media/wildlife.mp4">Télécharger la vidéo</a>
+        <video src="image/video/puma.mp4" width="640" height="360" poster="image/logo/panthersneakers-white_3.png" id="film1" controls>
         </video>
     </div>
     <div class="img" id="lecteur">
