@@ -14,20 +14,20 @@ if (isset($_POST['submit'])) {
                 if(!empty($_FILES['URL'])){
                     $upload = uploadImage($_FILES['URL'],IMG_FORMAT,IMG_MAX_SIZE,IMG_UPLOAD_ORIGINAL,IMG_UPLOAD_MEDIUM,IMG_UPLOAD_SMALL,IMG_MEDIUM_WIDTH,IMG_MEDIUM_HEIGHT,IMG_SMALL_WIDTH,IMG_SMALL_HEIGHT,IMG_JPG_MEDIUM,IMG_JPG_SMALL);
                     // l'image a bien été envoyée, donc on obtient un tableau
-                    var_dump($upload);
-                    echo"coucou";
+                    //var_dump($upload);
+                    //echo"coucou";
                     if(is_array($upload)){
                         
                         // on insert l'image (et on récupère l'id de l'image)
                         $idimage = insertImages($db,$legend,$upload[0],$produit_idproduit);
-                        var_dump( $idimage);
+                        //var_dump( $idimage);
                     // en cas d'erreur (string)
                     }else{
                         $error = $upload;
                     }
                 }
-                //header("Location: ?pg=Image&message=insert");
-                //exit;
+                header("Location: ?pg=Image&message=insert");
+                exit;
             }else{
 
                 $erreur ="Problème lors de l'insertion";

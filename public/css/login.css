@@ -21,10 +21,7 @@ h2 {
   margin: 0;
 }
 body{
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  text-align: center;
+  text-align: justify;
   font-family: sans-serif;
   justify-content: center;
   background: url(bg.jpg);
@@ -104,7 +101,7 @@ form .button{
   left: -100%;
   z-index: -1;
   transition: all .4s;
-  background: -webkit-linear-gradient(right,#00dbde,#fc00ff,#00dbde,#fc00ff);
+  background: -webkit-linear-gradient(280deg, #ff8c00 0, #ff7c00 12.5%, #ff6600 25%, #ff4700 37.5%, #ff0000 50%, #f20008 62.5%, #e80013 75%, #e1001d 87.5%, #de0028 100%);
 }
 .button:hover .inner{
   left: 0;

@@ -38,6 +38,7 @@ if(isset($_GET['idMagasin'])&&ctype_digit($_GET['idMagasin'])){
                 //var_dump($idMagasin);
                 // redirection
                 header("Location: ?pg=Magasin&message=update");
+                exit;
             
     }
 }

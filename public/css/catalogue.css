@@ -51,9 +51,14 @@ padding: 20px;
 
 
   }
-  .item .img img{
-      width: 80%;
-  }
+
+
+.item .img{
+    min-height: 350px;
+    width: 80%;
+    background-size: cover;
+}
+
 .btn {
     flex: 0 0 auto;
     display: block;

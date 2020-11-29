@@ -74,13 +74,25 @@ function selectDetail($db,$id){
 }
 //var_dump(selectNom($db,2));
 
-//affichage le nombre de produit que je possede
-function selectCount($db){
-    $sql= "SELECT COUNT(*) AS nb FROM produits";
-    $recup=mysqli_query($db,$sql);
-    $data=mysqli_fetch_assoc($recup);
-    return $data;
+
+// tous sur les produits
+function selectsAllProduits($db){
+    $sql="SELECT * 
+    FROM produits P 
+    LEFT JOIN produits_has_categorie AS PHC ON P.idproduit= PHC.produits_id 
+    LEFT JOIN categorie AS C ON C.idcategorie = PHC.categorie_id
+    LEFT JOIN images AS I ON I.produits_idproduit= P.idproduit  
+    ORDER BY P.idproduit; ";
+
+    $result = mysqli_query($db, $sql);
+    if($result) {
+        $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        return $data;
+    } else {
+        return "La sélection a échouée: " . mysqli_error($db) . "<br>";
+    }
 }
+
 //var_dump(selectCount($db));
 
 //--------Image--------

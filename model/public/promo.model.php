@@ -6,7 +6,7 @@ function selectsAllProduitsEvident($db){
     LEFT JOIN produits_has_categorie AS PHC ON P.idproduit= PHC.produits_id 
     LEFT JOIN categorie AS C ON C.idcategorie = PHC.categorie_id
     LEFT JOIN images AS I ON I.produits_idproduit= P.idproduit  
-    ORDER BY produit_evident desc
+    ORDER BY produit_evident DESC
     LIMIT 1; ";
 
     $result = mysqli_query($db, $sql);
@@ -26,8 +26,8 @@ function selectsAllProduitsPromo($db){
     LEFT JOIN produits_has_categorie AS PHC ON P.idproduit= PHC.produits_id 
     LEFT JOIN categorie AS C ON C.idcategorie = PHC.categorie_id
     LEFT JOIN images AS I ON I.produits_idproduit= P.idproduit
-    LEFT JOIN promotion AS Pr ON Pr.produits_idproduit = P.idproduit
-    ORDER BY reduction desc
+    JOIN promotion AS Pr ON Pr.produits_idproduit = P.idproduit
+    ORDER BY reduction DESC
     LIMIT 3;";
 
     $result = mysqli_query($db, $sql);

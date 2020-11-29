@@ -3,9 +3,7 @@
 // affichage des produits classé par categorie
 function selectsCategories($db){
     $sql="SELECT * 
-    FROM produits P 
-    JOIN produits_has_categorie AS PHC ON P.idproduit= PHC.produits_id 
-    LEFT JOIN categorie AS C ON C.idcategorie = PHC.categorie_id ORDER BY P.modele ; ";
+    FROM categorie";
 
     $result = mysqli_query($db, $sql);
     if($result) {

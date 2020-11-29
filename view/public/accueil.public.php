@@ -25,7 +25,7 @@
     <div class="panel panel3">
       <p>Nos</p>
       <p>Magasins</p>
-      <a href="?pg=Magasin"><img src="image/iconMag.png"<button class="button" ></button></a>
+      <a href="?pg=Magasin"><img src="image/iconeMag.png"<button class="button" ></button></a>
     </div>
     <div class="panel panel4">
       <p>Nous</p>

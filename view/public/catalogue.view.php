@@ -15,26 +15,30 @@
     <h2>Catalogue!</h2></br>
 
    
-    <div class="container"></div>
-        <div class="recherche">
-
-        </div>
+    <div class="container">
+        <p><?=$pagination?></p>
         <div class="content">
+
             <?php
-                foreach($produit as $item ) {
+            //var_dump($recupProdPage);
+                foreach($recupProdPage as $item ) {
+                  $url=explode('||',$item['GroupeUrl']);
             ?>
             <div class="item">
-            <div class="img"><img src="image/upload/medium/<?=$item['URL']?>"></div>
-            <div class="nom"><h3><?=$item['modele']?></h3></div>
-            <div class="prix"><p><?=$item['prix']?></p></div>
-            <button class="btn" type="button"><a href="?pg=detailProduit&idproduit=<?=$item['idproduit']?>"title="detail produit">Découvrir</a></button>
-        </div>
+                <div class="img"style="background-image:url('image/upload/medium/<?=$url[0]?>');"></div>
+                <div class="nom"><h3><?=$item['modele']?></h3></div>
+                <div class="prix"><p><?=$item['prix']?>$</p></div>
+                <button class="btn" type="button"><a href="?pg=detailProduit&idproduit=<?=$item['idproduit']?>"title="detail produit">Découvrir</a></button>
+            </div>
 
             <?php
         
                 }
             ?>
-        </div.recherch>
+       
+        </div>
+        <p><?=$pagination?></p>
     </div>
+    <!--<script src="../../public/js/promo.js"></script>-->
 </body>
 </html>

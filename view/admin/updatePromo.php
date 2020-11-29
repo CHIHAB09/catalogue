@@ -41,12 +41,12 @@
                 </div>
                 <div class="form-group row">
                    <label class="col-md-3" for="debut">Date debut  (*)</label>
-                   <input name="debut" type="Date" class="form-control col-md-9" id="debut" placeholder="Entrez votre date de debut" value="<?=$promo['debut'] ?>" required>
+                   <input name="debut" type="Date" class="form-control col-md-9" id="debut" placeholder="Entrez votre date de debut" value="<?=date("Y-m-d",strtotime($promo['debut'])) ?>" required>
                    <div class="invalid-feedback text-left offset-md-3">Vous devez entrez votre date de debut</div>
                 </div>
                 <div class="form-group row">
                    <label class="col-md-3" for="fin">Date de fin (*)</label>
-                   <input name="fin" type="Date" class="form-control col-md-9" id="fin" placeholder="Entrez une date de v" value="<?=$promo['fin'] ?>" required>
+                   <input name="fin" type="Date" class="form-control col-md-9" id="fin" placeholder="Entrez une date de v" value="<?=date("Y-m-d",strtotime($promo['fin'])) ?>" required>
                    <div class="invalid-feedback text-left offset-md-3">Vous devez entrez une date de fin</div>
                 </div>
                <div class="form-group row">

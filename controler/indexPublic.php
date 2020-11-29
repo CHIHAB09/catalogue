@@ -1,6 +1,5 @@
 <?php
 require_once "../model/connectUsers.php";
-require_once "../model/paginationModel.php";
 require_once "../view/parts/navbar.php";
 
 
@@ -33,7 +32,7 @@ if(isset($_GET['pg'])&&$_GET['pg']=="connect"){
        
         }
          // view
-    require_once "../view/public/accueil.view.php";
+    require_once "../view/public/accueil.public.php";
     exit();
 }
 
@@ -74,4 +73,4 @@ if(!isset($_GET['pg'])){
 }
 
 
-//require_once "../view/parts/footer.php";
+require_once "../view/parts/footer.php";

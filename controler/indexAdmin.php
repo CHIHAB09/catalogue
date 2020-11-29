@@ -111,4 +111,3 @@ if(isset($_SESSION['utilisateurs'])&& $_SESSION['utilisateurs']===session_id()) 
         }
     }
 }
-//require_once "../view/admin/parts/footer.php";

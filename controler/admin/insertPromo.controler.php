@@ -16,7 +16,8 @@ if (isset($_POST['submit'])) {
     }else {
         insertPromo($db,$idproduit,$reduction,$debut,$fin);
         
-        //header("Location: ?pg=Promo&message=insert");
+        header("Location: ?pg=Promo&message=insert");
+        exit;
 }
 }
 

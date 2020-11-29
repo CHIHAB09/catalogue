@@ -37,6 +37,7 @@ if(empty($model)||!isset($produitEvident)||empty($marque)||empty($descriptif)||e
     $updateProduitCateg= updateProduitCateg($db,$idproduit,$idcategories);
     // redirection
     header("Location: ?pg=Produit&message=update");
+    eit;
  }
 }
 

@@ -12,7 +12,7 @@
 
 <body>
       <h1>Panther Sneakers</h1></br>
-      <h2>Se conecter!</h2></br>
+      <h2>Se connecter!</h2></br>
     <div class="container">
           <header>Login</header>
           <form method="POST" action="?pg=connect">

@@ -22,7 +22,7 @@ h2 {
 body{
     margin: 0;
     padding: 0;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .container{
@@ -43,8 +43,8 @@ body{
 
         flex: 0 0 auto;
         margin: 2px;
-        width: 26%;
-        height: 80vh;
+        width: 45%;
+        height: auto;
         border: 1px solid #222;
         border-radius: 3px;
         text-align: center;
@@ -57,7 +57,61 @@ body{
 .content .item .marque, .nom,.categ,.prix,.descriptif,.promo{
     text-align: justify;
 }
+.miniImage {
+    margin:0 auto;
+    width: 85%;
+    text-align: center;
+}
+.miniImage img{
+    padding: 25px;
+    filter: grayscale(100%);
+    transition: 1s;
+}
+.miniImage img:hover{
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
 
+body.lightbox:before {
+	content: "";
+	background: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: fixed;
+	/*S'assure que le voile noir colle le haut de l'écran dans le cas ou un margin décalerait le body;*/
+	top: 0;
+	left: 0;
+}
+
+#floatingGallerie {
+	display: none;
+	position: fixed;
+	margin: auto;
+    top: 100px;
+    min-height: 500px;
+	left: 0;
+    right: 0;
+    background-color: orangered;
+}
+
+#gallerieImage {
+    margin:2%  auto;
+	display: block;
+	
+}
+
+#gaucheArrow {
+	position: absolute;
+	top: 50%;
+	left: 20px;
+}
+
+#droiteArrow {
+	position: absolute;
+	top: 50%;
+	right: 20px;
+}
 
 /*pour rendre notre site responsive aux écrans plus petits que 700 px*/
 @media screen and (max-width: 700px){

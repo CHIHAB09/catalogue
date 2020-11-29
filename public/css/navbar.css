@@ -3,8 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   color : #222; 
-    background : white;
-    font-family: 'Bebas Neue', cursive;;
+  /*background : white;*/
+  font-family: 'Bebas Neue', cursive;
 }
 .items{
 	color: white;
@@ -14,20 +14,21 @@
 }
 
 nav{
-  background: #fdfbfb;
+  width: 100%;
+  margin: 20px auto 50px auto;
+  background: white;
   padding: 5px 40px;
   letter-spacing: 2px;
 }
 nav ul{
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
 }
 nav ul li{
   padding: 15px 0;
   cursor: pointer;
+  display: inline;
+ 
   
 }
 nav ul li.items{
@@ -53,16 +54,16 @@ nav ul li.items:hover:after{
   bottom: 8px;
 }
 nav ul li.logo{
-  flex: 1;
   color: white;
-  font-size: 23px;
-  font-weight: 600;
+  width: 25%;
   cursor: default;
   user-select: none;
+  display: inline;
 }
 nav ul li a{
-  color: black;
+  color: #222;
   font-size: 18px;
+  font-family: 'Bebas Neue', sans-serif;
   
   transition: .4s;
 }
@@ -110,9 +111,10 @@ nav ul li.btn.hide i:before{
   }
 }
 .logo img {
-
-height: 2.5rem;
-width: auto;
+width: 20%;
 
 }
-
+nav div{
+  float: right;
+  margin-top: 18px;
+}

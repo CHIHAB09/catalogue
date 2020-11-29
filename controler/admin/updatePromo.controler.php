@@ -32,6 +32,7 @@ require_once "../model/paginationModel.php";
         var_dump(mysqli_error($db));
      // redirection
      header("Location: ?pg=Promo&message=update");
+     exit;
      //var_dump($update);
  }
 }

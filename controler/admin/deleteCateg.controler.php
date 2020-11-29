@@ -7,7 +7,7 @@ if(isset($_GET['idcategorie'])&&ctype_digit($_GET['idcategorie'])){
     
     // conversion en entier
     $idcategorie = (int) $_GET['idcategorie'];
-    $categ= selectCategorieByID($db,$_GET['idcategorie']);
+    $categ= selectCategorieByID($db,$idcategorie);
 
     // on confirme la suppression en rajoutant la variable get ok
     if(isset($_GET['ok'])){

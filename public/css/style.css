@@ -45,14 +45,16 @@ body{
         flex: 0 0 auto;
         margin: 2px;
         width: 26%;
-        height: 80vh;
+        height: 95vh;
         border: 1px solid #222;
         border-radius: 3px;
         text-align: center;
         padding: 20px;
 }
 .content .item .img img{
+    height: 350px;
     width: 80%;
+    background-size: cover;
 }
 
 .content .item .marque, .nom,.categ,.prix,.promo{
@@ -80,18 +82,23 @@ body{
 }
 
 .feature .evidentitem .img img{
+    height: 350px;
     width: 80%;
+    background-size: cover;
 }
 
 
-.feature .evidentitem .marque, .nom,.categ,.prix{
+.feature .evidentitem .marque, .nom,.categ,.prix1,.prixPromo{
     text-align: justify;
 }
-
+.prixPromo h2{
+    color: red;
+}
 .btn {
+    flex: 0 0 auto;
     display: block;
     margin: 150px auto 0;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: lighter;
     color: #333;
     padding: 25px 80px;

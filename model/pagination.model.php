@@ -1,12 +1,11 @@
 <?php
-
-function paginationModel($nb_tot_item,$current_page,$nb_per_page=10,$URL_VAR="",$name_get_pagination="pg"){
+function paginationModel($nb_tot_prod,$current_page,$nb_per_page=6,$URL_VAR="",$name_get_pagination="pg"){
 
     // création de la variable de sortie
     $sortie="";
 
     // pour obtenir le nombre total de page, on divise le nombre total d'éléments affichables $nb_tot_item par le nombre d'éléments affichables par page, le tout arrondit à l'entier supérieur ceil()
-    $nb_pages = ceil($nb_tot_item/$nb_per_page);
+    $nb_pages = ceil($nb_tot_prod/$nb_per_page);
 
     // si on a qu'une seule page
     if($nb_pages<2){
@@ -15,7 +14,7 @@ function paginationModel($nb_tot_item,$current_page,$nb_per_page=10,$URL_VAR="",
     }
 
     $sortie.= "Page ";
-
+    // on cree une boucle
     for($i=1;$i<=$nb_pages;$i++){
         // si on est sur la première page
         if($i==1){
