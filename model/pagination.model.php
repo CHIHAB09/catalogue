@@ -1,5 +1,5 @@
 <?php
-function paginationModel($nb_tot_prod,$current_page,$nb_per_page=6,$URL_VAR="",$name_get_pagination="pg"){
+function paginationModel($nb_tot_prod,$current_page,$nb_per_page=6,$URL_VAR="",$name_get_pagination="pg",$recup_url){
 
     // création de la variable de sortie
     $sortie="";
@@ -24,15 +24,15 @@ function paginationModel($nb_tot_prod,$current_page,$nb_per_page=6,$URL_VAR="",$
                 // la première page n'est pas la page actuelle
             }else{
                 // retour à la première ligne
-                $sortie .= "<a href='?$URL_VAR&$name_get_pagination=$i'><<</a> ";
+                $sortie .= "<a href='?$URL_VAR&$name_get_pagination=$i". $recup_url. "'><<</a> ";
                 // une page en arrière
-                $sortie .= "<a href='?$URL_VAR&$name_get_pagination=".($current_page-1)."'><</a> ";
+                $sortie .= "<a href='?$URL_VAR&$name_get_pagination=".($current_page-1).$recup_url."'><</a> ";
             }
         }
         // si on est sur la page actuelle, pas besoin de lien, sinon on en met un
         $sortie .= ($i==$current_page)
             ? "$i "
-            : "<a href='?$URL_VAR&$name_get_pagination=$i'>$i</a> ";
+            : "<a href='?$URL_VAR&$name_get_pagination=$i$recup_url'>$i</a> ";
 
         // si on est sur la dernière page
         if($nb_pages==$i){
@@ -41,9 +41,9 @@ function paginationModel($nb_tot_prod,$current_page,$nb_per_page=6,$URL_VAR="",$
                 $sortie.=" > >> ";
             }else{
                 // page suivante
-                $sortie.="<a href='?$URL_VAR&$name_get_pagination=".($current_page+1)."'>></a> ";
+                $sortie.="<a href='?$URL_VAR&$name_get_pagination=".($current_page+1).$recup_url."'>></a> ";
                 // dernière page
-                $sortie.="<a href='?$URL_VAR&$name_get_pagination=$i'>>></a> ";
+                $sortie.="<a href='?$URL_VAR&$name_get_pagination=$i$recup_url'>>></a> ";
             }
         }
 

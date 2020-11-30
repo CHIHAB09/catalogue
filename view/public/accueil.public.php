@@ -5,7 +5,7 @@
   <title>Accueil</title>
   <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../public/css/accueil.public.css">
+  <link rel="stylesheet" href="css/accueil.public.css">
   <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -39,6 +39,6 @@
     </div>
   </div>
 
-  <script src="../../public/js/accueil.public.js"></script>
+  <script src="js/accueil.public.js"></script>
 </body>
 </html>

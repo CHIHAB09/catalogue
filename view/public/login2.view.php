@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../public/css/login.css">
+  <link rel="stylesheet" href="css/login.css">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <title>Login</title>
 </head>
@@ -33,7 +33,7 @@
           </form>
     </div>
        
-        <script src="../../public/js/login.js"></script>
+        <script src="js/login.js"></script>
 </body>
 
 </html>

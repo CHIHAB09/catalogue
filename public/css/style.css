@@ -3,6 +3,7 @@
     color : #222; 
     background : white; 
     font-family : 'Montserrat', sans-serif;
+    font-size: 30px;
 }
 h1 {
     text-align: center;
@@ -22,7 +23,7 @@ h2 {
 body{
     margin: 0;
     padding: 0;
-    font-size: 40px;
+    font-size: 25px;
 }
 
 .container{
@@ -92,7 +93,7 @@ body{
     text-align: justify;
 }
 .prixPromo h2{
-    color: red;
+    text-decoration: none;
 }
 .btn {
     flex: 0 0 auto;
@@ -125,6 +126,9 @@ body{
     top: 6px;
 }
 
+.prixReduit{
+    text-decoration: line-through red;
+}
 
 
 

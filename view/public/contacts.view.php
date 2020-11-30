@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
     <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../public/css/contact.css">
+    <link rel="stylesheet" href="css/contact.css">
     
 </head>
 <body>
@@ -45,6 +45,6 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <!-- js perso -->
     <script>let shops= <?=json_encode($shop)?>;</script>
-    <script src="../public/js/map.js"></script>
+    <script src="js/map.js"></script>
 </body>
 </html>

@@ -59,7 +59,7 @@ padding: 20px;
     background-size: cover;
 }
 
-.btn button {
+.btn {
     flex: 0 0 auto;
     display: block;
     margin: 150px auto 0;
@@ -76,16 +76,16 @@ padding: 20px;
     box-shadow: 0 6px orangered;
     /*bottom: 30px;*/
 }
-.btn button a{
+.btn a{
     text-decoration: none;
     color:#222;
     background: orangered;
 }
-.btn button:hover{
+.btn:hover{
     box-shadow: 0 4px orangered;
     top: 2px;
 }
-.btn button:active{
+.btn :active{
     box-shadow: 0 0 chocolate;
     top: 6px;
 }
@@ -93,6 +93,7 @@ padding: 20px;
 
 
 
+/*
 @media screen and (max-width:1300px){
     .contenair {
         width: 700px;
@@ -122,4 +123,4 @@ padding: 20px;
         width: 40%;
         margin: 0 0;
     }
-}
+}*/

@@ -54,7 +54,7 @@ body{
     width: 80%;
 }
 
-.content .item .marque, .nom,.categ,.prix,.descriptif,.promo{
+.content .item .marque, .nom,.categ,.prix,.descriptif,.promo,.prixPromo{
     text-align: justify;
 }
 .miniImage {
@@ -70,6 +70,10 @@ body{
 .miniImage img:hover{
     filter: grayscale(0);
     transform: scale(1.1);
+}
+
+.prixReduit{
+    text-decoration: line-through red;
 }
 
 body.lightbox:before {

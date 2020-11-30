@@ -14,7 +14,26 @@
     <h1>Panther Sneakers</h1></br>
     <h2>Catalogue!</h2></br>
 
-   
+   <div class="recherche">
+       <form method="get" action="?pg=Catalogue">
+       <input type="text" hidden name="pg" value="Catalogue">
+            <h4>Categorie</h4>
+            <?php
+                foreach($categories AS $categorie) :
+            ?>
+            <label><input type="checkbox" name="categories[<?=$categorie['idcategorie']?>]" class="form-check-input" value="<?=$categorie['idcategorie']?>"><?=$categorie['genre']?></label>
+            <?php
+            endforeach;
+            ?>
+           
+           <input name="prixMin" type="text" value="0"></input>
+           <input name="prixMax" type="text" value="<?=$prixmax['prix']?>"></input>
+           <input type="text" hidden value="ok" name="recherche"></input>
+           <button type="submit">Recherche</button>
+
+       </form>
+
+   </div> 
     <div class="container">
         <p><?=$pagination?></p>
         <div class="content">
@@ -27,7 +46,8 @@
             <div class="item">
                 <div class="img"style="background-image:url('image/upload/medium/<?=$url[0]?>');"></div>
                 <div class="nom"><h3><?=$item['modele']?></h3></div>
-                <div class="prix"><p><?=$item['prix']?>$</p></div>
+                <div class="prix"><p><?=$item['prix']?>€</p></div>
+                
                 <button class="btn" type="button"><a href="?pg=detailProduit&idproduit=<?=$item['idproduit']?>"title="detail produit">Découvrir</a></button>
             </div>
 

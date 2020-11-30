@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="image/logo/panthersneakers-black_5.png">
     <link rel="stylesheet" href="css/navbar.css">
-    <link rel="js" href="../../public/js/navbar.js">
     <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -29,6 +28,6 @@
               </div>
             </ul>
           </nav>
-       <script src="../../public/js/navbar.js"></script>
+       <script src="js/navbar.js"></script>
 </body>
 </html>

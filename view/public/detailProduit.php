@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../public/css/detailProduit.css">
+    <link rel="stylesheet" href="css/detailProduit.css">
 </head>
 <body>
    
@@ -19,9 +19,9 @@
                     <div class="nom">Modéle:<?=$detailProduits['modele']?></div>
                     <div class="marque">Marque:<?=$detailProduits['marque']?></div>
                     <div class="categ">Categorie:<?=$detailProduits['genre']?></div>
-                    <div class="prix">Prix:<?=$detailProduits['prix']?></div>
                     <div class="descriptif">Descriptif:<?=$detailProduits['descriptif']?></div>
-                    <div class="promo">Promo:<?=$detailProduits['reduction']?>%</div>
+                    <?php if($detailProduits['reduction']){ ?> <div class="promo">Promo:<?=$detailProduits['reduction']?>%</div> <?php } ?>
+                    <div class="prix <?=(!empty($detailProduits['reduction'])) ? 'prixReduit':''?>"data-promo="<?=$detailProduits['reduction']?>" data-prix="<?=$detailProduits['prix']?>">Prix:<?=$detailProduits['prix']?>€</div>
                 </div>
             </div>
                     <div class="miniImage">
@@ -44,7 +44,8 @@
                         <img id="droiteArrow" src="image/icone/droite.png">
                     </div>
         </div>
-        <script src="../../public/js/lightbox.js"></script>
+        <script src="js/lightbox.js"></script>
+        <script src="js/promo.js"></script>
 </body>
 </html>
 

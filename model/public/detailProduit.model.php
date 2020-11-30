@@ -3,7 +3,7 @@
 //affichage classé par id
 function selectsProduitById($db,$idproduit){
     
-    $sql="SELECT *, GROUP_CONCAT(I.`URL` SEPARATOR '||') AS images
+    $sql="SELECT *,Pr.reduction, GROUP_CONCAT(I.`URL` SEPARATOR '||') AS images
     FROM produits P 
     LEFT JOIN promotion Pr ON Pr.produits_idproduit = P.idproduit
     LEFT JOIN images I ON I.produits_idproduit = P.idproduit
