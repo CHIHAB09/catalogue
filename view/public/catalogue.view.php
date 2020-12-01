@@ -15,24 +15,24 @@
     <h2>Catalogue!</h2></br>
 
    <div class="recherche">
-       <form method="get" action="?pg=Catalogue">
+       <form class="form" method="get" action="?pg=Catalogue">
        <input type="text" hidden name="pg" value="Catalogue">
-            <h4>Categorie</h4>
+            <h4>Catégorie</h4>
             <?php
                 foreach($categories AS $categorie) :
             ?>
-            <label><input type="checkbox" name="categories[<?=$categorie['idcategorie']?>]" class="form-check-input" value="<?=$categorie['idcategorie']?>"><?=$categorie['genre']?></label>
+            <label class="categecriture">
+                <input type="checkbox" name="categories[<?=$categorie['idcategorie']?>]" class="form-check-input" value="<?=$categorie['idcategorie']?>"><?=$categorie['genre']?>
+            </label>
             <?php
             endforeach;
             ?>
            
-           <input name="prixMin" type="text" value="0"></input>
-           <input name="prixMax" type="text" value="<?=$prixmax['prix']?>"></input>
+           <input class="barreSearch" name="prixMin" type="text" value="0"></input>
+           <input class="barreSearch" name="prixMax" type="text" value="<?=$prixmax['prix']?>"></input>
            <input type="text" hidden value="ok" name="recherche"></input>
-           <button type="submit">Recherche</button>
-
+           <button class="search"type="submit">Recherche</button>
        </form>
-
    </div> 
     <div class="container">
         <p><?=$pagination?></p>

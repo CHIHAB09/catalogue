@@ -1,6 +1,6 @@
 <?php
 include "../model/insertMagasin.model.php";
-require_once "../model/paginationModel.php";
+
 
 
 if (isset($_POST['submit'])) {

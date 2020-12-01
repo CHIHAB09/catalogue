@@ -1,6 +1,6 @@
 <?php
 require_once "../model/updateProduit.model.php";
-require_once "../model/paginationModel.php";
+
 // on vérifie l'existence de la variable get id et que son contenu de type string ne contient que des numériques
     if(isset($_GET['idproduit'])&&ctype_digit($_GET['idproduit'])){
         // on traîte idproduit en le transformant en entier si faux 0 => empty

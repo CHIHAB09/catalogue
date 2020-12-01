@@ -1,6 +1,6 @@
 <?php
 require_once "../model/updateMagasin.model.php";
-require_once "../model/paginationModel.php";
+
 
 
 $nomMagasin="";

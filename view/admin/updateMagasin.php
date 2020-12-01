@@ -23,7 +23,7 @@
 </header>
         
         <main class="container">
-            <h3><a href="?pg=Magasin" ><img src="i#" alt="Retour à la gestion des magasins"/></a></h3>
+            <h3><a href="?pg=Magasin" ><img src="image/retour.png" alt="Retour à la gestion des magasins"/></a></h3>
             <?php
                 // message d'erreur
                 if(isset($message)) {

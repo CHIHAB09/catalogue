@@ -1,7 +1,6 @@
 <?php
 require_once "../model/updateImage.model.php";
-require_once "../model/paginationModel.php";
- //$genre="";
+
 $idimage="";
 // on vérifie l'existence de la variable get id et que son contenu de type string ne contient que des numériques
   if(isset($_GET['idimage'])&&ctype_digit($_GET['idimage'])){

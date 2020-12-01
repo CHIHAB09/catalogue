@@ -1,7 +1,7 @@
 <?php
 
 require_once "../model/updateCateg.model.php";
-require_once "../model/paginationModel.php";
+
  //$genre="";
 $idcategorie="";
 // on vérifie l'existence de la variable get id et que son contenu de type string ne contient que des numériques
