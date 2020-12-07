@@ -30,10 +30,12 @@ body{
 }
 
 .wrapper{
-    
-    
     width: 100%;
     padding: 0 20px;
+}
+.wrapper p{
+    margin: 10px auto;
+    text-align: center;
 }
 .contact-form{
     max-width: 550px;

@@ -27,7 +27,6 @@ function selectsAllProduitsPromo($db){
     LEFT JOIN categorie AS C ON C.idcategorie = PHC.categorie_id
     LEFT JOIN images AS I ON I.produits_idproduit= P.idproduit
     JOIN promotion AS Pr ON Pr.produits_idproduit = P.idproduit
-    GROUP BY idproduit
     ORDER BY reduction DESC
     LIMIT 3;";
 

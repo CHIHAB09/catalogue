@@ -16,8 +16,14 @@
     <h2>Nous contacter!</h2></br>
       <!--formulaire de contact-->
       <div id="contact">
-        <form method="POST">    
+        <form method="POST">
             <div class="wrapper">
+            <?php if(isset($msg)){
+            echo "<p>$msg</p>";
+        }else{
+            echo "<p> </p> ";
+        }  
+        ?>    
                 <div class="contact-form">
                     <div class="input-fields">
                         <input type="text" class="input" name="thename" placeholder="Nom">
@@ -29,12 +35,13 @@
                     <div class="msg">
                         <textarea name="message" placeholder="Message"></textarea>
                         <div class="btn">
-                            <button class="Send" name="Send">Send</button>
+                            <button type="submit" class="Send" name="Send">Send</button>
                         </div>
                     </div>
                 </div>
             </div>
         </form> 
+       
         <p style='center color:red'><?php if(isset($_SESSION['enoyeok'] )) echo $_SESSION['enoyeok'] ;  ?></p>      
     </div>
     <div id="mymap">
