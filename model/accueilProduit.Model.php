@@ -19,7 +19,7 @@
 
 // tous sur les produits
 function selectsAllProduits($db){
-    $sql="SELECT * , GROUP_CONCAT(`URL`  SEPARATOR '||' ) AS GroupeUrl
+    $sql="SELECT * , GROUP_CONCAT(`URL`  SEPARATOR '||<br>' ) AS GroupeUrl
     FROM produits P 
     LEFT JOIN produits_has_categorie AS PHC ON P.idproduit= PHC.produits_id 
     LEFT JOIN categorie AS C ON C.idcategorie = PHC.categorie_id

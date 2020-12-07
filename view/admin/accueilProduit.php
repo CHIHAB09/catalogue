@@ -87,7 +87,7 @@
                         <td><?=$item['prix']?></td>
                         <td><?=$item['genre']?></td>
                         <td><?=$item['legend']?></td>
-                        <td><?=$item['URL']?></td>
+                        <td><?=$item['GroupeUrl']?></td>
                         <td><a href="?pg=detailProduit&idproduit=<?=$item['idproduit']?>" title="detail du produit"><img src="image/detail.png" class="btn btn-sm btn-info" data-toggle="modal" data-target="#detailsProduit"><i class="fa fa-search" aria-hidden="true"></i></a></td>
                         <td><a href="?pg=updateProduit&idproduit=<?=$item['idproduit']?>" title="modifier le produit"><img src="image/update.png" alt="modifier le produit" class="btn btn-sm btn-warning"/><i class="fa fa-edit" aria-hidden="true"></i></a></td>
                         <td><a href="?pg=deleteProduit&idproduit=<?=$item['idproduit']?>" title="supprimer ce produit"><img src="image/delete.png" alt="supprimer ce produit" class="btn btn-sm btn-danger"/><i class="fa fa-trash" aria-hidden="true"></i></a></td>
