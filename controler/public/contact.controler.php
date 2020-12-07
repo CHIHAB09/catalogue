@@ -2,7 +2,6 @@
 require_once "../model/public/contact.model.php";
 
 $shop= selectsMagasin($db);
-$_SESSION['enoyeok'] ="";
 
 if (isset($_POST['Send'])) {
     $sujet=htmlspecialchars($_POST['sujet'],ENT_QUOTES);

@@ -40,7 +40,7 @@
 
             <?php
             //var_dump($recupProdPage);
-                foreach($recupProdPage as $item ) {
+                foreach($recupProdPage AS $item ) {
                   $url=explode('||',$item['GroupeUrl']);
             ?>
             <div class="item">

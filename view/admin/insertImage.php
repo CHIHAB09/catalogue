@@ -31,21 +31,31 @@
     ?>
 
             <form id="formulaire" method="POST" enctype="multipart/form-data">
-               <div class="form-group row">
+                <div class="form-group row">
                    <label class="col-md-3" for="genre">Legend  (*)</label>
                    <input name="legend" type="text" class="form-control col-md-9" id="legend" placeholder="Entrez une legend" required>
                    <div class="invalid-feedback text-left offset-md-3">Vous devez entrez une legend/description</div>
-               </div>
-               <div class="form-group row">
+                </div>
+                <div class="form-group row">
                    <label class="col-md-3" for="URL">URL  (*)</label>
                    <input name="URL" type="file" value="50000" class="form-control col-md-9" id="URL" placeholder="Entrez le chemin" required>
                    <div class="invalid-feedback text-left offset-md-3">Vous devez entrez le chemin de l'image</div>
-               </div>
-               <div class="form-group row">
-                   <label class="col-md-3" for="produits_idproduit">ID du produit  (*)</label>
-                   <input name="produits_idproduit" type="text" class="form-control col-md-9" id="produits_idproduit" placeholder="Entrez le chemin" required>
-                   <div class="invalid-feedback text-left offset-md-3">Vous devez entrez l'ID correspondant à l'image</div>
-               </div>
+                </div>
+                <div class="col-auto my-1">
+                    <label class="mr-sm-2" for="inlineFormCustomSelect">Id produit</label>
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                            <option selected>Choix id...</option>
+                            <?php 
+                                foreach($recup_idProd AS $item){
+                                    
+                            ?>
+                           <option value="<?=$item['idproduit']?>"><?=$item['modele']?></option>
+                            <?php
+                            } 
+                            ?>
+
+                        </select>
+                </div>
                
                
                <div class="form-group row">

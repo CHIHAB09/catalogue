@@ -64,8 +64,13 @@
             <table class="table table-striped">
                 <thead class="thead-light">
                     <tr>
-                      <th scope="col">Legend</th>
-                      <th scope="col">URL</th>
+                        <th scope="col">id produit</th>
+                        <th scope="col">Modéle</th>
+                        <th scope="col">Legend</th>
+                        <th scope="col">URL</th>
+                        <th scope="col">Detail</th>
+                        <th scope="col">Modifier</th>
+                        <th scope="col">Supprimer</th>
                       
                 </thead>
                 <tbody>
@@ -73,8 +78,10 @@
                             foreach($image as $item ) {
                         ?>
                     <tr>
+                        <td><?=$item['idproduit']?></td>
+                        <td><?=$item['modele']?></td>
                         <td><?=$item['legend']?></td>
-                        <td><?=$item['URL']?></td>
+                        <td><?=$item['GroupeUrl']?></td>
                         
                         <td><a href="?pg=detailImage&idimage=<?=$item['idimage']?>"title="detail de la image"><img src="image/detail.png" class="btn btn-sm btn-info" data-toggle="modal" data-target="#detailImage"><i class="fa fa-search" aria-hidden="true"></i></a></td>
                         <td><a href="?pg=updateImage&idimage=<?=$item['idimage']?>"title="modifier la image"><img src="image/update.png" alt="modifier l'image" class="btn btn-sm btn-warning"/><i class="fa fa-edit" aria-hidden="true"></i></a></td>

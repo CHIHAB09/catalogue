@@ -1,5 +1,17 @@
 <?php
 
+//tous les produits
+function AllProduit($db){
+    $sql= "SELECT * FROM produits;";
+    $result = mysqli_query($db, $sql);
+    if($result) {
+        $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        return $data;
+    } else {
+        return "La sélection a échouée: " . mysqli_error($db) . "<br>";
+    }
+}
+
 //cree une image
 function insertImages($db,$legend,$fileName,$produit_idproduit){
     $sql= "INSERT INTO images (legend,URL,produits_idproduit) VALUES('$legend','" .$fileName ."','$produit_idproduit');";

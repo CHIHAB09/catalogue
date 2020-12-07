@@ -1,6 +1,8 @@
 <?php
 require_once "../model/insertImage.model.php";
 
+$recup_idProd= AllProduit($db);
+
 // verification et securisation avant la requete au moment de l envoie du formulaire
 if (isset($_POST['submit'])) {
     $legend = htmlspecialchars(strip_tags(trim($_POST['legend'])),ENT_QUOTES); 
